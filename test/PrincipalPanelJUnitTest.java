@@ -27,6 +27,7 @@ public class PrincipalPanelJUnitTest {
 
     @Test
     public void testVisibleComponents() {
+        window.menuItem("AddConsultorio").requireVisible();
         window.menuItem("salir").requireVisible();
     }
 

@@ -13,17 +13,17 @@ import javax.swing.JMenuItem;
  *
  * @author cristian
  */
-public class PrincipalPanelController implements ActionListener{
-   
-    private JMenuItem Exit;
+public class PrincipalPanelController implements ActionListener {
 
-    public PrincipalPanelController(JMenuItem Exit) {
+    private JMenuItem exit;
+
+    public PrincipalPanelController(JMenuItem exit) {
         super();
-        this.Exit = Exit;
+        this.exit = exit;
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
         System.exit(0);
-    }    
+    }
 }

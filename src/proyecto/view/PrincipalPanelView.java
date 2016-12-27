@@ -25,6 +25,8 @@ public class PrincipalPanelView extends JFrame {
     // Create views swing UI components
     JMenuBar principalmenu = new JMenuBar();
     JMenu archivomenuitem = new JMenu();
+    JMenu consultoriomenuitem = new JMenu();
+    JMenuItem agregarconsultorio = new JMenuItem();
     JMenuItem salir = new JMenuItem();
 
     public PrincipalPanelView() {
@@ -36,19 +38,26 @@ public class PrincipalPanelView extends JFrame {
         setJMenuBar(principalmenu);
 
         // Create controller
-        PrincipalPanelController controller = new PrincipalPanelController(salir);
+        PrincipalPanelController controller
+                = new PrincipalPanelController(salir);
         salir.addActionListener(controller);
 
         //set the name to components
         panel.setName("PanelAdministrativo");
+        consultoriomenuitem.setName("AdminConsultorio");
+        agregarconsultorio.setName("AddConsultorio");
         salir.setName("salir");
 
         //set the text to components
         archivomenuitem.setText("Archivo");
+        consultoriomenuitem.setText("Administración Consultorio");
+        agregarconsultorio.setText("Agregar Consultorio");
         salir.setText("Salir");
 
         //add componets
         principalmenu.add(archivomenuitem);
+        principalmenu.add(consultoriomenuitem);
+        consultoriomenuitem.add(agregarconsultorio);
         archivomenuitem.add(salir);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
