@@ -27,6 +27,7 @@ public class PrincipalPanelView extends JFrame {
     JMenu consultoriomenuitem = new JMenu();
     JMenu pacientemenuitem = new JMenu();
     JMenuItem agregarconsultorio = new JMenuItem();
+    JMenuItem agregarpaciente = new JMenuItem();
     JMenuItem verTodospacientes = new JMenuItem();
     JMenuItem verTodosconsultorios = new JMenuItem();
     JMenuItem salir = new JMenuItem();
@@ -45,9 +46,10 @@ public class PrincipalPanelView extends JFrame {
         // Create controller
         PrincipalPanelController controller
                 = new PrincipalPanelController(salir, agregarconsultorio, verTodosconsultorios,
-                        escritorio, verTodospacientes);
+                        escritorio, verTodospacientes, agregarpaciente);
         salir.addActionListener(controller);
         agregarconsultorio.addActionListener(controller);
+        agregarpaciente.addActionListener(controller);
         verTodosconsultorios.addActionListener(controller);
         verTodospacientes.addActionListener(controller);
 
@@ -59,6 +61,7 @@ public class PrincipalPanelView extends JFrame {
         agregarconsultorio.setName("agregarConsultorio");
         verTodosconsultorios.setName("todosConsultorios");
         pacientemenuitem.setName("adminPaciente");
+        agregarpaciente.setName("agregarPaciente");
         verTodospacientes.setName("todosPacientes");
         salir.setName("salir");
 
@@ -68,6 +71,7 @@ public class PrincipalPanelView extends JFrame {
         agregarconsultorio.setText("Agregar Consultorio");
         verTodosconsultorios.setText("Ver Lista");
         pacientemenuitem.setText("Administración Pacientes");
+        agregarpaciente.setText("Agregar Paciente");
         verTodospacientes.setText("Ver Lista");
         salir.setText("Salir");
 
@@ -77,6 +81,7 @@ public class PrincipalPanelView extends JFrame {
         principalmenu.add(pacientemenuitem);
         consultoriomenuitem.add(agregarconsultorio);
         consultoriomenuitem.add(verTodosconsultorios);
+        pacientemenuitem.add(agregarpaciente);
         pacientemenuitem.add(verTodospacientes);
         archivomenuitem.add(salir);
 
