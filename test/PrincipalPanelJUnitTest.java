@@ -8,9 +8,9 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import java.io.IOException;
 import org.assertj.swing.edt.GuiActionRunner;
 import org.assertj.swing.fixture.FrameFixture;
-import org.assertj.swing.fixture.JPanelFixture;
 import org.junit.After;
 import org.junit.Test;
+import proyecto.java.view.AddOfficeView;
 import proyecto.java.view.OfficesListView;
 import proyecto.java.view.PrincipalPanelView;
 
@@ -33,6 +33,13 @@ public class PrincipalPanelJUnitTest {
         window.menuItem("agregarConsultorio").requireVisible();
         window.menuItem("todosConsultorios").requireVisible();
         window.menuItem("salir").requireVisible();
+    }
+    
+    @Test
+    public void testOnClickAddOffice() throws IOException {
+        AddOfficeView ventanaInterna = new AddOfficeView();
+        window.menuItem("agregarConsultorio").click();
+        ventanaInterna.setVisible(true);
     }
 
     @Test

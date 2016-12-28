@@ -60,13 +60,13 @@ public class AddOfficeView extends JInternalFrame {
         daysLabel.setName("lblDays");
         hourStartLabel.setName("lblHourStart");
         hourEndLabel.setName("lblHourEnd");
-        officeLabel.setName("lblOfficec");
+        officeLabel.setName("lblOffice");
 
         name.setName("name");
         phone_number.setName("phone");
-        days.setName("phone");
+        days.setName("days");
         officesBox.setName("offices");
-        hourStart.setName("hourEnd");
+        hourStart.setName("hourStart");
         hourEnd.setName("hourEnd");
         accept_form.setName("ok");
 

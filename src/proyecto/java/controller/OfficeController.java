@@ -94,5 +94,5 @@ public class OfficeController implements ActionListener {
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(new File(Constants.FILENAME), officesList);
-    }
+    }  
 }

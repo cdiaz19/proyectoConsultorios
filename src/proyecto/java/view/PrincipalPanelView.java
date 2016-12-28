@@ -50,8 +50,11 @@ public class PrincipalPanelView extends JFrame {
 
         // Create controller
         PrincipalPanelController controller
-                = new PrincipalPanelController(salir);
+                = new PrincipalPanelController(salir, agregarconsultorio, verTodosconsultorios,
+                        escritorio);
         salir.addActionListener(controller);
+        agregarconsultorio.addActionListener(controller);
+        verTodosconsultorios.addActionListener(controller);
 
         //set the name to components
         panel.setName("panelAdministrativo");
@@ -75,29 +78,6 @@ public class PrincipalPanelView extends JFrame {
         consultoriomenuitem.add(verTodosconsultorios);
         archivomenuitem.add(salir);
 
-        //componets actions
-        agregarconsultorio.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                try {
-                    loadAddOfficeForm(e);
-                } catch (IOException ex) {
-                    Logger.getLogger(PrincipalPanelView.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        });
-
-        verTodosconsultorios.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                try {
-                    loadListOffices(e);
-                } catch (IOException ex) {
-                    Logger.getLogger(PrincipalPanelView.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        });
-
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setExtendedState(MAXIMIZED_BOTH);
         pack();
@@ -113,16 +93,6 @@ public class PrincipalPanelView extends JFrame {
         } catch (Exception exc) {
             // ignore error
         }
-    }
-
-    private void loadListOffices(java.awt.event.ActionEvent evt) throws JsonMappingException, IOException {
-        OfficesListView ventanaInterna = new OfficesListView();
-        escritorio.add(ventanaInterna);
-    }
-
-    private void loadAddOfficeForm(java.awt.event.ActionEvent evt) throws IOException {
-        AddOfficeView ventanaInterna = new AddOfficeView();
-        escritorio.add(ventanaInterna);
     }
 
     public static void main(String[] arguments) {
