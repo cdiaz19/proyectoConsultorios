@@ -9,14 +9,13 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-import static java.lang.System.exit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JDesktopPane;
 import javax.swing.JMenuItem;
-import static jdk.nashorn.internal.objects.NativeRegExp.source;
 import proyecto.java.view.AddOfficeView;
 import proyecto.java.view.OfficesListView;
+import proyecto.java.view.PatientListView;
 import proyecto.java.view.PrincipalPanelView;
 
 /**
@@ -57,7 +56,11 @@ public class PrincipalPanelController implements ActionListener {
                 Logger.getLogger(PrincipalPanelView.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else if (source == allPatient) {
-            System.exit(0);
+            try {
+                loadListPatients(e);
+            } catch (IOException ex) {
+                Logger.getLogger(PrincipalPanelController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else if (source == exit) {
             System.exit(0);
         }
@@ -70,6 +73,11 @@ public class PrincipalPanelController implements ActionListener {
 
     private void loadListOffices(java.awt.event.ActionEvent evt) throws JsonMappingException, IOException {
         OfficesListView ventanaInterna = new OfficesListView();
+        escritorio.add(ventanaInterna);
+    }
+
+    private void loadListPatients(java.awt.event.ActionEvent evt) throws JsonMappingException, IOException {
+        PatientListView ventanaInterna = new PatientListView();
         escritorio.add(ventanaInterna);
     }
 }

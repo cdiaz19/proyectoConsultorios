@@ -1,0 +1,15 @@
+[{
+	"name": "Carlos Guzman",
+	"phone": "22795122",
+	"address": "Cartago",
+	"birthday": "19-11-1993",
+	"associatedDiseases": "Cabeza, panel",
+	"observation": "Adicto muy Adicto"
+}, {
+	"name": "Mario Guzman",
+	"phone": "22795122",
+	"address": "Cartago",
+	"birthday": "19-11-1993",
+	"associatedDiseases": "Panel, panel",
+	"observation": "Adicto muy Adicto"
+}]

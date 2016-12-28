@@ -12,6 +12,7 @@ import org.junit.After;
 import org.junit.Test;
 import proyecto.java.view.AddOfficeView;
 import proyecto.java.view.OfficesListView;
+import proyecto.java.view.PatientListView;
 import proyecto.java.view.PrincipalPanelView;
 
 /**
@@ -32,6 +33,7 @@ public class PrincipalPanelJUnitTest {
     public void testVisibleComponents() {
         window.menuItem("agregarConsultorio").requireVisible();
         window.menuItem("todosConsultorios").requireVisible();
+        window.menuItem("todosPacientes").requireVisible();
         window.menuItem("salir").requireVisible();
     }
     
@@ -46,6 +48,13 @@ public class PrincipalPanelJUnitTest {
     public void testOnClickAllOffices() throws JsonMappingException, IOException {
         OfficesListView ventanaInterna = new OfficesListView();
         window.menuItem("todosConsultorios").click();
+        ventanaInterna.setVisible(true);
+    }
+    
+    @Test
+    public void testOnClickAllPatients() throws JsonMappingException, IOException {
+        PatientListView ventanaInterna = new PatientListView();
+        window.menuItem("todosPacientes").click();
         ventanaInterna.setVisible(true);
     }
 

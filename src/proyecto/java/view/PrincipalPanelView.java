@@ -5,21 +5,13 @@
  */
 package proyecto.java.view;
 
-import com.fasterxml.jackson.databind.JsonMappingException;
 import java.awt.BorderLayout;
-import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
-import javax.swing.JInternalFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import proyecto.java.controller.PrincipalPanelController;
 

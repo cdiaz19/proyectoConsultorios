@@ -19,7 +19,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
-import proyecto.java.controller.OfficeListController;
+import proyecto.java.controller.PatientListController;
 
 /**
  *
@@ -43,7 +43,7 @@ public class PatientListView extends JInternalFrame {
     public PatientListView() throws JsonGenerationException,
             JsonMappingException, IOException {
 
-        super("Lista de Consultorios", true, true, true, true);
+        super("Lista de Pacientes", true, true, true, true);
 
         searchTermTextField.setName("txtSearch");
         filterButton.setName("btnFilter");
@@ -53,7 +53,7 @@ public class PatientListView extends JInternalFrame {
         table.setModel(tableModel);
 
         // Create controller
-        OfficeListController controller = new OfficeListController(searchTermTextField, tableModel);
+        PatientListController controller = new PatientListController(searchTermTextField, tableModel);
         filterButton.addActionListener(controller);
 
         // Set the view layout
@@ -63,9 +63,9 @@ public class PatientListView extends JInternalFrame {
         ctrlPane.add(filterButton);
 
         JScrollPane tableScrollPane = new JScrollPane(table);
-        tableScrollPane.setName("scrollTablePaneOffice");
+        tableScrollPane.setName("scrollTablePanePatient");
         tableScrollPane.setPreferredSize(new Dimension(700, 182));
-        tableScrollPane.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Consultorios Registrados",
+        tableScrollPane.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Pacientes Registrados",
                 TitledBorder.CENTER, TitledBorder.TOP));
 
         JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, ctrlPane, tableScrollPane);
@@ -78,5 +78,4 @@ public class PatientListView extends JInternalFrame {
         pack();
         setVisible(true);
     }
-    
 }

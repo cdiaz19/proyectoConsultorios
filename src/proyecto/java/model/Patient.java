@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  *
  * @author cristian
  */
-public class Patient extends User {
+public class Patient {
 
     @JsonProperty("name")
     private String name;
@@ -22,12 +22,23 @@ public class Patient extends User {
     @JsonProperty("birthday")
     private String birthday;
     @JsonProperty("associatedDiseases")
-    private String[] associatedDiseases;
+    private String associatedDiseases;
     @JsonProperty("observation")
     private String observation;
 
-    public Patient(String name, String phone, String address, String birthday, String[] associatedDiseases, String observation, String username, String password) {
-        super(username, password);
+    public Patient() {
+    }
+    
+    /**
+     * @param name
+     * @param phone
+     * @param address
+     * @param birthday
+     * @param associatedDiseases
+     * @param observation 
+     */
+    public Patient(String name, String phone, String address, String birthday,
+            String associatedDiseases, String observation) {
         this.name = name;
         this.phone = phone;
         this.address = address;
@@ -95,14 +106,14 @@ public class Patient extends User {
     /**
      * @return the associatedDiseases
      */
-    public String[] getAssociatedDiseases() {
+    public String getAssociatedDiseases() {
         return associatedDiseases;
     }
 
     /**
      * @param associatedDiseases the associatedDiseases to set
      */
-    public void setAssociatedDiseases(String[] associatedDiseases) {
+    public void setAssociatedDiseases(String associatedDiseases) {
         this.associatedDiseases = associatedDiseases;
     }
 

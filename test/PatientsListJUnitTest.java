@@ -17,6 +17,7 @@ import org.junit.Test;
 import proyecto.java.model.Clinic;
 import proyecto.java.model.Hospital;
 import proyecto.java.model.Office;
+import proyecto.java.model.Patient;
 import proyecto.java.view.OfficesListView;
 import proyecto.java.view.PrincipalPanelView;
 
@@ -24,14 +25,14 @@ import proyecto.java.view.PrincipalPanelView;
  *
  * @author cristian
  */
-public class OfficesListUnitTest {
+public class PatientsListJUnitTest {
 
     private FrameFixture window;
     private JPanelFixture panel;
-    private ArrayList<Office> offices;
+    private ArrayList<Patient> patients;
     private Random randomOffice;
 
-    public OfficesListUnitTest() {
+    public PatientsListJUnitTest() {
         PrincipalPanelView frame = GuiActionRunner.execute(() -> new PrincipalPanelView());
         window = new FrameFixture(frame);
         window.show();
@@ -40,31 +41,33 @@ public class OfficesListUnitTest {
     @Test
     public void testVisibleComponents() throws JsonMappingException, IOException {
         OfficesListView ventanaInterna = new OfficesListView();
-        window.menuItem("todosConsultorios").click();
+        window.menuItem("todosPacientes").click();
         ventanaInterna.setVisible(true);
 
         window.textBox("txtSearch").requireVisible();
         window.button("btnFilter").requireVisible();
         window.table("mainTable").requireVisible();
-        window.scrollPane("scrollTablePaneOffice").requireVisible();
+        window.scrollPane("scrollTablePanePatient").requireVisible();
     }
 
     @Before
-    public void createArrayOffices() {
-        offices = new ArrayList<>();
-        offices.add(new Hospital("Hospital CIMA", "22795122", "Lunes y Martes", "8:00", "5:00"));
-        offices.add(new Clinic("Centro Médico del Este", "22792761", "Jueves y Viernes", "8:00", "5:00"));
+    public void createArrayPatients() {
+        patients = new ArrayList<>();
+        patients.add(new Patient( "Carlos Guzman", "22795122", "Cartago",
+                "19-11-1993", "Cabeza, panel", "Adicto muy Adicto"));
+        patients.add(new Patient( "Mario Guzman", "22795122", "Cartago",
+                "19-11-1993", "Panel, panel", "Adicto muy Adicto"));
     }
 
     @Test
     public void testSearchFilter() throws IOException {
         OfficesListView ventanaInterna = new OfficesListView();
-        window.menuItem("todosConsultorios").click();
+        window.menuItem("todosPacientes").click();
         ventanaInterna.setVisible(true);
 
         randomOffice = new Random();
-        int index = randomOffice.nextInt(offices.size());
-        Office item = offices.get(index);
+        int index = randomOffice.nextInt(patients.size());
+        Patient item = patients.get(index);
         String b = item.getName();
 
         window.textBox("txtSearch").enterText(b.toString());

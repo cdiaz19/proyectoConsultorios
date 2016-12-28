@@ -15,13 +15,14 @@ public class Constants {
      *
      */
     public static final String FILENAME = "src/proyecto/resources/officesList.json";
-    public static final String FILENAME_USER = "src/proyecto/resources/patientsList.json";
+    public static final String FILENAME_PATIENT = "src/proyecto/resources/patientsList.json";
 
     /**
      *
      */
     public static final Object[] 
-            TABLE_HEADER = {"Nombre Consultorio", "Contacto", "Días Consulta", "Horario Apertura", "Horario Cierre"};
+            TABLE_HEADER = {"Nombre Consultorio", "Contacto", "Días Consulta", 
+                "Horario Apertura", "Horario Cierre"};
     
     /**
      *

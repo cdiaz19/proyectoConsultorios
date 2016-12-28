@@ -11,23 +11,22 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
 import proyecto.java.Constants;
-import proyecto.java.model.User;
+import proyecto.java.model.Patient;
 
 /**
  *
  * @author cristian
  */
-public class UserService {
+public class PatientService {
     
     /**
      * Empty Constructor
      */
-    public UserService() {
+    public PatientService() {
     }
 
-
     /**
-     * Wrapper to return the list of offices from the File
+     * Wrapper to return the list of patients from the File
      *
      * @return Object[][] data
      * @throws com.fasterxml.jackson.core.JsonGenerationException
@@ -36,36 +35,37 @@ public class UserService {
      */
     public Object[][] loadOfficesObjWrapper() throws JsonGenerationException,
             JsonMappingException, IOException {
-        User[] users = loadOfficesFromFile();
+        Patient[] patients = loadOfficesFromFile();
         Object[][] data = null;
 
-        if (users != null && users.length > 0) {
-            data = new Object[users.length][5]; // filas y columnas
+        if (patients != null && patients.length > 0) {
+            data = new Object[patients.length][6]; // filas y columnas
             int i = 0;
-            for (User user : users) {
-                data[i][0] = checkIfNull(users.getClass().getName());
-                data[i][1] = checkIfNull(users.getClass().getName());
-                data[i][2] = checkIfNull(users.getClass().getName());
-                data[i][3] = checkIfNull(users.getClass().getName());
-                data[i][4] = checkIfNull(users.getClass().getName());
+            for (Patient patient : patients) {
+                data[i][0] = checkIfNull(patient.getName());
+                data[i][1] = checkIfNull(patient.getPhone());
+                data[i][2] = checkIfNull(patient.getAddress());
+                data[i][3] = checkIfNull(patient.getBirthday());
+                data[i][4] = checkIfNull(patient.getAssociatedDiseases());
+                data[i][5] = checkIfNull(patient.getObservation());
                 i++;
             }
-        }
-
+        }       
+        
         return data;
     }
 
-    private User[] loadOfficesFromFile() throws JsonGenerationException,
+    private Patient[] loadOfficesFromFile() throws JsonGenerationException,
             JsonMappingException, IOException {
         // Library Jackson parse JSon
         // http://wiki.fasterxml.com/JacksonHome
-        User[] offices = null;
+        Patient[] patients = null;
 
         ObjectMapper mapper = new ObjectMapper();
         // Convert JSON string from file to Object
-        offices = mapper.readValue(new File(Constants.FILENAME_USER), User[].class);
+        patients = mapper.readValue(new File(Constants.FILENAME_PATIENT), Patient[].class);
 
-        return offices;
+        return patients;
     }
 
     private String checkIfNull(Object obj) {
