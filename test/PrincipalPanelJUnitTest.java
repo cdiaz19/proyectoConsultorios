@@ -11,8 +11,8 @@ import org.assertj.swing.fixture.FrameFixture;
 import org.assertj.swing.fixture.JPanelFixture;
 import org.junit.After;
 import org.junit.Test;
-import proyecto.view.OfficesListView;
-import proyecto.view.PrincipalPanelView;
+import proyecto.java.view.OfficesListView;
+import proyecto.java.view.PrincipalPanelView;
 
 /**
  *

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyecto.controller;
+package proyecto.java.controller;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -13,8 +13,8 @@ import java.io.IOException;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
-import proyecto.Constants;
-import proyecto.service.OfficeService;
+import proyecto.java.Constants;
+import proyecto.java.service.OfficeService;
 
 /**
  *

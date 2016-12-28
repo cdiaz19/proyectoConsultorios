@@ -14,11 +14,11 @@ import org.assertj.swing.fixture.JPanelFixture;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import proyecto.model.Clinic;
-import proyecto.model.Hospital;
-import proyecto.model.Office;
-import proyecto.view.OfficesListView;
-import proyecto.view.PrincipalPanelView;
+import proyecto.java.model.Clinic;
+import proyecto.java.model.Hospital;
+import proyecto.java.model.Office;
+import proyecto.java.view.OfficesListView;
+import proyecto.java.view.PrincipalPanelView;
 
 /**
  *

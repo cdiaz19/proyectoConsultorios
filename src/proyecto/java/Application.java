@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyecto;
+package proyecto.java;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import java.io.IOException;
 import javax.swing.SwingUtilities;
-import proyecto.view.PrincipalPanelView;
+import proyecto.java.view.PrincipalPanelView;
 
 /**
  *

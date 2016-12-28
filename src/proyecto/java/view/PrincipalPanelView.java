@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyecto.view;
+package proyecto.java.view;
 
 import com.fasterxml.jackson.databind.JsonMappingException;
 import java.awt.BorderLayout;
@@ -21,7 +21,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
-import proyecto.controller.PrincipalPanelController;
+import proyecto.java.controller.PrincipalPanelController;
 
 /**
  *
@@ -76,6 +76,17 @@ public class PrincipalPanelView extends JFrame {
         archivomenuitem.add(salir);
 
         //componets actions
+        agregarconsultorio.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                try {
+                    loadAddOfficeForm(e);
+                } catch (IOException ex) {
+                    Logger.getLogger(PrincipalPanelView.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+
         verTodosconsultorios.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
@@ -106,6 +117,11 @@ public class PrincipalPanelView extends JFrame {
 
     private void loadListOffices(java.awt.event.ActionEvent evt) throws JsonMappingException, IOException {
         OfficesListView ventanaInterna = new OfficesListView();
+        escritorio.add(ventanaInterna);
+    }
+
+    private void loadAddOfficeForm(java.awt.event.ActionEvent evt) throws IOException {
+        AddOfficeView ventanaInterna = new AddOfficeView();
         escritorio.add(ventanaInterna);
     }
 

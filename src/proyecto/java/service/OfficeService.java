@@ -3,14 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyecto.service;
+package proyecto.java.service;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
-import proyecto.model.Office;
+import proyecto.java.Constants;
+import proyecto.java.model.Office;
 
 /**
  *
@@ -39,14 +40,14 @@ public class OfficeService {
         Object[][] data = null;
 
         if (offices != null && offices.length > 0) {
-            data = new Object[offices.length][4]; // filas y columnas
+            data = new Object[offices.length][5]; // filas y columnas
             int i = 0;
             for (Office office : offices) {
                 data[i][0] = checkIfNull(office.getName());
                 data[i][1] = checkIfNull(office.getPhone());
                 data[i][2] = checkIfNull(office.getDays());
-                data[i][3] = checkIfNull(office.getHourStart().concat(" AM - ") 
-                        + office.getHourEnd().concat(" PM"));
+                data[i][3] = checkIfNull(office.getHourStart());
+                data[i][4] = checkIfNull(office.getHourEnd());
                 i++;
             }
         }
@@ -59,11 +60,10 @@ public class OfficeService {
         // Library Jackson parse JSon
         // http://wiki.fasterxml.com/JacksonHome
         Office[] offices = null;
-        final String FILENAME = "officesList.json";
 
         ObjectMapper mapper = new ObjectMapper();
         // Convert JSON string from file to Object
-        offices = mapper.readValue(new File(FILENAME), Office[].class);
+        offices = mapper.readValue(new File(Constants.FILENAME), Office[].class);
 
         return offices;
     }
