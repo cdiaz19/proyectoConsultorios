@@ -9,7 +9,7 @@ import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import java.io.IOException;
 import javax.swing.SwingUtilities;
-import proyecto.view.OfficesListView;
+import proyecto.view.PrincipalPanelView;
 
 /**
  *
@@ -47,6 +47,6 @@ public class Application {
      * @throws Exception
      */
     public static void createAndShowGUI() throws Exception {
-        OfficesListView studentListView = new OfficesListView();
+        PrincipalPanelView principalView = new PrincipalPanelView();
     }
 }

@@ -20,7 +20,7 @@ import proyecto.service.OfficeService;
  *
  * @author cristian
  */
-public class OfficeController implements ActionListener {
+public class OfficeListController implements ActionListener {
 
     private JTextField searchOfficeTextField = new JTextField(26);
     private DefaultTableModel tableModel;
@@ -37,7 +37,7 @@ public class OfficeController implements ActionListener {
      * @throws com.fasterxml.jackson.databind.JsonMappingException
      * @throws java.io.IOException
      */
-    public OfficeController(JTextField searchTermTextField,
+    public OfficeListController(JTextField searchTermTextField,
             DefaultTableModel tableModel) throws JsonGenerationException,
             JsonMappingException, IOException {
         super();

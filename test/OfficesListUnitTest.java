@@ -4,19 +4,21 @@
  * and open the template in the editor.
  */
 
+import com.fasterxml.jackson.databind.JsonMappingException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import org.assertj.swing.edt.GuiActionRunner;
 import org.assertj.swing.fixture.FrameFixture;
 import org.assertj.swing.fixture.JPanelFixture;
 import org.junit.After;
-import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 import proyecto.model.Clinic;
 import proyecto.model.Hospital;
 import proyecto.model.Office;
 import proyecto.view.OfficesListView;
+import proyecto.view.PrincipalPanelView;
 
 /**
  *
@@ -30,14 +32,17 @@ public class OfficesListUnitTest {
     private Random randomOffice;
 
     public OfficesListUnitTest() {
-        OfficesListView frame = GuiActionRunner.execute(() -> new OfficesListView());
+        PrincipalPanelView frame = GuiActionRunner.execute(() -> new PrincipalPanelView());
         window = new FrameFixture(frame);
         window.show();
-        panel = window.panel("ctrlPanel");
     }
 
     @Test
-    public void testVisibleComponents() {
+    public void testVisibleComponents() throws JsonMappingException, IOException {
+        OfficesListView ventanaInterna = new OfficesListView();
+        window.menuItem("todosConsultorios").click();
+        ventanaInterna.setVisible(true);
+
         window.textBox("txtSearch").requireVisible();
         window.button("btnFilter").requireVisible();
         window.table("mainTable").requireVisible();
@@ -52,14 +57,18 @@ public class OfficesListUnitTest {
     }
 
     @Test
-    public void testSearchFilter() {
+    public void testSearchFilter() throws IOException {
+        OfficesListView ventanaInterna = new OfficesListView();
+        window.menuItem("todosConsultorios").click();
+        ventanaInterna.setVisible(true);
+
         randomOffice = new Random();
         int index = randomOffice.nextInt(offices.size());
         Office item = offices.get(index);
         String b = item.getName();
 
         window.textBox("txtSearch").enterText(b.toString());
-        window.button("btnFilter").click();      
+        window.button("btnFilter").click();
         window.table("mainTable").equals(b);
     }
 
