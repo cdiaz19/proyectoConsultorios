@@ -33,7 +33,9 @@ public class PrincipalPanelView extends JFrame {
     JMenuBar principalmenu = new JMenuBar();
     JMenu archivomenuitem = new JMenu();
     JMenu consultoriomenuitem = new JMenu();
+    JMenu pacientemenuitem = new JMenu();
     JMenuItem agregarconsultorio = new JMenuItem();
+    JMenuItem verTodospacientes = new JMenuItem();
     JMenuItem verTodosconsultorios = new JMenuItem();
     JMenuItem salir = new JMenuItem();
     JDesktopPane escritorio;
@@ -51,17 +53,21 @@ public class PrincipalPanelView extends JFrame {
         // Create controller
         PrincipalPanelController controller
                 = new PrincipalPanelController(salir, agregarconsultorio, verTodosconsultorios,
-                        escritorio);
+                        escritorio, verTodospacientes);
         salir.addActionListener(controller);
         agregarconsultorio.addActionListener(controller);
         verTodosconsultorios.addActionListener(controller);
+        verTodospacientes.addActionListener(controller);
 
         //set the name to components
         panel.setName("panelAdministrativo");
         escritorio.setName("escritorio");
         consultoriomenuitem.setName("adminConsultorio");
+        pacientemenuitem.setName("adminPaciente");
         agregarconsultorio.setName("agregarConsultorio");
         verTodosconsultorios.setName("todosConsultorios");
+        pacientemenuitem.setName("adminPaciente");
+        verTodospacientes.setName("todosPacientes");
         salir.setName("salir");
 
         //set the text to components
@@ -69,13 +75,17 @@ public class PrincipalPanelView extends JFrame {
         consultoriomenuitem.setText("Administración Consultorio");
         agregarconsultorio.setText("Agregar Consultorio");
         verTodosconsultorios.setText("Ver Lista");
+        pacientemenuitem.setText("Administración Pacientes");
+        verTodospacientes.setText("Ver Lista");
         salir.setText("Salir");
 
         //add componets
         principalmenu.add(archivomenuitem);
         principalmenu.add(consultoriomenuitem);
+        principalmenu.add(pacientemenuitem);
         consultoriomenuitem.add(agregarconsultorio);
         consultoriomenuitem.add(verTodosconsultorios);
+        pacientemenuitem.add(verTodospacientes);
         archivomenuitem.add(salir);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
