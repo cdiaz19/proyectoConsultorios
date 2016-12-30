@@ -13,4 +13,9 @@
         "name": "Hospital CIMA",
         "fecha": "13/05/2017",
         "hora": "1:00am"
+    }, {
+        "namePatient": "Felipe",
+        "name": "Hospital CIMA",
+        "fecha": "9/1/2017",
+        "hora": "11:00am"
     }]
