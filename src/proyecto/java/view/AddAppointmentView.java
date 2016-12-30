@@ -30,6 +30,7 @@ public class AddAppointmentView extends JInternalFrame {
     JTextField namePatient = new JTextField(16);
     JComboBox name = new JComboBox(offices);
     JDateChooser fecha = new JDateChooser();
+    JTextField fechaObtenida = new JTextField(16);
     JComboBox hora = new JComboBox();
     JButton accept_button = new JButton("Aceptar");
     JButton clean_button = new JButton("Limpiar");

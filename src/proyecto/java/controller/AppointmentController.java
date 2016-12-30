@@ -35,6 +35,7 @@ public class AppointmentController implements ActionListener {
     private JTextField namePatient;
     private JComboBox name;
     private JDateChooser fecha;
+    private JTextField fechaObtenida;
     private JComboBox hora;
     private JButton accept_button;
     private JButton clean_button;
@@ -100,8 +101,7 @@ public class AppointmentController implements ActionListener {
         namePatient.setText(" ");
         name.setSelectedItem(" ");
         fecha.setCalendar(null);
-        hora.setSelectedItem(" ");
-        
+        hora.setSelectedItem(" ");   
     }
  
 }
