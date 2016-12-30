@@ -9,7 +9,8 @@ import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import java.io.IOException;
 import javax.swing.SwingUtilities;
-import proyecto.java.view.PrincipalPanelView;
+import javax.swing.UIManager;
+import proyecto.java.view.LoginView;
 
 /**
  *
@@ -40,13 +41,22 @@ public class Application {
             }
         });
     }
-
+    private static void setLookAndFeel() {
+        try {
+            UIManager.setLookAndFeel(
+                    "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel"
+            );
+        } catch (Exception exc) {
+            // ignore error
+        }
+    }
     /**
      * Create the GUI
      *
      * @throws Exception
      */
     public static void createAndShowGUI() throws Exception {
-        PrincipalPanelView principalView = new PrincipalPanelView();
+        setLookAndFeel();
+        LoginView login = new LoginView();
     }
 }
