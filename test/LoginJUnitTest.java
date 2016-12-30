@@ -13,7 +13,6 @@ import static org.junit.Assert.assertNotEquals;
 import org.junit.Test;
 import org.junit.Before;
 import proyecto.java.view.LoginView;
-import proyecto.java.view.PrincipalPanelView;
 
 /**
  *
@@ -42,7 +41,7 @@ public class LoginJUnitTest {
      *
      */
     @Test
-    public void testVisibleComponents() {
+    public void testVisibleComponents() throws IOException{
         window.label("lblUsername").requireVisible();
         window.label("lblPassword").requireVisible();
     }
@@ -51,26 +50,28 @@ public class LoginJUnitTest {
      *
      */
     @Test
-    public void isCorrectUserTest(){
+    public void isCorrectUserTest()throws IOException{
         String pass = "1234";
         char[] c = pass.toCharArray();
         window.textBox("username").enterText("Juan");
-       // window.textBox("password").;
+        window.textBox("password").enterText("1234");
         window.button("Login").click();
         assertEquals(window.textBox("username").text(), "Juan");
+        assertEquals(window.textBox("password").text(), "1234");
     }
     
     /**
      *
      */
     @Test
-    public void isInCorrectUserTest(){
+    public void isInCorrectUserTest()throws IOException{
         String pass = "1234";
         char[] c = pass.toCharArray();
         window.textBox("username").enterText("Carlos");
-       // window.textBox("password").;
+        window.textBox("password").enterText("45678");
         window.button("Login").click();
         assertNotEquals(window.textBox("username").text(), "Juan");
+        assertNotEquals(window.textBox("password").text(), "1234");
     }
     
     /**

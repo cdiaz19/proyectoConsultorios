@@ -5,18 +5,15 @@
  */
 package proyecto.java.controller;
 
-import com.fasterxml.jackson.databind.JsonMappingException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import proyecto.java.model.Login;
 import proyecto.java.view.LoginView;
 import proyecto.java.view.PrincipalPanelView;
 

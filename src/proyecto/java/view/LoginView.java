@@ -15,9 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
-import static proyecto.java.Application.createAndShowGUI;
 import proyecto.java.controller.LoginController;
 
 /**
@@ -55,7 +53,7 @@ public class LoginView extends JFrame {
 
         //sets
         txtUsername.setName("username");
-        txtPassword.setName("pasword");
+        txtPassword.setName("password");
         btnLogin.setName("Login");
         btnSalir.setName("Salir");
         usernameLabel.setName("lblUsername");
@@ -97,6 +95,6 @@ public class LoginView extends JFrame {
      */
     public static void main(String[] args) throws JsonMappingException, IOException {
         setLookAndFeel();
-        LoginView principalView = new LoginView();
+        LoginView loginView = new LoginView();
     }
 }
