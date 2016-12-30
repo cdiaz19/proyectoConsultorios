@@ -14,8 +14,6 @@ import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
@@ -35,7 +33,6 @@ public class AppointmentController implements ActionListener {
     private JTextField namePatient;
     private JComboBox name;
     private JDateChooser fecha;
-    private JTextField fechaObtenida;
     private JComboBox hora;
     private JButton accept_button;
     private JButton clean_button;

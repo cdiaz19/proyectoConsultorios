@@ -27,10 +27,9 @@ public class AddAppointmentView extends JInternalFrame {
 
     String[] offices = {" ","Hospital CIMA", "Centro Médico del Este"};
     
-    JTextField namePatient = new JTextField(16);
+    JTextField namePatient = new JTextField(15);
     JComboBox name = new JComboBox(offices);
     JDateChooser fecha = new JDateChooser();
-    JTextField fechaObtenida = new JTextField(16);
     JComboBox hora = new JComboBox();
     JButton accept_button = new JButton("Aceptar");
     JButton clean_button = new JButton("Limpiar");
@@ -38,7 +37,7 @@ public class AddAppointmentView extends JInternalFrame {
     
     public AddAppointmentView() throws IOException {
         super("Formulario de Cita Nueva", false, true, false, true);
-        setSize(300, 220);
+        setSize(200, 250);
 
         // Create controller
         AppointmentController controller = new 
