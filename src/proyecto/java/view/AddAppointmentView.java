@@ -23,29 +23,42 @@ import proyecto.java.controller.AppointmentController;
  * @author Yeni
  */
 public class AddAppointmentView extends JInternalFrame {
-     
+    //create UI components 
 
     String[] offices = {" ","Hospital CIMA", "Centro Médico del Este"};
-    //create UI components
-    JTextField namePatient = new JTextField(15);
+    
+    JTextField namePatient = new JTextField(16);
     JComboBox name = new JComboBox(offices);
     JDateChooser fecha = new JDateChooser();
+    JTextField fechaObtenida = new JTextField(16);
     JComboBox hora = new JComboBox();
     JButton accept_button = new JButton("Aceptar");
     JButton clean_button = new JButton("Limpiar");
     
+    
     public AddAppointmentView() throws IOException {
         super("Formulario de Cita Nueva", false, true, false, true);
-        setSize(200, 250);
+        setSize(300, 220);
 
         // Create controller
         AppointmentController controller = new 
-                      AppointmentController(namePatient, name, fecha, hora, accept_button,clean_button);
+                            AppointmentController(namePatient, name, fecha, hora, accept_button,clean_button);
 
         accept_button.addActionListener(controller);
         clean_button.addActionListener(controller);
+        hora.addItem(" ");
+        hora.addItem("8:00am");
+        hora.addItem("9:00am");
+        hora.addItem("10:00am");
+        hora.addItem("11:00am");
+        hora.addItem("12:00pm");
+        hora.addItem("1:00pm");
+        hora.addItem("2:00pm");
+        hora.addItem("3:00pm");
+        hora.addItem("4:00pm");
+        hora.addItem("5:00pm");
         
-        addHours();
+        
         //Inicializa variables
         JPanel panel = new JPanel();
         FlowLayout lm = new FlowLayout(FlowLayout.CENTER);
@@ -97,19 +110,5 @@ public class AddAppointmentView extends JInternalFrame {
     public static void main(String[] args) throws IOException {
         AddAppointmentView.setLookAndFeel();
         AddAppointmentView ad = new AddAppointmentView();
-    }
-    
-    private void addHours(){
-        hora.addItem(" ");
-        hora.addItem("8:00am");
-        hora.addItem("9:00am");
-        hora.addItem("10:00am");
-        hora.addItem("11:00am");
-        hora.addItem("12:00pm");
-        hora.addItem("1:00pm");
-        hora.addItem("2:00pm");
-        hora.addItem("3:00pm");
-        hora.addItem("4:00pm");
-        hora.addItem("5:00pm");
     }
 }

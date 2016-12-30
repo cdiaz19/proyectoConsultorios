@@ -34,7 +34,7 @@ public class AddOfficeView extends JInternalFrame {
 
     public AddOfficeView() throws IOException {
         super("Formulario Nuevo Consultorio", false, true, false, true);
-        setSize(260, 310);
+        setSize(300, 220);
         
         // Create controller
         OfficeController controller
@@ -45,7 +45,7 @@ public class AddOfficeView extends JInternalFrame {
 
         //Inicializa variables
         JPanel panel = new JPanel();
-        FlowLayout lm = new FlowLayout(FlowLayout.CENTER);
+        FlowLayout lm = new FlowLayout(FlowLayout.LEFT);
         panel.setLayout(lm);
         JLabel nameLabel = new JLabel("Nombre: ");
         JLabel phonenumberLabel = new JLabel("Telefono: ");

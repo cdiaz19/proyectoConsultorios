@@ -13,7 +13,6 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -36,16 +35,18 @@ public class AppointmentController implements ActionListener {
     private JTextField namePatient;
     private JComboBox name;
     private JDateChooser fecha;
+    private JTextField fechaObtenida;
     private JComboBox hora;
     private JButton accept_button;
     private JButton clean_button;
+
     private DateFormat dt = DateFormat.getDateInstance();
 
     private AppointmentService appointmentService;
     private Object[][] appointments;
 
     public AppointmentController(JTextField namePatient, JComboBox name, JDateChooser fecha,
-            JComboBox hora, JButton accept_button, JButton clean_button)
+            JComboBox hora, JButton accept_button,JButton clean_button)
             throws JsonMappingException, IOException {
         super();
         this.namePatient = namePatient;
@@ -61,13 +62,13 @@ public class AppointmentController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == accept_button) {
+        if(e.getSource() == accept_button){
             try {
                 updateAppointmentList();
             } catch (IOException ex) {
                 Logger.getLogger(AppointmentController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } else if (e.getSource() == clean_button) {
+            } 
+        } else if(e.getSource() == clean_button){
             try {
                 cleanAll();
             } catch (IOException ex) {
@@ -80,7 +81,7 @@ public class AppointmentController implements ActionListener {
         ArrayList<Appointment> appointmentsList = new ArrayList<>();
         String namePatientTyped = namePatient.getText();
         String nameTyped = (String) name.getSelectedItem();
-        String date = selectDate();
+        String fechaTyped = fecha.getDateFormatString();
         String horaTyped = hora.getSelectedItem().toString();
 
         for (Object[] obj : appointments) {
@@ -88,26 +89,19 @@ public class AppointmentController implements ActionListener {
                     = new Appointment(obj[0].toString(), obj[1].toString(), obj[2].toString(), obj[3].toString());
             appointmentsList.add(fullText);
         }
-        appointmentsList.add(new Appointment(namePatientTyped, nameTyped, date, horaTyped));
+        appointmentsList.add(new Appointment(namePatientTyped, nameTyped, fechaTyped, horaTyped));
 
         JOptionPane.showMessageDialog(null, "Se agregó " + namePatientTyped + " correctamente");
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(new File(Constants.FILENAME_APPOINTMENT), appointmentsList);
     }
-
-    private void cleanAll() throws IOException {
+   
+    private void cleanAll() throws IOException{
         namePatient.setText(" ");
         name.setSelectedItem(" ");
         fecha.setCalendar(null);
-        hora.setSelectedItem(" ");
+        hora.setSelectedItem(" ");   
     }
-
-    private String selectDate() {
-        int dia = fecha.getCalendar().get(Calendar.DAY_OF_MONTH);
-        int mes = fecha.getCalendar().get(Calendar.MONTH) + 1;
-        int ano = fecha.getCalendar().get(Calendar.YEAR);
-        String date = dia + "/" + mes + "/" + ano;
-        return date;
-    }
+ 
 }
