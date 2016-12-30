@@ -13,8 +13,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JDesktopPane;
 import javax.swing.JMenuItem;
+import proyecto.java.view.AddAppointmentView;
 import proyecto.java.view.AddOfficeView;
 import proyecto.java.view.AddPatientView;
+import proyecto.java.view.AppointmentListView;
 import proyecto.java.view.OfficesListView;
 import proyecto.java.view.PatientListView;
 import proyecto.java.view.PrincipalPanelView;
@@ -25,22 +27,27 @@ import proyecto.java.view.PrincipalPanelView;
  */
 public class PrincipalPanelController implements ActionListener {
 
-    private JMenuItem addOffice;
-    private JMenuItem addPatient;
-    private JMenuItem allOffice;
-    private JMenuItem allPatient;
     private JMenuItem exit;
+    private JMenuItem addOffice;
+    private JMenuItem allOffice;
     private JDesktopPane escritorio;
+    private JMenuItem allPatient;
+    private JMenuItem addPatient;
+    private JMenuItem allAppointment;
+    private JMenuItem addAppointment;
 
     public PrincipalPanelController(JMenuItem exit, JMenuItem addOffice, JMenuItem allOffice,
-            JDesktopPane escritorio, JMenuItem allPatient, JMenuItem addPatient) {
+            JDesktopPane escritorio, JMenuItem allPatient, JMenuItem addPatient,
+            JMenuItem allAppointment, JMenuItem addAppointment) {
         super();
         this.exit = exit;
         this.addOffice = addOffice;
-        this.addPatient = addPatient;
         this.allOffice = allOffice;
-        this.allPatient = allPatient;
         this.escritorio = escritorio;
+        this.allPatient = allPatient;
+        this.addPatient = addPatient;
+        this.allAppointment = allAppointment;
+        this.addAppointment = addAppointment;
     }
 
     @Override
@@ -52,10 +59,12 @@ public class PrincipalPanelController implements ActionListener {
             } catch (IOException ex) {
                 Logger.getLogger(PrincipalPanelView.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } if (source == addPatient) {
+        }
+        if (source == addPatient) {
             try {
                 loadAddPatientForm(e);
             } catch (IOException ex) {
+                ex.getMessage();
                 Logger.getLogger(PrincipalPanelView.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else if (source == allOffice) {
@@ -70,6 +79,18 @@ public class PrincipalPanelController implements ActionListener {
             } catch (IOException ex) {
                 Logger.getLogger(PrincipalPanelController.class.getName()).log(Level.SEVERE, null, ex);
             }
+        } else if (source == addAppointment) {
+            try {
+                loadListAppointments(e);
+            } catch (IOException ex) {
+                Logger.getLogger(PrincipalPanelController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else if (source == allAppointment) {
+            try {
+                loadAddAppointmentForm(e);
+            } catch (IOException ex) {
+                Logger.getLogger(PrincipalPanelView.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else if (source == exit) {
             System.exit(0);
         }
@@ -79,9 +100,14 @@ public class PrincipalPanelController implements ActionListener {
         AddOfficeView ventanaInterna = new AddOfficeView();
         escritorio.add(ventanaInterna);
     }
-    
+
     private void loadAddPatientForm(java.awt.event.ActionEvent evt) throws IOException {
         AddPatientView ventanaInterna = new AddPatientView();
+        escritorio.add(ventanaInterna);
+    }
+
+    private void loadAddAppointmentForm(java.awt.event.ActionEvent evt) throws IOException {
+        AddAppointmentView ventanaInterna = new AddAppointmentView();
         escritorio.add(ventanaInterna);
     }
 
@@ -92,6 +118,11 @@ public class PrincipalPanelController implements ActionListener {
 
     private void loadListPatients(java.awt.event.ActionEvent evt) throws JsonMappingException, IOException {
         PatientListView ventanaInterna = new PatientListView();
+        escritorio.add(ventanaInterna);
+    }
+
+    private void loadListAppointments(java.awt.event.ActionEvent evt) throws JsonMappingException, IOException {
+        AppointmentListView ventanaInterna = new AppointmentListView();
         escritorio.add(ventanaInterna);
     }
 }

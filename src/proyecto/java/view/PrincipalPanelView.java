@@ -26,10 +26,13 @@ public class PrincipalPanelView extends JFrame {
     JMenu archivomenuitem = new JMenu();
     JMenu consultoriomenuitem = new JMenu();
     JMenu pacientemenuitem = new JMenu();
+    JMenu citamenuitem = new JMenu();
     JMenuItem agregarconsultorio = new JMenuItem();
     JMenuItem agregarpaciente = new JMenuItem();
     JMenuItem verTodospacientes = new JMenuItem();
     JMenuItem verTodosconsultorios = new JMenuItem();
+    JMenuItem agregarcita = new JMenuItem();
+    JMenuItem verTodascitas = new JMenuItem();
     JMenuItem salir = new JMenuItem();
     JDesktopPane escritorio;
 
@@ -46,12 +49,14 @@ public class PrincipalPanelView extends JFrame {
         // Create controller
         PrincipalPanelController controller
                 = new PrincipalPanelController(salir, agregarconsultorio, verTodosconsultorios,
-                        escritorio, verTodospacientes, agregarpaciente);
+                        escritorio, verTodospacientes, agregarpaciente,agregarcita, verTodascitas);
         salir.addActionListener(controller);
         agregarconsultorio.addActionListener(controller);
         agregarpaciente.addActionListener(controller);
         verTodosconsultorios.addActionListener(controller);
         verTodospacientes.addActionListener(controller);
+        agregarcita.addActionListener(controller);
+        verTodascitas.addActionListener(controller);
 
         //set the name to components
         panel.setName("panelAdministrativo");
@@ -63,6 +68,9 @@ public class PrincipalPanelView extends JFrame {
         pacientemenuitem.setName("adminPaciente");
         agregarpaciente.setName("agregarPaciente");
         verTodospacientes.setName("todosPacientes");
+        citamenuitem.setName("adminCitas");
+        agregarcita.setName("agregarCita");
+        verTodascitas.setName("todasCitas");
         salir.setName("salir");
 
         //set the text to components
@@ -73,17 +81,23 @@ public class PrincipalPanelView extends JFrame {
         pacientemenuitem.setText("Administración Pacientes");
         agregarpaciente.setText("Agregar Paciente");
         verTodospacientes.setText("Ver Lista");
+        citamenuitem.setText("Administracion de Citas");
+        agregarcita.setText("Agregar Cita");
+        verTodascitas.setText("Ver Lista");
         salir.setText("Salir");
 
         //add componets
         principalmenu.add(archivomenuitem);
         principalmenu.add(consultoriomenuitem);
         principalmenu.add(pacientemenuitem);
+        principalmenu.add(citamenuitem);
         consultoriomenuitem.add(agregarconsultorio);
         consultoriomenuitem.add(verTodosconsultorios);
         pacientemenuitem.add(agregarpaciente);
         pacientemenuitem.add(verTodospacientes);
         archivomenuitem.add(salir);
+        citamenuitem.add(agregarcita);
+        citamenuitem.add(verTodascitas);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setExtendedState(MAXIMIZED_BOTH);

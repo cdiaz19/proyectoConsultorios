@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class Patient {
 
-    @JsonProperty("name")
+    @JsonProperty("namePatient")
     private String name;
     @JsonProperty("phone")
     private String phone;
@@ -26,6 +26,9 @@ public class Patient {
     @JsonProperty("observation")
     private String observation;
 
+    /**
+     *
+     */
     public Patient() {
     }
     
@@ -35,7 +38,7 @@ public class Patient {
      * @param address
      * @param birthday
      * @param associatedDiseases
-     * @param observation 
+     * @param observation
      */
     public Patient(String name, String phone, String address, String birthday,
             String associatedDiseases, String observation) {
@@ -45,6 +48,14 @@ public class Patient {
         this.birthday = birthday;
         this.associatedDiseases = associatedDiseases;
         this.observation = observation;
+    }
+
+    /**
+     *
+     * @param name
+     */
+    public Patient(String name) {
+        this.name = name;
     }
 
     /**

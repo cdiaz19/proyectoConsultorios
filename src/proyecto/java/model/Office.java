@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @author cristian
  */
 public class Office {
-    
+
     @JsonProperty("name")
     private String name;
     @JsonProperty("phone")
@@ -24,9 +24,20 @@ public class Office {
     @JsonProperty("hourEnd")
     private String hourEnd;
 
+    /**
+     *
+     */
     public Office() {
     }
 
+    /**
+     *
+     * @param name
+     * @param phone
+     * @param days
+     * @param hourStart
+     * @param hourEnd
+     */
     public Office(String name, String phone, String days, String hourStart, String hourEnd) {
         this.name = name;
         this.phone = phone;
@@ -109,5 +120,5 @@ public class Office {
     public String toString() {
         return "Office{" + "name=" + name + ", phone=" + phone + ", days=" + days + ", hourStart=" + hourStart + ", hourEnd=" + hourEnd + '}';
     }
-    
+
 }

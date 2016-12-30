@@ -16,6 +16,7 @@ public class Constants {
      */
     public static final String FILENAME = "src/proyecto/resources/officesList.json";
     public static final String FILENAME_PATIENT = "src/proyecto/resources/patientsList.json";
+    public static final String FILENAME_APPOINTMENT = "src/proyecto/resources/appointmentsList.json";
 
     /**
      *
@@ -30,4 +31,8 @@ public class Constants {
     public static final Object[] 
             TABLE_HEADER_PATIENT = {"Nombre Paciente", "Contacto", "Domicilio",
                 "Fecha Nacimiento", "Enfermedades Asociadas", "Observaciones"};
+    
+    
+    public static final Object[] 
+            TABLE_HEADER_APPOINTMENT = {"Nombre Paciente", "Nombre Consultorio","Fecha", "Hora"};
 }
