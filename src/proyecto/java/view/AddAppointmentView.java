@@ -25,7 +25,7 @@ import proyecto.java.controller.AppointmentController;
 public class AddAppointmentView extends JInternalFrame {
     //create UI components 
 
-    String[] offices = {"Hospital CIMA", "Centro Médico del Este"};
+    String[] offices = {" ","Hospital CIMA", "Centro Médico del Este"};
     
     JTextField namePatient = new JTextField(16);
     JComboBox name = new JComboBox(offices);
@@ -41,11 +41,11 @@ public class AddAppointmentView extends JInternalFrame {
 
         // Create controller
         AppointmentController controller = new 
-                            AppointmentController(namePatient, name, fecha, hora, accept_button, clean_button);
+                            AppointmentController(namePatient, name, fecha, hora, accept_button,clean_button);
 
         accept_button.addActionListener(controller);
         clean_button.addActionListener(controller);
-        
+        hora.addItem(" ");
         hora.addItem("8:00am");
         hora.addItem("9:00am");
         hora.addItem("10:00am");
@@ -78,7 +78,7 @@ public class AddAppointmentView extends JInternalFrame {
         fecha.setName("date");
         hora.setName("hour");
         accept_button.setName("ok");
-        clean_button.setName("limpiar");
+        clean_button.setName("clean");
 
         //Las agrega al Panel
         panel.setName("Form");
@@ -92,7 +92,6 @@ public class AddAppointmentView extends JInternalFrame {
         panel.add(hora);
         panel.add(accept_button);
         panel.add(clean_button);
-
         add(panel);
         setVisible(true);
     }
