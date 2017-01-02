@@ -1,26 +1,12 @@
 [{
-	"name": "Carlos Guzman",
+	"namePatient": "Carlos Guzman",
 	"phone": "22795122",
 	"address": "Cartago",
 	"birthday": "19-11-1993",
 	"associatedDiseases": "Cabeza, panel",
 	"observation": "Adicto muy Adicto"
 }, {
-	"name": "Mario Guzman",
-	"phone": "22795122",
-	"address": "Cartago",
-	"birthday": "19-11-1993",
-	"associatedDiseases": "Panel, panel",
-	"observation": "Adicto muy Adicto"
-}, {
-	"name": "Maria",
-	"phone": "22795122",
-	"address": "Cartago",
-	"birthday": "20-11-1195",
-	"associatedDiseases": "Hipotiroidismo",
-	"observation": "Nerviosa, dolores fuertes de cabeza"
-}, {
-	"name": "Santiago Gonzalez",
+	"namePatient": "Santiago Gonzalez",
 	"phone": "22795352",
 	"address": "Alajuela",
 	"birthday": "23-12-1985",
