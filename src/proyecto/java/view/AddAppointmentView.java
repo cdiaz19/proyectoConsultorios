@@ -8,7 +8,6 @@ package proyecto.java.view;
 import com.toedter.calendar.JDateChooser;
 import java.awt.FlowLayout;
 import java.io.IOException;
-import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
@@ -25,23 +24,21 @@ import proyecto.java.controller.AppointmentController;
 public class AddAppointmentView extends JInternalFrame {
     //create UI components 
 
-    String[] offices = {" ","Hospital CIMA", "Centro Médico del Este"};
-    
+    String[] offices = {" ", "Hospital CIMA", "Centro Médico del Este"};
+
     JTextField namePatient = new JTextField(15);
     JComboBox name = new JComboBox(offices);
     JDateChooser fecha = new JDateChooser();
     JComboBox hora = new JComboBox();
     JButton accept_button = new JButton("Aceptar");
     JButton clean_button = new JButton("Limpiar");
-    
-    
+
     public AddAppointmentView() throws IOException {
         super("Formulario de Cita Nueva", false, true, false, true);
         setSize(200, 250);
 
         // Create controller
-        AppointmentController controller = new 
-                            AppointmentController(namePatient, name, fecha, hora, accept_button,clean_button);
+        AppointmentController controller = new AppointmentController(namePatient, name, fecha, hora, accept_button, clean_button);
 
         accept_button.addActionListener(controller);
         clean_button.addActionListener(controller);
@@ -56,8 +53,7 @@ public class AddAppointmentView extends JInternalFrame {
         hora.addItem("3:00pm");
         hora.addItem("4:00pm");
         hora.addItem("5:00pm");
-        
-        
+
         //Inicializa variables
         JPanel panel = new JPanel();
         FlowLayout lm = new FlowLayout(FlowLayout.CENTER);
