@@ -36,6 +36,8 @@ public class AddPatientJUnitTest {
         window.menuItem("agregarPaciente").click();
         ventanaInterna.setVisible(true);
 
+        window.label("lblUser").requireVisible();
+        window.label("lblPassword").requireVisible();
         window.label("lblName").requireVisible();
         window.label("lblPhone").requireVisible();
         window.label("lblAddress").requireVisible();
@@ -50,6 +52,8 @@ public class AddPatientJUnitTest {
         window.menuItem("agregarPaciente").click();
         ventanaInterna.setVisible(true);
 
+        window.textBox("user").enterText("Santiago");
+        window.textBox("password").enterText("1234");
         window.textBox("name").enterText("Santiago Gonzalez");
         window.textBox("phone").enterText("22795352");
         window.textBox("address").enterText("Alajuela");

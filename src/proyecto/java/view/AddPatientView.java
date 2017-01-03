@@ -22,6 +22,8 @@ import proyecto.java.controller.PatientController;
  */
 public class AddPatientView extends JInternalFrame {
 
+    JTextField user = new JTextField(15);
+    JTextField password = new JTextField(15);
     JTextField name = new JTextField(15);
     JTextField phone_number = new JTextField(15);
     JTextField address = new JTextField(15);
@@ -32,11 +34,11 @@ public class AddPatientView extends JInternalFrame {
 
     public AddPatientView() throws IOException {
         super("Formulario Nuevo Paciente", false, true, false, true);
-        setSize(220, 420);
+        setSize(220, 560);
 
         // Create controller
         PatientController controller
-                = new PatientController(name, phone_number, address, birthday,
+                = new PatientController(user, password, name, phone_number, address, birthday,
                         associatedDiseases, observations, accept_form);
 
         accept_form.addActionListener(controller);
@@ -45,6 +47,8 @@ public class AddPatientView extends JInternalFrame {
         JPanel panel = new JPanel();
         FlowLayout lm = new FlowLayout(FlowLayout.LEFT);
         panel.setLayout(lm);
+        JLabel userLabel = new JLabel("Usuario: ");
+        JLabel passwordLabel = new JLabel("Contraseña: ");
         JLabel nameLabel = new JLabel("Nombre: ");
         JLabel phonenumberLabel = new JLabel("Telefono: ");
         JLabel addressLabel = new JLabel("Direccion: ");
@@ -53,6 +57,8 @@ public class AddPatientView extends JInternalFrame {
         JLabel observationLabel = new JLabel("Observaciones del Paciente: ");
 
         //setea nombres (ids)
+        userLabel.setName("lblUser");
+        passwordLabel.setName("lblPassword");
         nameLabel.setName("lblName");
         phonenumberLabel.setName("lblPhone");
         addressLabel.setName("lblAddress");
@@ -63,6 +69,8 @@ public class AddPatientView extends JInternalFrame {
         observations.setLineWrap(true);
         observations.setWrapStyleWord(true);
 
+        user.setName("user");
+        password.setName("password");
         name.setName("name");
         phone_number.setName("phone");
         address.setName("address");
@@ -73,6 +81,10 @@ public class AddPatientView extends JInternalFrame {
 
         //Las agrega al Panel
         panel.setName("Form");
+        panel.add(userLabel);
+        panel.add(user);
+        panel.add(passwordLabel);
+        panel.add(password);
         panel.add(nameLabel);
         panel.add(name);
         panel.add(phonenumberLabel);

@@ -39,15 +39,17 @@ public class PatientService {
         Object[][] data = null;
 
         if (patients != null && patients.length > 0) {
-            data = new Object[patients.length][6]; // filas y columnas
+            data = new Object[patients.length][8]; // filas y columnas
             int i = 0;
             for (Patient patient : patients) {
-                data[i][0] = checkIfNull(patient.getName());
-                data[i][1] = checkIfNull(patient.getPhone());
-                data[i][2] = checkIfNull(patient.getAddress());
-                data[i][3] = checkIfNull(patient.getBirthday());
-                data[i][4] = checkIfNull(patient.getAssociatedDiseases());
-                data[i][5] = checkIfNull(patient.getObservation());
+                data[i][0] = checkIfNull(patient.getUser());
+                data[i][1] = checkIfNull(patient.getPassword());
+                data[i][2] = checkIfNull(patient.getName());
+                data[i][3] = checkIfNull(patient.getPhone());
+                data[i][4] = checkIfNull(patient.getAddress());
+                data[i][5] = checkIfNull(patient.getBirthday());
+                data[i][6] = checkIfNull(patient.getAssociatedDiseases());
+                data[i][7] = checkIfNull(patient.getObservation());
                 i++;
             }
         }       

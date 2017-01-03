@@ -1,15 +1,1 @@
-[{
-	"namePatient": "Carlos Guzman",
-	"phone": "22795122",
-	"address": "Cartago",
-	"birthday": "19-11-1993",
-	"associatedDiseases": "Cabeza, panel",
-	"observation": "Adicto muy Adicto"
-}, {
-	"namePatient": "Santiago Gonzalez",
-	"phone": "22795352",
-	"address": "Alajuela",
-	"birthday": "23-12-1985",
-	"associatedDiseases": "Neumonia",
-	"observation": "Fuerte dolor en el pecho, cuesta respirar"
-}]
+[{"user":"Carlos","password":"1234","namePatient":"Carlos Guzman","phone":"22795122","address":"Cartago","birthday":"19-11-1993","associatedDiseases":"Cabeza, panel","observation":"Adicto muy Adicto"},{"user":"Santiago","password":"1234","namePatient":"Santiago Gonzalez","phone":"22795352","address":"Alajuela","birthday":"23-12-1985","associatedDiseases":"Neumonia","observation":"Fuerte dolor en el pecho, cuesta respirar"},{"user":"Maria","password":"1234","namePatient":"Maria Laura Arroyo","phone":"88931646","address":"Mata de Platano","birthday":"08/08/1994","associatedDiseases":"Gastritis","observation":"Dolor Fuerte en la boca del estomago"}]

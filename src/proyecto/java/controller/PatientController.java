@@ -30,6 +30,8 @@ import proyecto.java.service.PatientService;
  */
 public class PatientController implements ActionListener {
 
+    private JTextField user;
+    private JTextField password;
     private JTextField name;
     private JTextField phone_number;
     private JTextField address;
@@ -41,9 +43,11 @@ public class PatientController implements ActionListener {
     private PatientService patientService;
     private Object[][] patients;
 
-    public PatientController(JTextField name, JTextField phone_number,
+    public PatientController(JTextField user, JTextField password, JTextField name, JTextField phone_number,
             JTextField address, JTextField birthday, JTextField associatedDiseases,
             JTextArea observations, JButton accept_form) throws JsonMappingException, IOException {
+        this.user = user;
+        this.password = password;
         this.name = name;
         this.phone_number = phone_number;
         this.address = address;
@@ -67,6 +71,8 @@ public class PatientController implements ActionListener {
 
     private void updatePatientsList() throws IOException {
         ArrayList<Patient> patientsList = new ArrayList<>();
+        String userTyped = user.getText().toString();
+        String passwordTyped = password.getText().toString();
         String nameTyped = name.getText().toString();
         String phoneTyped = phone_number.getText().toString();
         String addressTyped = address.getText().toString();
@@ -78,11 +84,12 @@ public class PatientController implements ActionListener {
         int idx = 0;
         for (Object[] obj : patients) {
             Patient fullText = new Patient(obj[0].toString(), obj[1].toString(),
-                    obj[2].toString(), obj[3].toString(), obj[4].toString(), obj[5].toString());
+                    obj[2].toString(), obj[3].toString(), obj[4].toString(), obj[5].toString(),
+                    obj[6].toString(), obj[7].toString());
             patientsList.add(fullText);
         }
 
-        patientsList.add(new Patient(nameTyped, phoneTyped, addressTyped, birthdayTyped,
+        patientsList.add(new Patient(userTyped, passwordTyped, nameTyped, phoneTyped, addressTyped, birthdayTyped,
                 associatedDiseasesTyped, observationsTyped));
         JOptionPane.showMessageDialog(null,
                 "Se agregó " + nameTyped + " correctamente");

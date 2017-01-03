@@ -29,8 +29,8 @@ public class Constants {
      *
      */
     public static final Object[] 
-            TABLE_HEADER_PATIENT = {"Nombre Paciente", "Contacto", "Domicilio",
-                "Fecha Nacimiento", "Enfermedades Asociadas", "Observaciones"};
+            TABLE_HEADER_PATIENT = {"Usuario", "Contraseña","Nombre Paciente", 
+                "Contacto", "Domicilio", "Fecha Nacimiento", "Enfermedades Asociadas", "Observaciones"};
     
     
     public static final Object[] 

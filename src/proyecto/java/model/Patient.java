@@ -13,6 +13,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class Patient {
 
+    private String user;
+    private String password;
+    
     @JsonProperty("namePatient")
     private String name;
     @JsonProperty("phone")
@@ -31,17 +34,29 @@ public class Patient {
      */
     public Patient() {
     }
-    
+
     /**
+     * 
      * @param name
      * @param phone
      * @param address
      * @param birthday
      * @param associatedDiseases
-     * @param observation
+     * @param observation 
      */
-    public Patient(String name, String phone, String address, String birthday,
-            String associatedDiseases, String observation) {
+    public Patient(String name, String phone, String address, String birthday, String associatedDiseases, String observation) {
+        this.name = name;
+        this.phone = phone;
+        this.address = address;
+        this.birthday = birthday;
+        this.associatedDiseases = associatedDiseases;
+        this.observation = observation;
+    }
+    
+    public Patient(String user, String password, String name, String phone, 
+            String address, String birthday, String associatedDiseases, String observation) {
+        this.user = user;
+        this.password = password;
         this.name = name;
         this.phone = phone;
         this.address = address;
@@ -51,11 +66,31 @@ public class Patient {
     }
 
     /**
-     *
-     * @param name
+     * @return the user
      */
-    public Patient(String name) {
-        this.name = name;
+    public String getUser() {
+        return user;
+    }
+
+    /**
+     * @param user the user to set
+     */
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    /**
+     * @return the password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * @param password the password to set
+     */
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     /**
@@ -144,11 +179,13 @@ public class Patient {
 
     @Override
     public String toString() {
-        return "Patient{" + "name=" + name
-                + ", phone=" + phone
-                + ", address=" + address
-                + ", birthday=" + birthday
-                + ", associatedDiseases=" + associatedDiseases
-                + ", observation=" + observation + '}';
-    }
+        return "Patient{" + "user=" + user + 
+                ", password=" + password + 
+                ", name=" + name + 
+                ", phone=" + phone + 
+                ", address=" + address + 
+                ", birthday=" + birthday + 
+                ", associatedDiseases=" + associatedDiseases + 
+                ", observation=" + observation + '}';
+    } 
 }
