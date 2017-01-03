@@ -15,7 +15,7 @@ import proyecto.java.view.PatientPanelView;
  * @author cristian
  */
 public class PatientPanelJUnitTest {
-    
+
     private FrameFixture window;
 
     public PatientPanelJUnitTest() {
@@ -26,9 +26,21 @@ public class PatientPanelJUnitTest {
 
     @Test
     public void testVisibleComponents() {
+        window.menuItem("citasPaciente").requireVisible();
+        window.menuItem("informacionPersonal").requireVisible();
         window.menuItem("salir").requireVisible();
     }
-    
+
+    @Test
+    public void testOnClickPersonalInformation() {
+        window.menuItem("informacionPersonal").click();
+    }
+
+    @Test
+    public void testOnClickAppointmentPatient() {
+        window.menuItem("citasPaciente").click();
+    }
+
     @After
     public void tearDown() {
         window.cleanUp();

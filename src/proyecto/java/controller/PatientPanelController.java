@@ -5,21 +5,10 @@
  */
 package proyecto.java.controller;
 
-import com.fasterxml.jackson.databind.JsonMappingException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JDesktopPane;
 import javax.swing.JMenuItem;
-import proyecto.java.view.AddAppointmentView;
-import proyecto.java.view.AddOfficeView;
-import proyecto.java.view.AddPatientView;
-import proyecto.java.view.AppointmentListView;
-import proyecto.java.view.OfficesListView;
-import proyecto.java.view.PatientListView;
-import proyecto.java.view.PrincipalPanelView;
 
 /**
  *
@@ -28,13 +17,17 @@ import proyecto.java.view.PrincipalPanelView;
 public class PatientPanelController implements ActionListener {
 
     private JMenuItem exit;
+    private JMenuItem information;
+    private JMenuItem appointment;
     private JDesktopPane escritorio;
 
-    public PatientPanelController(JMenuItem exit, JDesktopPane escritorio) {
+    public PatientPanelController(JMenuItem exit, JDesktopPane escritorio, JMenuItem information,
+            JMenuItem appointment) {
         super();
         this.exit = exit;
         this.escritorio = escritorio;
-
+        this.information = information;
+        this.appointment = appointment;
     }
 
     @Override
@@ -42,6 +35,10 @@ public class PatientPanelController implements ActionListener {
         Object source = e.getSource();
         if (source == exit) {
             System.exit(0);
+        } else if (source == information) {
+            System.out.println("Informacion personal");
+        } else if (source == appointment) {
+            System.out.println("Citas Registradas");
         } else {
         }
     }

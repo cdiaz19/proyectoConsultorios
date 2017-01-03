@@ -5,8 +5,9 @@
  */
 package proyecto.java.view;
 
+import static com.sun.glass.ui.Cursor.setVisible;
 import java.awt.BorderLayout;
-import javafx.application.Application;
+import static java.awt.Frame.MAXIMIZED_BOTH;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -25,7 +26,10 @@ public class PatientPanelView extends JFrame {
     // Create views swing UI components
     JMenuBar principalmenu = new JMenuBar();
     JMenu archivomenuitem = new JMenu();
+    JMenu informacionmenuitem = new JMenu();
     JMenuItem salir = new JMenuItem();
+    JMenuItem informacionPersonal = new JMenuItem();
+    JMenuItem citasPaciente = new JMenuItem();
     JDesktopPane escritorio;
 
     public PatientPanelView() {
@@ -40,21 +44,32 @@ public class PatientPanelView extends JFrame {
 
         // Create controller
         PatientPanelController controller
-                = new PatientPanelController(salir, escritorio);
+                = new PatientPanelController(salir, escritorio, informacionPersonal,
+                citasPaciente);
         salir.addActionListener(controller);
+        informacionPersonal.addActionListener(controller);
+        citasPaciente.addActionListener(controller);
 
         //set the name to components
         panel.setName("panelPaciente");
         escritorio.setName("escritorio");
+        informacionPersonal.setName("informacionPersonal");
+        citasPaciente.setName("citasPaciente");
         salir.setName("salir");
 
         //set the text to components
+        informacionmenuitem.setText("Información General");
         archivomenuitem.setText("Archivo");
+        informacionPersonal.setText("Información Personal");
+        citasPaciente.setText("Citas Registradas");
         salir.setText("Salir");
 
         //add componets
         principalmenu.add(archivomenuitem);
+        principalmenu.add(informacionmenuitem);
         archivomenuitem.add(salir);
+        informacionmenuitem.add(informacionPersonal);
+        informacionmenuitem.add(citasPaciente);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setExtendedState(MAXIMIZED_BOTH);
