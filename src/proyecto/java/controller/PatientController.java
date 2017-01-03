@@ -7,6 +7,7 @@ package proyecto.java.controller;
 
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.toedter.calendar.JDateChooser;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -35,7 +36,7 @@ public class PatientController implements ActionListener {
     private JTextField name;
     private JTextField phone_number;
     private JTextField address;
-    private JTextField birthday;
+    private JDateChooser birthday;
     private JTextField associatedDiseases;
     private JTextArea observations;
     private JButton accept_form;
@@ -44,7 +45,7 @@ public class PatientController implements ActionListener {
     private Object[][] patients;
 
     public PatientController(JTextField user, JTextField password, JTextField name, JTextField phone_number,
-            JTextField address, JTextField birthday, JTextField associatedDiseases,
+            JTextField address, JDateChooser birthday, JTextField associatedDiseases,
             JTextArea observations, JButton accept_form) throws JsonMappingException, IOException {
         this.user = user;
         this.password = password;
@@ -76,7 +77,7 @@ public class PatientController implements ActionListener {
         String nameTyped = name.getText().toString();
         String phoneTyped = phone_number.getText().toString();
         String addressTyped = address.getText().toString();
-        String birthdayTyped = birthday.getText().toString();
+        String birthdayTyped = birthday.getDateFormatString();
         String associatedDiseasesTyped = associatedDiseases.getText().toString();
         String observationsTyped = observations.getText().toString();
 

@@ -13,9 +13,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class Patient {
 
+    @JsonProperty("user")
     private String user;
-    private String password;
-    
+    @JsonProperty("password")
+    private String password;    
     @JsonProperty("namePatient")
     private String name;
     @JsonProperty("phone")

@@ -5,6 +5,7 @@
  */
 package proyecto.java.view;
 
+import com.toedter.calendar.JDateChooser;
 import java.awt.FlowLayout;
 import java.io.IOException;
 import javax.swing.JButton;
@@ -27,7 +28,7 @@ public class AddPatientView extends JInternalFrame {
     JTextField name = new JTextField(15);
     JTextField phone_number = new JTextField(15);
     JTextField address = new JTextField(15);
-    JTextField birthday = new JTextField(8);
+    JDateChooser birthday = new JDateChooser();
     JTextField associatedDiseases = new JTextField(15);
     JTextArea observations = new JTextArea(4, 15);
     JButton accept_form = new JButton("Aceptar");
