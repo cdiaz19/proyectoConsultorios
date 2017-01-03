@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import proyecto.java.view.LoginView;
+import proyecto.java.view.PatientPanelView;
 import proyecto.java.view.PrincipalPanelView;
 
 /**
@@ -42,19 +43,18 @@ public class LoginController implements ActionListener {
         this.txtPassword = txtPassword;
         this.btnLogin = btnLogin;
         this.btnSalir = btnSalir;
-       
-        
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
-       String username = txtUsername.getText();
-       String password = new String(txtPassword.getPassword());
-        
+        String username = txtUsername.getText();
+        String password = new String(txtPassword.getPassword());
+
         if (source == btnLogin) {
-           try {
-                compare(username,password);
+            try {
+                compare(username, password);
             } catch (IOException ex) {
                 Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -70,21 +70,27 @@ public class LoginController implements ActionListener {
      * @param password
      * @throws IOException
      */
-    public void compare(String username, String password) throws IOException{
-        if(txtUsername.getText().equals("Juan") && password.equals("1234")){
-            PrincipalPanelView principalView = new PrincipalPanelView();
-            principalView.setVisible(true);
+    public void compare(String username, String password) throws IOException {
+        if (txtUsername.getText().equals("Admin")) {
+            if (password.equals("1234")) {
+                PrincipalPanelView principalView = new PrincipalPanelView();
+                principalView.setVisible(true);
+                LoginView logView = new LoginView();
+                logView.setVisible(false);
+                logView.dispose();
+            } else {
+                JOptionPane.showMessageDialog(null,
+                        "Nombre de Usuario o Contraseña Invalidos", "Error",
+                        JOptionPane.ERROR_MESSAGE);
+                txtUsername.setText("");
+                txtPassword.setText("");
+            }
+        } else {
+            PatientPanelView patientView = new PatientPanelView();
+            patientView.setVisible(true);
             LoginView logView = new LoginView();
             logView.setVisible(false);
             logView.dispose();
-        }else{
-            JOptionPane.showMessageDialog(null,
-                    "Nombre de Usuario o Contraseña Invalidos","Error",
-                    JOptionPane.ERROR_MESSAGE);
-            txtUsername.setText("");
-            txtPassword.setText("");
-             
         }
     }
-
 }
