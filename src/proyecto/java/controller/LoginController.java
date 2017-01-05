@@ -71,7 +71,7 @@ public class LoginController implements ActionListener {
      * @throws IOException
      */
     public void compare(String username, String password) throws IOException {
-        if (txtUsername.getText().equals("Admin")) {
+        if (username.equals("Admin")) {
             if (password.equals("1234")) {
                 PrincipalPanelView principalView = new PrincipalPanelView();
                 principalView.setVisible(true);
@@ -85,7 +85,16 @@ public class LoginController implements ActionListener {
                 txtUsername.setText("");
                 txtPassword.setText("");
             }
-        } else {
+        } else
+            if(username.equals("") || password.equals("")){
+                JOptionPane.showMessageDialog(null,
+                        "No se aceptan espacios en blanco." + "\n" +""
+                                + "Digite datos válidos", "Error",
+                        JOptionPane.ERROR_MESSAGE);
+                txtUsername.setText("");
+                txtPassword.setText("");
+            }
+        else {
             PatientPanelView patientView = new PatientPanelView();
             patientView.setVisible(true);
             LoginView logView = new LoginView();
