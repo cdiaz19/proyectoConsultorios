@@ -50,13 +50,13 @@ public class LoginJUnitTest {
      *
      */
     @Test
-    public void isCorrectUserTest()throws IOException{
+    public void isCorrectAdminTest()throws IOException{
         String pass = "1234";
         char[] c = pass.toCharArray();
-        window.textBox("username").enterText("Juan");
+        window.textBox("username").enterText("Admin");
         window.textBox("password").enterText("1234");
         window.button("Login").click();
-        assertEquals(window.textBox("username").text(), "Juan");
+        assertEquals(window.textBox("username").text(), "Admin");
         assertEquals(window.textBox("password").text(), "1234");
     }
     
@@ -64,7 +64,7 @@ public class LoginJUnitTest {
      *
      */
     @Test
-    public void isInCorrectUserTest()throws IOException{
+    public void isInCorrectAdminTest()throws IOException{
         String pass = "1234";
         char[] c = pass.toCharArray();
         window.textBox("username").enterText("Carlos");

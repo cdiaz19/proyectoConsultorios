@@ -8,7 +8,11 @@ package proyecto.java.view;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.ComponentOrientation;
+import java.awt.FlowLayout;
 import java.io.IOException;
+import java.util.Locale;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -26,8 +30,8 @@ public class LoginView extends JFrame {
 
     JTextField txtUsername = new JTextField(15);
     JPasswordField txtPassword = new JPasswordField(15);
-    JButton btnLogin = new JButton("Iniciar Sesión");
-    JButton btnSalir = new JButton("Salir");
+    JButton btnLogin = new JButton();
+    JButton btnSalir = new JButton();
 
     /**
      *
@@ -39,6 +43,14 @@ public class LoginView extends JFrame {
         setSize(300, 200);
         setLayout(new BorderLayout());
 
+        // create icons
+        ImageIcon login = new ImageIcon("Log_in.png");
+        ImageIcon logout = new ImageIcon("Log_out.png");
+
+        //create buttons
+        btnLogin = new JButton("Entrar", login);
+        btnSalir = new JButton("Salir", logout);
+
         //create controller
         LoginController logController = new LoginController(txtUsername, txtPassword, btnLogin, btnSalir);
         btnLogin.addActionListener(logController);
@@ -46,7 +58,8 @@ public class LoginView extends JFrame {
 
         //create panel and change color
         JPanel panel = new JPanel();
-        panel.setBackground(Color.WHITE);
+        panel.setBackground(Color.LIGHT_GRAY);
+        JPanel buttonPanel = new JPanel();
 
         JLabel usernameLabel = new JLabel("Username: ");
         JLabel passwordLabel = new JLabel("Password: ");
@@ -59,9 +72,6 @@ public class LoginView extends JFrame {
         usernameLabel.setName("lblUsername");
         passwordLabel.setName("lblPassword");
 
-        btnLogin.setBackground(Color.cyan);
-        btnSalir.setBackground(Color.cyan);
-
         //add components
         panel.setName("Form");
         panel.add(usernameLabel);
@@ -70,8 +80,8 @@ public class LoginView extends JFrame {
         panel.add(txtPassword);
         panel.add(btnLogin);
         panel.add(btnSalir);
-
         add(panel);
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //pack();
         setLocationRelativeTo(null);
