@@ -5,7 +5,6 @@
  */
 package proyecto.java.view;
 
-import static com.sun.glass.ui.Cursor.setVisible;
 import java.awt.BorderLayout;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import javax.swing.JDesktopPane;
