@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
@@ -24,7 +25,7 @@ import proyecto.java.controller.PatientController;
 public class AddPatientView extends JInternalFrame {
 
     JTextField user = new JTextField(15);
-    JTextField password = new JTextField(15);
+    JPasswordField password = new JPasswordField(15);
     JTextField name = new JTextField(15);
     JTextField phone_number = new JTextField(15);
     JTextField address = new JTextField(15);

@@ -17,6 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import proyecto.java.Constants;
@@ -32,7 +33,7 @@ import proyecto.java.service.PatientService;
 public class PatientController implements ActionListener {
 
     private JTextField user;
-    private JTextField password;
+    private JPasswordField password;
     private JTextField name;
     private JTextField phone_number;
     private JTextField address;
@@ -44,7 +45,7 @@ public class PatientController implements ActionListener {
     private PatientService patientService;
     private Object[][] patients;
 
-    public PatientController(JTextField user, JTextField password, JTextField name, JTextField phone_number,
+    public PatientController(JTextField user, JPasswordField password, JTextField name, JTextField phone_number,
             JTextField address, JDateChooser birthday, JTextField associatedDiseases,
             JTextArea observations, JButton accept_form) throws JsonMappingException, IOException {
         this.user = user;
@@ -71,9 +72,10 @@ public class PatientController implements ActionListener {
     }
 
     private void updatePatientsList() throws IOException {
+        String passwordLogin = new String(password.getPassword());
         ArrayList<Patient> patientsList = new ArrayList<>();
         String userTyped = user.getText().toString();
-        String passwordTyped = password.getText().toString();
+        String passwordTyped = passwordLogin.toString();
         String nameTyped = name.getText().toString();
         String phoneTyped = phone_number.getText().toString();
         String addressTyped = address.getText().toString();
