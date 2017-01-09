@@ -12,6 +12,7 @@ import org.assertj.swing.fixture.FrameFixture;
 import org.assertj.swing.fixture.JPanelFixture;
 import org.junit.After;
 import static org.junit.Assert.assertArrayEquals;
+import org.junit.Before;
 import org.junit.Test;
 import proyecto.java.view.AddAppointmentView;
 import proyecto.java.view.PrincipalPanelView;
@@ -26,19 +27,23 @@ public class AddAppointmentJUnitTest {
     private JPanelFixture panel;
 
     public AddAppointmentJUnitTest() {
-        PrincipalPanelView frame = GuiActionRunner.execute(() -> new PrincipalPanelView());
-        window = new FrameFixture(frame);
-        frame.setVisible(true);
-        window.show();
-
     }
 
-    @Test
-    public void testVisibleComponents() throws IOException {
+    @Before
+    public void setUp() throws IOException {
+        PrincipalPanelView frame = GuiActionRunner.execute(() -> new PrincipalPanelView());
+        window = new FrameFixture(frame);
+        frame.setVisible(true); 
+        window.show();
+        frame.setExtendedState(MAXIMIZED_BOTH);
         AddAppointmentView ventanaInterna = new AddAppointmentView();
         window.menuItem("agregarCita").click();
+        
         ventanaInterna.setVisible(true);
-
+    }
+            
+    @Test
+    public void testVisibleComponents() throws IOException {
         window.label("lblName").requireVisible();
         window.label("lblOffice").requireVisible();
         window.label("lblDate").requireVisible();
@@ -47,10 +52,6 @@ public class AddAppointmentJUnitTest {
 
     @Test
     public void isCorrectInformation() throws IOException {
-        AddAppointmentView ventanaInterna = new AddAppointmentView();
-        window.menuItem("agregarCita").click();
-        ventanaInterna.setVisible(true);
-        
         window.textBox("name").enterText("Maria");
         window.comboBox("office").selectItem("Hospital CIMA");
         window.comboBox("hour").selectItem("10:00am");
