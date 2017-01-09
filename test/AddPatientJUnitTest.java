@@ -15,6 +15,7 @@ import org.junit.Test;
 import proyecto.java.view.AddPatientView;
 import proyecto.java.view.PrincipalPanelView;
 
+
 /**
  *
  * @author cristian
