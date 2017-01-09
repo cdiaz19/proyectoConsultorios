@@ -5,6 +5,7 @@
  */
 
 import com.fasterxml.jackson.databind.JsonMappingException;
+import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
@@ -32,21 +33,17 @@ public class OfficesListJUnitTest {
     private Random randomOffice;
 
     public OfficesListJUnitTest() {
+    }
+
+    @Before
+    public void setUp() throws JsonMappingException, IOException {
         PrincipalPanelView frame = GuiActionRunner.execute(() -> new PrincipalPanelView());
         window = new FrameFixture(frame);
         window.show();
-    }
-
-    @Test
-    public void testVisibleComponents() throws JsonMappingException, IOException {
+        frame.setExtendedState(MAXIMIZED_BOTH);
         OfficesListView ventanaInterna = new OfficesListView();
         window.menuItem("todosConsultorios").click();
         ventanaInterna.setVisible(true);
-
-        window.textBox("txtSearch").requireVisible();
-        window.button("btnFilter").requireVisible();
-        window.table("mainTable").requireVisible();
-        window.scrollPane("scrollTablePaneOffice").requireVisible();
     }
 
     @Before
@@ -57,17 +54,21 @@ public class OfficesListJUnitTest {
     }
 
     @Test
-    public void testSearchFilter() throws IOException {
-        OfficesListView ventanaInterna = new OfficesListView();
-        window.menuItem("todosConsultorios").click();
-        ventanaInterna.setVisible(true);
+    public void testVisibleComponents() throws JsonMappingException, IOException {
+        window.textBox("txtSearch").requireVisible();
+        window.button("btnFilter").requireVisible();
+        window.table("mainTable").requireVisible();
+        window.scrollPane("scrollTablePaneOffice").requireVisible();
+    }
 
+    @Test
+    public void testSearchFilter() throws IOException {
         randomOffice = new Random();
         int index = randomOffice.nextInt(offices.size());
         Office item = offices.get(index);
         String b = item.getName();
 
-        window.textBox("txtSearch").enterText(b.toString());
+        window.textBox("txtSearch").enterText(b);
         window.button("btnFilter").click();
         window.table("mainTable").equals(b);
     }
