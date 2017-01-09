@@ -5,6 +5,7 @@
  */
 
 import com.fasterxml.jackson.databind.JsonMappingException;
+import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
@@ -30,44 +31,46 @@ public class PatientsListJUnitTest {
     private Random randomOffice;
 
     public PatientsListJUnitTest() {
+        
+    }
+
+    @Before 
+    public void setUp() throws JsonMappingException, IOException{
         PrincipalPanelView frame = GuiActionRunner.execute(() -> new PrincipalPanelView());
         window = new FrameFixture(frame);
         window.show();
-    }
-
-    @Test
-    public void testVisibleComponents() throws JsonMappingException, IOException {
+        frame.setExtendedState(MAXIMIZED_BOTH);
+        
         OfficesListView ventanaInterna = new OfficesListView();
         window.menuItem("todosPacientes").click();
-        ventanaInterna.setVisible(true);
-
-        window.textBox("txtSearch").requireVisible();
-        window.button("btnFilter").requireVisible();
-        window.table("mainTable").requireVisible();
-        window.scrollPane("scrollTablePanePatient").requireVisible();
+        ventanaInterna.setVisible(true);   
     }
-
-    @Before
+    
+     @Before
     public void createArrayPatients() {
         patients = new ArrayList<>();
         patients.add(new Patient( "Carlos Guzman", "22795122", "Cartago",
                 "19-11-1993", "Cabeza, panel", "Adicto muy Adicto"));
         patients.add(new Patient( "Mario Guzman", "22795122", "Cartago",
                 "19-11-1993", "Panel, panel", "Adicto muy Adicto"));
+    } 
+    
+    @Test
+    public void testVisibleComponents() throws JsonMappingException, IOException {
+        window.textBox("txtSearch").requireVisible();
+        window.button("btnFilter").requireVisible();
+        window.table("mainTable").requireVisible();
+        window.scrollPane("scrollTablePanePatient").requireVisible();
     }
 
     @Test
     public void testSearchFilter() throws IOException {
-        OfficesListView ventanaInterna = new OfficesListView();
-        window.menuItem("todosPacientes").click();
-        ventanaInterna.setVisible(true);
-
         randomOffice = new Random();
         int index = randomOffice.nextInt(patients.size());
         Patient item = patients.get(index);
         String b = item.getName();
 
-        window.textBox("txtSearch").enterText(b.toString());
+        window.textBox("txtSearch").enterText(b);
         window.button("btnFilter").click();
         window.table("mainTable").equals(b);
     }
