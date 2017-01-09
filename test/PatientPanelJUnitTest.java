@@ -4,9 +4,11 @@
  * and open the template in the editor.
  */
 
+import static java.awt.Frame.MAXIMIZED_BOTH;
 import org.assertj.swing.edt.GuiActionRunner;
 import org.assertj.swing.fixture.FrameFixture;
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import proyecto.java.view.PatientPanelView;
 
@@ -19,11 +21,18 @@ public class PatientPanelJUnitTest {
     private FrameFixture window;
 
     public PatientPanelJUnitTest() {
+       
+    }
+
+    @Before
+    public void setUp(){
         PatientPanelView frame = GuiActionRunner.execute(() -> new PatientPanelView());
         window = new FrameFixture(frame);
         window.show();
+        frame.setExtendedState(MAXIMIZED_BOTH);
+        
     }
-
+    
     @Test
     public void testVisibleComponents() {
         window.menuItem("citasPaciente").requireVisible();

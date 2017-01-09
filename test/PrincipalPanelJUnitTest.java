@@ -5,10 +5,12 @@
  */
 
 import com.fasterxml.jackson.databind.JsonMappingException;
+import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.io.IOException;
 import org.assertj.swing.edt.GuiActionRunner;
 import org.assertj.swing.fixture.FrameFixture;
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import proyecto.java.view.AddOfficeView;
 import proyecto.java.view.OfficesListView;
@@ -24,9 +26,15 @@ public class PrincipalPanelJUnitTest {
     private FrameFixture window;
 
     public PrincipalPanelJUnitTest() {
+        
+    }
+    
+     @Before
+    public void setUp(){
         PrincipalPanelView frame = GuiActionRunner.execute(() -> new PrincipalPanelView());
         window = new FrameFixture(frame);
         window.show();
+        frame.setExtendedState(MAXIMIZED_BOTH);
     }
 
     @Test
