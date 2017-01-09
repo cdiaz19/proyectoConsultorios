@@ -14,6 +14,9 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import proyecto.java.model.Patient;
+import proyecto.java.service.LoginPatientService;
+import proyecto.java.service.PatientService;
 import proyecto.java.view.LoginView;
 import proyecto.java.view.PatientPanelView;
 import proyecto.java.view.PrincipalPanelView;
@@ -28,6 +31,8 @@ public class LoginController implements ActionListener {
     private JPasswordField txtPassword;
     private JButton btnLogin;
     private JButton btnSalir;
+    private LoginPatientService patientService;
+
 
     /**
      *
@@ -43,7 +48,9 @@ public class LoginController implements ActionListener {
         this.txtPassword = txtPassword;
         this.btnLogin = btnLogin;
         this.btnSalir = btnSalir;
-
+        
+        
+        
     }
 
     @Override
@@ -54,7 +61,7 @@ public class LoginController implements ActionListener {
 
         if (source == btnLogin) {
             try {
-                compare(username, password);
+                compareUserAndPassword(username, password);
             } catch (IOException ex) {
                 Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -70,7 +77,7 @@ public class LoginController implements ActionListener {
      * @param password
      * @throws IOException
      */
-    public void compare(String username, String password) throws IOException {
+    public void compareUserAndPassword(String username, String password) throws IOException {
         if (username.equals("Admin")) {
             if (password.equals("1234")) {
                 PrincipalPanelView principalView = new PrincipalPanelView();
@@ -85,21 +92,53 @@ public class LoginController implements ActionListener {
                 txtUsername.setText("");
                 txtPassword.setText("");
             }
-        } else
-            if(username.equals("") || password.equals("")){
-                JOptionPane.showMessageDialog(null,
-                        "No se aceptan espacios en blanco." + "\n" +""
-                                + "Digite datos válidos", "Error",
-                        JOptionPane.ERROR_MESSAGE);
-                txtUsername.setText("");
-                txtPassword.setText("");
-            }
-        else {
-            PatientPanelView patientView = new PatientPanelView();
-            patientView.setVisible(true);
-            LoginView logView = new LoginView();
-            logView.setVisible(false);
-            logView.dispose();
+//        } 
+//        else {
+//            if () {
+//            PatientPanelView patientView = new PatientPanelView();
+//                patientView.setVisible(true);
+//                LoginView logView = new LoginView();
+//                logView.setVisible(false);
+//                logView.dispose();
+//            }
+//            else {
+//            JOptionPane.showMessageDialog(null,
+//                    "Paciente no registrado", "Error",
+//                    JOptionPane.ERROR_MESSAGE);
+//            txtUsername.setText("");
+//            txtPassword.setText("");
+        } 
+        else if (username.equals("") || password.equals("")) {
+            JOptionPane.showMessageDialog(null,
+                    "No se aceptan espacios en blanco." + "\n" + ""
+                    + "Digite datos válidos", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            txtUsername.setText("");
+            txtPassword.setText("");
         }
+    }
+    
+
+    public void comparePatient(String username, String password) throws IOException {
+        Patient pat = new Patient();
+        if (username.equals(pat.getUser())) {
+            if (password.equals(pat.getPassword())) {
+                PatientPanelView patientView = new PatientPanelView();
+                patientView.setVisible(true);
+                LoginView logView = new LoginView();
+                logView.setVisible(false);
+                logView.dispose();
+            }
+        } else {
+            JOptionPane.showMessageDialog(null,
+                    "Paciente no registrado", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            txtUsername.setText("");
+            txtPassword.setText("");
+        }
+    }
+    
+    public void compare(){
+        
     }
 }
