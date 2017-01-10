@@ -21,13 +21,13 @@ public class LoginPatientService {
     public Object[][] loadOfficesObjWrapper() throws JsonGenerationException,
             JsonMappingException, IOException {
         Patient[] patients = loadOfficesFromFile();
-        Object[][] data = null;
+        Object[][]data = null;
 
         if (patients != null && patients.length > 0) {
-            data = new Object[patients.length][8]; // filas y columnas
+            data = new Object[patients.length][2]; // filas y columnas
             int i = 0;
             for (Patient patient : patients) {
-                data[i][0] = checkIfNull(patient.getUser());
+                data[i][0]= checkIfNull(patient.getUser());
                 data[i][1] = checkIfNull(patient.getPassword());
                 i++;
             }

@@ -5,18 +5,22 @@
  */
 package proyecto.java.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import proyecto.java.Constants;
+import proyecto.java.model.Login;
 import proyecto.java.model.Patient;
 import proyecto.java.service.LoginPatientService;
-import proyecto.java.service.PatientService;
 import proyecto.java.view.LoginView;
 import proyecto.java.view.PatientPanelView;
 import proyecto.java.view.PrincipalPanelView;
@@ -31,8 +35,9 @@ public class LoginController implements ActionListener {
     private JPasswordField txtPassword;
     private JButton btnLogin;
     private JButton btnSalir;
-    private LoginPatientService patientService;
-
+    private LoginPatientService loginPatientService;
+    private Object[][] patients;
+    private ArrayList<Login> loginList;
 
     /**
      *
@@ -48,9 +53,16 @@ public class LoginController implements ActionListener {
         this.txtPassword = txtPassword;
         this.btnLogin = btnLogin;
         this.btnSalir = btnSalir;
-        
-        
-        
+        loginList = new ArrayList<>();
+        loginPatientService = new LoginPatientService();
+        patients = loginPatientService.loadOfficesObjWrapper();
+
+        for (Object obj[] : patients) {
+            Login fullText;
+            fullText = new Login(obj[0].toString(), obj[1].toString());
+            loginList.add(fullText);
+        }
+
     }
 
     @Override
@@ -61,7 +73,7 @@ public class LoginController implements ActionListener {
 
         if (source == btnLogin) {
             try {
-                compareUserAndPassword(username, password);
+                validateUserandPassword(username, password);
             } catch (IOException ex) {
                 Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -71,12 +83,26 @@ public class LoginController implements ActionListener {
         }
     }
 
+    public void validateUserandPassword(String username, String password) throws IOException {
+        if (username.equals("") || password.equals("")) {
+            JOptionPane.showMessageDialog(null,
+                    "No se aceptan espacios en blanco." + "\n" + ""
+                    + "Digite datos válidos", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            txtUsername.setText("");
+            txtPassword.setText("");
+        } else {
+            compareUserAndPassword(username, password);
+        }
+    }
+
     /**
      *
      * @param username
      * @param password
      * @throws IOException
      */
+
     public void compareUserAndPassword(String username, String password) throws IOException {
         if (username.equals("Admin")) {
             if (password.equals("1234")) {
@@ -92,44 +118,27 @@ public class LoginController implements ActionListener {
                 txtUsername.setText("");
                 txtPassword.setText("");
             }
-//        } 
-//        else {
-//            if () {
-//            PatientPanelView patientView = new PatientPanelView();
-//                patientView.setVisible(true);
-//                LoginView logView = new LoginView();
-//                logView.setVisible(false);
-//                logView.dispose();
-//            }
-//            else {
-//            JOptionPane.showMessageDialog(null,
-//                    "Paciente no registrado", "Error",
-//                    JOptionPane.ERROR_MESSAGE);
-//            txtUsername.setText("");
-//            txtPassword.setText("");
-        } 
-        else if (username.equals("") || password.equals("")) {
-            JOptionPane.showMessageDialog(null,
-                    "No se aceptan espacios en blanco." + "\n" + ""
-                    + "Digite datos válidos", "Error",
-                    JOptionPane.ERROR_MESSAGE);
-            txtUsername.setText("");
-            txtPassword.setText("");
+        } else {
+            comparePatientInRegister(username, password);
         }
-    }
-    
 
-    public void comparePatient(String username, String password) throws IOException {
-        Patient pat = new Patient();
-        if (username.equals(pat.getUser())) {
-            if (password.equals(pat.getPassword())) {
+    }
+
+    public void comparePatientInRegister(String username, String password) throws IOException {
+        boolean isUser = false;
+        for (int i = 0; i < loginList.size(); i++) {
+            String user = loginList.get(i).getUserName();
+            String pass = loginList.get(i).getPassword();
+            if (username.equals(user) && password.equals(pass)) {
                 PatientPanelView patientView = new PatientPanelView();
                 patientView.setVisible(true);
                 LoginView logView = new LoginView();
                 logView.setVisible(false);
                 logView.dispose();
+                isUser = true;
             }
-        } else {
+        }
+        if (isUser == false) {
             JOptionPane.showMessageDialog(null,
                     "Paciente no registrado", "Error",
                     JOptionPane.ERROR_MESSAGE);
@@ -137,8 +146,5 @@ public class LoginController implements ActionListener {
             txtPassword.setText("");
         }
     }
-    
-    public void compare(){
-        
-    }
+
 }
