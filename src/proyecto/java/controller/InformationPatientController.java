@@ -10,7 +10,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import proyecto.java.Constants;
 import proyecto.java.service.PatientService;
@@ -27,14 +26,13 @@ public class InformationPatientController implements ActionListener{
 
     public InformationPatientController(JButton verify, DefaultTableModel tableModel) 
             throws JsonMappingException, IOException {
-        this.verify = verify;
-        this.tableModel = tableModel;
         
         patientService = new PatientService();
         information = patientService.loadOfficesObjWrapper();
+        this.verify = verify;
         this.tableModel = tableModel;
         
-        tableModel.setDataVector(information, Constants.TABLE_HEADER_APPOINTMENT);
+        tableModel.setDataVector(information, Constants.TABLE_HEADER_PATIENT);
     }
     
     public void actionPerformed(ActionEvent e) {
@@ -57,7 +55,7 @@ public class InformationPatientController implements ActionListener{
                     newData[idx++] = obj;
                 }
             }
-            tableModel.setDataVector(newData, Constants.TABLE_HEADER_APPOINTMENT);
+            tableModel.setDataVector(newData, Constants.TABLE_HEADER_PATIENT);
         }
     }
     
