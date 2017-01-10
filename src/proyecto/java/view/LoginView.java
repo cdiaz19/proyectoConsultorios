@@ -52,7 +52,7 @@ public class LoginView extends JFrame {
         btnSalir = new JButton("Salir", logout);
 
         //create controller
-        LoginController logController = new LoginController(txtUsername, txtPassword, btnLogin, btnSalir);
+        LoginController logController = new LoginController(txtUsername,txtPassword,btnLogin, btnSalir);
         btnLogin.addActionListener(logController);
         btnSalir.addActionListener(logController);
 
@@ -83,7 +83,7 @@ public class LoginView extends JFrame {
         add(panel);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        pack();
+        //pack();
         setLocationRelativeTo(null);
         setVisible(true);
 

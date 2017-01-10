@@ -9,42 +9,43 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import proyecto.java.Constants;
+import static proyecto.java.Constants.ACTUAL;
+import proyecto.java.model.Patient;
 import proyecto.java.service.PatientService;
 
 /**
  *
  * @author Kimberly
  */
-public class InformationPatientController implements ActionListener{
-    private JButton verify;
+public class InformationPatientController {
+
     private DefaultTableModel tableModel;
     private PatientService patientService;
     private Object[][] information;
 
-    public InformationPatientController(JButton verify, DefaultTableModel tableModel) 
+    public InformationPatientController(DefaultTableModel tableModel)
             throws JsonMappingException, IOException {
-        
-        patientService = new PatientService();
-        information = patientService.loadOfficesObjWrapper();
-        this.verify = verify;
+
         this.tableModel = tableModel;
-        
-        tableModel.setDataVector(information, Constants.TABLE_HEADER_PATIENT);
-    }
-    
-    public void actionPerformed(ActionEvent e) {
         showInformation();
     }
 
-       public void showInformation(){
+    public void showInformation() throws IOException {
+        patientService = new PatientService();
+        information = patientService.loadOfficesObjWrapper();
         LoginController log = new LoginController();
-        String user = log.returnName();
+
+        String user = ACTUAL;
+
         if (user != null && !"".equals(user)
                 && information != null && information.length > 1) {
-            System.out.println("guillermo");
             Object[][] newData = new Object[information.length][];
             int idx = 0;
             for (Object[] obj : information) {
@@ -58,5 +59,5 @@ public class InformationPatientController implements ActionListener{
             tableModel.setDataVector(newData, Constants.TABLE_HEADER_PATIENT);
         }
     }
-    
+
 }

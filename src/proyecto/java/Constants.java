@@ -17,6 +17,7 @@ public class Constants {
     public static final String FILENAME = "src/proyecto/resources/officesList.json";
     public static final String FILENAME_PATIENT = "src/proyecto/resources/patientsList.json";
     public static final String FILENAME_APPOINTMENT = "src/proyecto/resources/appointmentsList.json";
+    public static String ACTUAL = "";
 
     /**
      *

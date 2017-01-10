@@ -8,7 +8,6 @@ package proyecto.java.view;
 import java.awt.Dimension;
 import java.io.IOException;
 import javax.swing.BorderFactory;
-import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -24,24 +23,21 @@ import proyecto.java.controller.InformationPatientController;
  */
 public class InformationPatientView extends JInternalFrame{
 
-    JButton verify = new JButton("Información Personal");
     JTable table = new JTable();
     DefaultTableModel tableModel;
 
     public InformationPatientView() throws IOException {
-        super("Informacion General");
-        verify.setName("btnFilter");
-
+         super("Informacion Personal", true, true, true, true);
+        tableModel = new DefaultTableModel();
         // Create table model
         table.setName("mainTable");
         table.setModel(tableModel);
         
-        InformationPatientController controller = new InformationPatientController(verify,tableModel);
-        verify.addActionListener(controller);
+        
+        InformationPatientController controller = new InformationPatientController(tableModel);
         
         JPanel ctrlPane = new JPanel();
         ctrlPane.setName("ctrlPanel");
-        ctrlPane.add(verify);
         
         JScrollPane tableScrollPane = new JScrollPane(table);
         tableScrollPane.setName("scrollTablePaneInformation");

@@ -29,6 +29,7 @@ public class LoginPatientService {
             for (Patient patient : patients) {
                 data[i][0]= checkIfNull(patient.getUser());
                 data[i][1] = checkIfNull(patient.getPassword());
+                
                 i++;
             }
         }       

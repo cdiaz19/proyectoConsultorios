@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import proyecto.java.Constants;
+import static proyecto.java.Constants.ACTUAL;
 import proyecto.java.model.Login;
 import proyecto.java.model.Patient;
 import proyecto.java.service.LoginPatientService;
@@ -38,6 +39,7 @@ public class LoginController implements ActionListener {
     private LoginPatientService loginPatientService;
     private Object[][] patients;
     private ArrayList<Login> loginList;
+    private Patient actual;
 
     /**
      *
@@ -54,6 +56,7 @@ public class LoginController implements ActionListener {
         this.btnLogin = btnLogin;
         this.btnSalir = btnSalir;
         loginList = new ArrayList<>();
+        actual = new Patient();
         loginPatientService = new LoginPatientService();
         patients = loginPatientService.loadOfficesObjWrapper();
 
@@ -63,10 +66,12 @@ public class LoginController implements ActionListener {
             loginList.add(fullText);
         }
         
-        
+       System.out.println("i"+1);
     }
     
     public LoginController() {
+        System.out.println("i"+2);
+//        actual = new Patient();
     }
 
     @Override
@@ -134,6 +139,7 @@ public class LoginController implements ActionListener {
             String user = loginList.get(i).getUserName();
             String pass = loginList.get(i).getPassword();
             if (username.equals(user) && password.equals(pass)) {
+                ACTUAL = loginList.get(i).getUserName();
                 PatientPanelView patientView = new PatientPanelView();
                 patientView.setVisible(true);
                 LoginView logView = new LoginView();
@@ -151,8 +157,4 @@ public class LoginController implements ActionListener {
         }
     }
 
-    public String returnName(){
-        String name= txtUsername.getText();
-        return name;
-    }
 }
