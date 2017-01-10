@@ -13,42 +13,31 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import proyecto.java.Constants;
+import static proyecto.java.Constants.ACTUAL;
 import proyecto.java.service.AppointmentService;
 
 /**
  *
  * @author Yeni
  */
-public class AppointmentPatientController implements ActionListener {
+public class AppointmentPatientController {
 
-    private JButton verify;
     private DefaultTableModel tableModel;
     private AppointmentService appointmentService;
     private Object[][] appointment;
 
-    public AppointmentPatientController(JButton verify, DefaultTableModel tableModel) 
+    public AppointmentPatientController(DefaultTableModel tableModel)
             throws JsonMappingException, IOException {
         super();
-        this.verify = verify;
         this.tableModel = tableModel;
- 
-        appointmentService = new AppointmentService();
-        appointment = appointmentService.loadAppointmentsObjWrapper();
-        this.tableModel = tableModel;
-
-        // Load the table with the list of appointment
-        tableModel.setDataVector(appointment, Constants.TABLE_HEADER_APPOINTMENT);
-
-    }
-    
-    @Override
-    public void actionPerformed(ActionEvent e) {
         verifyDate();
     }
 
-       public void verifyDate(){
-        LoginController log = new LoginController();
-        String user = log.returnName();
+    public void verifyDate() throws JsonMappingException, IOException {
+        appointmentService = new AppointmentService();
+        appointment = appointmentService.loadAppointmentsObjWrapper();
+
+        String user = ACTUAL;
         if (user != null && !"".equals(user)
                 && appointment != null && appointment.length > 1) {
             Object[][] newData = new Object[appointment.length][];

@@ -25,26 +25,22 @@ import proyecto.java.controller.AppointmentPatientController;
  * @author Yeni
  */
 public class AppointmentPatientView extends JInternalFrame {
-    JButton verify= new JButton("Buscar Citas");
     JTable table = new JTable();
-    DefaultTableModel tableModel;
+    DefaultTableModel tableModel  = new DefaultTableModel();
     
     public AppointmentPatientView() throws JsonGenerationException,
             JsonMappingException, IOException {
 
         super("Lista de Citas", true, true, true, true);
-        verify.setName("btnFilter");
 
         // Create table model
         table.setName("mainTable");
         table.setModel(tableModel);
         
-        AppointmentPatientController controller = new AppointmentPatientController(verify,tableModel);
-        verify.addActionListener(controller);
+        AppointmentPatientController controller = new AppointmentPatientController(tableModel);
         
         JPanel ctrlPane = new JPanel();
         ctrlPane.setName("ctrlPanel");
-        ctrlPane.add(verify);
         
         JScrollPane tableScrollPane = new JScrollPane(table);
         tableScrollPane.setName("scrollTablePaneAppointment");

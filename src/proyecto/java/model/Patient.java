@@ -80,6 +80,11 @@ public class Patient {
         this.user = user;
     }
 
+    public Patient(String user, String password) {
+        this.user = user;
+        this.password = password;
+    }
+
     /**
      * @return the password
      */

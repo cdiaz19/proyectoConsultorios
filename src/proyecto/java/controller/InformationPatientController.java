@@ -40,7 +40,6 @@ public class InformationPatientController {
     public void showInformation() throws IOException {
         patientService = new PatientService();
         information = patientService.loadOfficesObjWrapper();
-        LoginController log = new LoginController();
 
         String user = ACTUAL;
 
