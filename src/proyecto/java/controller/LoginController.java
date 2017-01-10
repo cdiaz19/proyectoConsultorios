@@ -19,7 +19,6 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import proyecto.java.Constants;
 import static proyecto.java.Constants.ACTUAL;
-import proyecto.java.model.Login;
 import proyecto.java.model.Patient;
 import proyecto.java.service.LoginPatientService;
 import proyecto.java.view.LoginView;
@@ -38,7 +37,7 @@ public class LoginController implements ActionListener {
     private JButton btnSalir;
     private LoginPatientService loginPatientService;
     private Object[][] patients;
-    private ArrayList<Login> loginList;
+    private ArrayList<Patient> loginList;
     private Patient actual;
 
     /**
@@ -61,8 +60,8 @@ public class LoginController implements ActionListener {
         patients = loginPatientService.loadOfficesObjWrapper();
 
         for (Object obj[] : patients) {
-            Login fullText;
-            fullText = new Login(obj[0].toString(), obj[1].toString());
+            Patient fullText;
+            fullText = new Patient(obj[0].toString(), obj[1].toString());
             loginList.add(fullText);
         }
         
@@ -136,10 +135,10 @@ public class LoginController implements ActionListener {
     public void comparePatientInRegister(String username, String password) throws IOException {
         boolean isUser = false;
         for (int i = 0; i < loginList.size(); i++) {
-            String user = loginList.get(i).getUserName();
+            String user = loginList.get(i).getUser();
             String pass = loginList.get(i).getPassword();
             if (username.equals(user) && password.equals(pass)) {
-                ACTUAL = loginList.get(i).getUserName();
+                ACTUAL = loginList.get(i).getUser();
                 PatientPanelView patientView = new PatientPanelView();
                 patientView.setVisible(true);
                 LoginView logView = new LoginView();
