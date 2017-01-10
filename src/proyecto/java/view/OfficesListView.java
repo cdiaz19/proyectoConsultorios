@@ -7,12 +7,10 @@ package proyecto.java.view;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-import static com.sun.glass.ui.Cursor.setVisible;
 import java.awt.Dimension;
 import java.io.IOException;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;

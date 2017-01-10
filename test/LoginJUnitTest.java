@@ -19,14 +19,15 @@ import proyecto.java.view.LoginView;
  * @author Kimberly
  */
 public class LoginJUnitTest {
+
     private FrameFixture window;
-    
+
     /**
      *
      */
     public LoginJUnitTest() {
     }
-    
+
     /**
      *
      */
@@ -36,21 +37,25 @@ public class LoginJUnitTest {
         window = new FrameFixture(frame);
         window.show();
     }
-    
+
     /**
      *
+     * @throws java.io.IOException
+     * @throws IOException
      */
     @Test
-    public void testVisibleComponents() throws IOException{
+    public void testVisibleComponents() throws IOException {
         window.label("lblUsername").requireVisible();
         window.label("lblPassword").requireVisible();
     }
-    
+
     /**
      *
+     * @throws java.io.IOException
+     * @throws IOException
      */
     @Test
-    public void isCorrectAdminTest()throws IOException{
+    public void isCorrectAdminTest() throws IOException {
         String pass = "1234";
         char[] c = pass.toCharArray();
         window.textBox("username").enterText("Admin");
@@ -59,12 +64,14 @@ public class LoginJUnitTest {
         assertEquals(window.textBox("username").text(), "Admin");
         assertEquals(window.textBox("password").text(), "1234");
     }
-    
+
     /**
      *
+     * @throws java.io.IOException
+     * @throws IOException
      */
     @Test
-    public void isInCorrectAdminTest()throws IOException{
+    public void isInCorrectAdminTest() throws IOException {
         String pass = "1234";
         char[] c = pass.toCharArray();
         window.textBox("username").enterText("Carlos");
@@ -73,7 +80,7 @@ public class LoginJUnitTest {
         assertNotEquals(window.textBox("username").text(), "Santiago");
         assertNotEquals(window.textBox("password").text(), "1234");
     }
-    
+
     /**
      *
      */

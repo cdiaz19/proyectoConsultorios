@@ -23,7 +23,7 @@ import proyecto.java.controller.OfficeController;
 public class AddOfficeView extends JInternalFrame {
 
     String[] offices = {"Hospital", "Clinica"};
-    
+
     JTextField name = new JTextField(15);
     JTextField phone_number = new JTextField(15);
     JTextField days = new JTextField(15);
@@ -32,15 +32,19 @@ public class AddOfficeView extends JInternalFrame {
     JComboBox officesBox = new JComboBox(offices);
     JButton accept_form = new JButton("Aceptar");
 
+    /**
+     *
+     * @throws IOException
+     */
     public AddOfficeView() throws IOException {
         super("Formulario Nuevo Consultorio", false, true, false, true);
         setSize(260, 310);
-        
+
         // Create controller
         OfficeController controller
                 = new OfficeController(name, phone_number, days, hourStart,
                         hourEnd, officesBox, accept_form);
-        
+
         accept_form.addActionListener(controller);
 
         //Inicializa variables
@@ -99,9 +103,14 @@ public class AddOfficeView extends JInternalFrame {
             System.out.println(exc.getMessage());
         }
     }
-    
+
+    /**
+     *
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
         AddOfficeView.setLookAndFeel();
-        AddOfficeView fu = new AddOfficeView();
+        AddOfficeView officeView = new AddOfficeView();
     }
 }

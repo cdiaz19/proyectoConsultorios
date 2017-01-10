@@ -31,6 +31,9 @@ public class PatientPanelView extends JFrame {
     JMenuItem citasPaciente = new JMenuItem();
     JDesktopPane escritorio;
 
+    /**
+     *
+     */
     public PatientPanelView() {
         super("Panel Paciente");
         setLayout(new BorderLayout());
@@ -44,7 +47,7 @@ public class PatientPanelView extends JFrame {
         // Create controller
         PatientPanelController controller
                 = new PatientPanelController(salir, escritorio, informacionPersonal,
-                citasPaciente);
+                        citasPaciente);
         salir.addActionListener(controller);
         informacionPersonal.addActionListener(controller);
         citasPaciente.addActionListener(controller);
@@ -87,6 +90,10 @@ public class PatientPanelView extends JFrame {
         }
     }
 
+    /**
+     *
+     * @param arguments
+     */
     public static void main(String[] arguments) {
         setLookAndFeel();
         PatientPanelView pp = new PatientPanelView();

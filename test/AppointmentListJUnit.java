@@ -11,12 +11,9 @@ import org.assertj.swing.edt.GuiActionRunner;
 import org.assertj.swing.fixture.FrameFixture;
 import org.assertj.swing.fixture.JPanelFixture;
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import proyecto.java.view.AppointmentListView;
-import proyecto.java.view.OfficesListView;
 import proyecto.java.view.PrincipalPanelView;
 
 /**
@@ -24,12 +21,21 @@ import proyecto.java.view.PrincipalPanelView;
  * @author Yeni
  */
 public class AppointmentListJUnit {
+
     private FrameFixture window;
     private JPanelFixture panel;
-    
+
+    /**
+     *
+     */
     public AppointmentListJUnit() {
     }
-    
+
+    /**
+     *
+     * @throws JsonMappingException
+     * @throws IOException
+     */
     @Before
     public void setUp() throws JsonMappingException, IOException {
         PrincipalPanelView frame = GuiActionRunner.execute(() -> new PrincipalPanelView());
@@ -40,7 +46,12 @@ public class AppointmentListJUnit {
         window.menuItem("todasCitas").click();
         ventanaInterna.setVisible(true);
     }
-    
+
+    /**
+     *
+     * @throws JsonMappingException
+     * @throws IOException
+     */
     @Test
     public void testVisibleComponents() throws JsonMappingException, IOException {
         window.textBox("txtSearch").requireVisible();
@@ -48,14 +59,21 @@ public class AppointmentListJUnit {
         window.table("mainTable").requireVisible();
         window.scrollPane("scrollTablePaneAppointment").requireVisible();
     }
-    
-     @Test
+
+    /**
+     *
+     * @throws IOException
+     */
+    @Test
     public void searchFilter() throws IOException {
         window.textBox("txtSearch").enterText("Hospital CIMA");
         window.button("btnFilter").click();
         window.table("mainTable").equals("Hospital CIMA");
     }
-    
+
+    /**
+     *
+     */
     @After
     public void tearDown() {
         window.cleanUp();

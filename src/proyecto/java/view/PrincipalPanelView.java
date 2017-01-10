@@ -36,6 +36,9 @@ public class PrincipalPanelView extends JFrame {
     JMenuItem salir = new JMenuItem();
     JDesktopPane escritorio;
 
+    /**
+     *
+     */
     public PrincipalPanelView() {
         super("Panel Administrativo");
         setLayout(new BorderLayout());
@@ -49,7 +52,7 @@ public class PrincipalPanelView extends JFrame {
         // Create controller
         PrincipalPanelController controller
                 = new PrincipalPanelController(salir, agregarconsultorio, verTodosconsultorios,
-                        escritorio, verTodospacientes, agregarpaciente,agregarcita, verTodascitas);
+                        escritorio, verTodospacientes, agregarpaciente, agregarcita, verTodascitas);
         salir.addActionListener(controller);
         agregarconsultorio.addActionListener(controller);
         agregarpaciente.addActionListener(controller);
@@ -116,6 +119,10 @@ public class PrincipalPanelView extends JFrame {
         }
     }
 
+    /**
+     *
+     * @param arguments
+     */
     public static void main(String[] arguments) {
         setLookAndFeel();
         PrincipalPanelView pp = new PrincipalPanelView();

@@ -34,6 +34,10 @@ public class AddPatientView extends JInternalFrame {
     JTextArea observations = new JTextArea(4, 15);
     JButton accept_form = new JButton("Aceptar");
 
+    /**
+     *
+     * @throws IOException
+     */
     public AddPatientView() throws IOException {
         super("Formulario Nuevo Paciente", false, true, false, true);
         setSize(220, 560);
@@ -115,6 +119,11 @@ public class AddPatientView extends JInternalFrame {
         }
     }
 
+    /**
+     *
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
         AddPatientView.setLookAndFeel();
         AddPatientView fu = new AddPatientView();

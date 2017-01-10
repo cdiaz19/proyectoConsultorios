@@ -8,10 +8,7 @@ package proyecto.java.view;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.ComponentOrientation;
-import java.awt.FlowLayout;
 import java.io.IOException;
-import java.util.Locale;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -52,7 +49,7 @@ public class LoginView extends JFrame {
         btnSalir = new JButton("Salir", logout);
 
         //create controller
-        LoginController logController = new LoginController(txtUsername,txtPassword,btnLogin, btnSalir);
+        LoginController logController = new LoginController(txtUsername, txtPassword, btnLogin, btnSalir);
         btnLogin.addActionListener(logController);
         btnSalir.addActionListener(logController);
 

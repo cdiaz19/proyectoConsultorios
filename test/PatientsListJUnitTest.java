@@ -30,31 +30,47 @@ public class PatientsListJUnitTest {
     private ArrayList<Patient> patients;
     private Random randomOffice;
 
+    /**
+     *
+     */
     public PatientsListJUnitTest() {
-        
+
     }
 
-    @Before 
-    public void setUp() throws JsonMappingException, IOException{
+    /**
+     *
+     * @throws JsonMappingException
+     * @throws IOException
+     */
+    @Before
+    public void setUp() throws JsonMappingException, IOException {
         PrincipalPanelView frame = GuiActionRunner.execute(() -> new PrincipalPanelView());
         window = new FrameFixture(frame);
         window.show();
         frame.setExtendedState(MAXIMIZED_BOTH);
-        
+
         OfficesListView ventanaInterna = new OfficesListView();
         window.menuItem("todosPacientes").click();
-        ventanaInterna.setVisible(true);   
+        ventanaInterna.setVisible(true);
     }
-    
-     @Before
+
+    /**
+     *
+     */
+    @Before
     public void createArrayPatients() {
         patients = new ArrayList<>();
-        patients.add(new Patient( "Carlos Guzman", "22795122", "Cartago",
+        patients.add(new Patient("Carlos Guzman", "22795122", "Cartago",
                 "19-11-1993", "Cabeza, panel", "Adicto muy Adicto"));
-        patients.add(new Patient( "Mario Guzman", "22795122", "Cartago",
+        patients.add(new Patient("Mario Guzman", "22795122", "Cartago",
                 "19-11-1993", "Panel, panel", "Adicto muy Adicto"));
-    } 
-    
+    }
+
+    /**
+     *
+     * @throws JsonMappingException
+     * @throws IOException
+     */
     @Test
     public void testVisibleComponents() throws JsonMappingException, IOException {
         window.textBox("txtSearch").requireVisible();
@@ -63,6 +79,10 @@ public class PatientsListJUnitTest {
         window.scrollPane("scrollTablePanePatient").requireVisible();
     }
 
+    /**
+     *
+     * @throws IOException
+     */
     @Test
     public void testSearchFilter() throws IOException {
         randomOffice = new Random();
@@ -75,6 +95,9 @@ public class PatientsListJUnitTest {
         window.table("mainTable").equals(b);
     }
 
+    /**
+     *
+     */
     @After
     public void tearDown() {
         window.cleanUp();

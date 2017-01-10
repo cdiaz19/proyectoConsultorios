@@ -7,7 +7,6 @@ package proyecto.java.controller;
 
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.toedter.calendar.JDateChooser;
 import com.toedter.calendar.JSpinnerDateEditor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -43,8 +42,19 @@ public class AppointmentController implements ActionListener {
     private AppointmentService appointmentService;
     private Object[][] appointments;
 
+    /**
+     *
+     * @param namePatient
+     * @param name
+     * @param fecha
+     * @param hora
+     * @param accept_button
+     * @param clean_button
+     * @throws JsonMappingException
+     * @throws IOException
+     */
     public AppointmentController(JTextField namePatient, JComboBox name, JSpinnerDateEditor fecha,
-            JComboBox hora, JButton accept_button,JButton clean_button)
+            JComboBox hora, JButton accept_button, JButton clean_button)
             throws JsonMappingException, IOException {
         super();
         this.namePatient = namePatient;
@@ -60,13 +70,13 @@ public class AppointmentController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == accept_button){
+        if (e.getSource() == accept_button) {
             try {
                 updateAppointmentList();
             } catch (IOException ex) {
                 Logger.getLogger(AppointmentController.class.getName()).log(Level.SEVERE, null, ex);
-            } 
-        } else if(e.getSource() == clean_button){
+            }
+        } else if (e.getSource() == clean_button) {
             try {
                 cleanAll();
             } catch (IOException ex) {
@@ -94,12 +104,12 @@ public class AppointmentController implements ActionListener {
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(new File(Constants.FILENAME_APPOINTMENT), appointmentsList);
     }
-   
-    private void cleanAll() throws IOException{
+
+    private void cleanAll() throws IOException {
         namePatient.setText(" ");
         name.setSelectedItem(" ");
         fecha.setDateFormatString("");
-        hora.setSelectedItem(" ");   
+        hora.setSelectedItem(" ");
     }
- 
+
 }

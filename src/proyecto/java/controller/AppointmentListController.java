@@ -20,14 +20,22 @@ import proyecto.java.service.AppointmentService;
  *
  * @author Yeni
  */
-public class AppointmentListController implements ActionListener{
-    
+public class AppointmentListController implements ActionListener {
+
     private JTextField searchAppointmentTextField = new JTextField(26);
     private DefaultTableModel tableModel;
     private AppointmentService appointmentService;
     private Object[][] appointment;
-    
-       public AppointmentListController(JTextField searchTermTextField,
+
+    /**
+     *
+     * @param searchTermTextField
+     * @param tableModel
+     * @throws JsonGenerationException
+     * @throws JsonMappingException
+     * @throws IOException
+     */
+    public AppointmentListController(JTextField searchTermTextField,
             DefaultTableModel tableModel) throws JsonGenerationException,
             JsonMappingException, IOException {
 
@@ -71,5 +79,5 @@ public class AppointmentListController implements ActionListener{
             tableModel.setDataVector(appointment, Constants.TABLE_HEADER_APPOINTMENT);
         }
     }
-    
+
 }

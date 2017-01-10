@@ -25,7 +25,7 @@ import proyecto.java.controller.AppointmentListController;
  *
  * @author Yeni
  */
-public class AppointmentListView extends JInternalFrame{
+public class AppointmentListView extends JInternalFrame {
     // Create views swing UI components 
 
     JTextField searchTermTextField = new JTextField(26);

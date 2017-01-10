@@ -7,12 +7,12 @@ package proyecto.java.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  *
  * @author Yeni
  */
 public class Appointment {
+
     @JsonProperty("namePatient")
     private String namePatient;
     @JsonProperty("name")
@@ -36,10 +36,11 @@ public class Appointment {
         this.hora = hora;
     }
 
+    /**
+     *
+     */
     public Appointment() {
     }
-    
-    
 
     /**
      *
@@ -105,14 +106,12 @@ public class Appointment {
         this.hora = hora;
     }
 
-
     @Override
     public String toString() {
-        return "Appointment{" + "namePatient=" + 
-                namePatient + ", name=" + name + 
-                ", fecha=" + fecha +
-                ", hora=" + hora + '}';
+        return "Appointment{" + "namePatient="
+                + namePatient + ", name=" + name
+                + ", fecha=" + fecha
+                + ", hora=" + hora + '}';
     }
 
-     
 }

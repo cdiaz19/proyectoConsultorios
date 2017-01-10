@@ -10,7 +10,6 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import java.awt.Dimension;
 import java.io.IOException;
 import javax.swing.BorderFactory;
-import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -25,9 +24,16 @@ import proyecto.java.controller.AppointmentPatientController;
  * @author Yeni
  */
 public class AppointmentPatientView extends JInternalFrame {
+
     JTable table = new JTable();
-    DefaultTableModel tableModel  = new DefaultTableModel();
-    
+    DefaultTableModel tableModel = new DefaultTableModel();
+
+    /**
+     *
+     * @throws JsonGenerationException
+     * @throws JsonMappingException
+     * @throws IOException
+     */
     public AppointmentPatientView() throws JsonGenerationException,
             JsonMappingException, IOException {
 
@@ -36,12 +42,12 @@ public class AppointmentPatientView extends JInternalFrame {
         // Create table model
         table.setName("mainTable");
         table.setModel(tableModel);
-        
+
         AppointmentPatientController controller = new AppointmentPatientController(tableModel);
-        
+
         JPanel ctrlPane = new JPanel();
         ctrlPane.setName("ctrlPanel");
-        
+
         JScrollPane tableScrollPane = new JScrollPane(table);
         tableScrollPane.setName("scrollTablePaneAppointment");
         tableScrollPane.setPreferredSize(new Dimension(700, 182));
@@ -57,7 +63,7 @@ public class AppointmentPatientView extends JInternalFrame {
         add(splitPane);
         pack();
         setVisible(true);
-  
+
     }
-    
+
 }

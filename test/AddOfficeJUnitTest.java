@@ -16,7 +16,6 @@ import org.junit.Test;
 import proyecto.java.view.AddOfficeView;
 import proyecto.java.view.PrincipalPanelView;
 
-
 /**
  *
  * @author cristian
@@ -26,15 +25,22 @@ public class AddOfficeJUnitTest {
     private FrameFixture window;
     private JPanelFixture panel;
 
+    /**
+     *
+     */
     public AddOfficeJUnitTest() {
-   
+
     }
-    
-      @Before
+
+    /**
+     *
+     * @throws IOException
+     */
+    @Before
     public void setUp() throws IOException {
         PrincipalPanelView frame = GuiActionRunner.execute(() -> new PrincipalPanelView());
         window = new FrameFixture(frame);
-        frame.setVisible(true); 
+        frame.setVisible(true);
         window.show();
         frame.setExtendedState(MAXIMIZED_BOTH);
         AddOfficeView ventanaInterna = new AddOfficeView();
@@ -42,6 +48,10 @@ public class AddOfficeJUnitTest {
         ventanaInterna.setVisible(true);
     }
 
+    /**
+     *
+     * @throws IOException
+     */
     @Test
     public void testVisibleComponents() throws IOException {
         window.label("lblName").requireVisible();
@@ -52,12 +62,20 @@ public class AddOfficeJUnitTest {
         window.label("lblOffice").requireVisible();
     }
 
+    /**
+     *
+     * @throws IOException
+     */
     @Test
     public void contentGendersComboBox() throws IOException {
         String[] offices = {"Hospital", "Clinica"};
         assertArrayEquals(window.comboBox("offices").contents(), offices);
     }
 
+    /**
+     *
+     * @throws IOException
+     */
     @Test
     public void isCorrectInformation() throws IOException {
         window.textBox("name").enterText("Clinica Tres Rios");
@@ -67,9 +85,12 @@ public class AddOfficeJUnitTest {
         window.textBox("hourEnd").enterText("630 PM");
         window.comboBox("offices").selectItem("Clinica");
         window.button("ok").click();
-        
+
     }
 
+    /**
+     *
+     */
     @After
     public void tearDown() {
         window.cleanUp();

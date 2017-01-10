@@ -27,6 +27,13 @@ public class PatientPanelController implements ActionListener {
     private JMenuItem appointment;
     private JDesktopPane escritorio;
 
+    /**
+     *
+     * @param exit
+     * @param escritorio
+     * @param information
+     * @param appointment
+     */
     public PatientPanelController(JMenuItem exit, JDesktopPane escritorio, JMenuItem information,
             JMenuItem appointment) {
         super();
@@ -42,7 +49,7 @@ public class PatientPanelController implements ActionListener {
         if (source == exit) {
             System.exit(0);
         } else if (source == information) {
-           try {
+            try {
                 loadInformation();
             } catch (IOException ex) {
                 Logger.getLogger(PatientPanelController.class.getName()).log(Level.SEVERE, null, ex);
@@ -56,13 +63,13 @@ public class PatientPanelController implements ActionListener {
         } else {
         }
     }
-    
-    private void loadAppointment() throws JsonMappingException, IOException{
+
+    private void loadAppointment() throws JsonMappingException, IOException {
         AppointmentPatientView ventana = new AppointmentPatientView();
         escritorio.add(ventana);
     }
-    
-    private void loadInformation() throws JsonMappingException, IOException{
+
+    private void loadInformation() throws JsonMappingException, IOException {
         InformationPatientView ventana = new InformationPatientView();
         escritorio.add(ventana);
     }

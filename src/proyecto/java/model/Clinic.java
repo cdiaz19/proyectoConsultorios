@@ -11,6 +11,9 @@ package proyecto.java.model;
  */
 public class Clinic extends Office {
 
+    /**
+     *
+     */
     public Clinic() {
     }
 
@@ -29,5 +32,5 @@ public class Clinic extends Office {
     public String toString() {
         return super.toString().concat(", Clinica");
     }
-    
+
 }

@@ -32,9 +32,17 @@ public class OfficesListJUnitTest {
     private ArrayList<Office> offices;
     private Random randomOffice;
 
+    /**
+     *
+     */
     public OfficesListJUnitTest() {
     }
 
+    /**
+     *
+     * @throws JsonMappingException
+     * @throws IOException
+     */
     @Before
     public void setUp() throws JsonMappingException, IOException {
         PrincipalPanelView frame = GuiActionRunner.execute(() -> new PrincipalPanelView());
@@ -46,6 +54,9 @@ public class OfficesListJUnitTest {
         ventanaInterna.setVisible(true);
     }
 
+    /**
+     *
+     */
     @Before
     public void createArrayOffices() {
         offices = new ArrayList<>();
@@ -53,6 +64,11 @@ public class OfficesListJUnitTest {
         offices.add(new Clinic("Centro Médico del Este", "22792761", "Jueves y Viernes", "8:00", "5:00"));
     }
 
+    /**
+     *
+     * @throws JsonMappingException
+     * @throws IOException
+     */
     @Test
     public void testVisibleComponents() throws JsonMappingException, IOException {
         window.textBox("txtSearch").requireVisible();
@@ -61,6 +77,10 @@ public class OfficesListJUnitTest {
         window.scrollPane("scrollTablePaneOffice").requireVisible();
     }
 
+    /**
+     *
+     * @throws IOException
+     */
     @Test
     public void testSearchFilter() throws IOException {
         randomOffice = new Random();
@@ -73,6 +93,9 @@ public class OfficesListJUnitTest {
         window.table("mainTable").equals(b);
     }
 
+    /**
+     *
+     */
     @After
     public void tearDown() {
         window.cleanUp();

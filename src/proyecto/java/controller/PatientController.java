@@ -21,8 +21,6 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import proyecto.java.Constants;
-import proyecto.java.model.Clinic;
-import proyecto.java.model.Office;
 import proyecto.java.model.Patient;
 import proyecto.java.service.PatientService;
 
@@ -45,6 +43,20 @@ public class PatientController implements ActionListener {
     private PatientService patientService;
     private Object[][] patients;
 
+    /**
+     *
+     * @param user
+     * @param password
+     * @param name
+     * @param phone_number
+     * @param address
+     * @param birthday
+     * @param associatedDiseases
+     * @param observations
+     * @param accept_form
+     * @throws JsonMappingException
+     * @throws IOException
+     */
     public PatientController(JTextField user, JPasswordField password, JTextField name, JTextField phone_number,
             JTextField address, JDateChooser birthday, JTextField associatedDiseases,
             JTextArea observations, JButton accept_form) throws JsonMappingException, IOException {
@@ -83,8 +95,6 @@ public class PatientController implements ActionListener {
         String associatedDiseasesTyped = associatedDiseases.getText().toString();
         String observationsTyped = observations.getText().toString();
 
-        Object[][] newData = new Object[patients.length][];
-        int idx = 0;
         for (Object[] obj : patients) {
             Patient fullText = new Patient(obj[0].toString(), obj[1].toString(),
                     obj[2].toString(), obj[3].toString(), obj[4].toString(), obj[5].toString(),

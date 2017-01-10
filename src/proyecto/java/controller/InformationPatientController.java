@@ -6,18 +6,10 @@
 package proyecto.java.controller;
 
 import com.fasterxml.jackson.databind.JsonMappingException;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JButton;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import proyecto.java.Constants;
 import static proyecto.java.Constants.ACTUAL;
-import proyecto.java.model.Patient;
 import proyecto.java.service.PatientService;
 
 /**
@@ -30,6 +22,12 @@ public class InformationPatientController {
     private PatientService patientService;
     private Object[][] information;
 
+    /**
+     *
+     * @param tableModel
+     * @throws JsonMappingException
+     * @throws IOException
+     */
     public InformationPatientController(DefaultTableModel tableModel)
             throws JsonMappingException, IOException {
 
@@ -37,6 +35,10 @@ public class InformationPatientController {
         showInformation();
     }
 
+    /**
+     *
+     * @throws IOException
+     */
     public void showInformation() throws IOException {
         patientService = new PatientService();
         information = patientService.loadPatientObjWrapper();

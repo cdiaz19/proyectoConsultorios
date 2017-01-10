@@ -40,6 +40,18 @@ public class OfficeController implements ActionListener {
     private OfficeService officeService;
     private Object[][] offices;
 
+    /**
+     *
+     * @param name
+     * @param phone_number
+     * @param days
+     * @param hourStart
+     * @param hourEnd
+     * @param officeBox
+     * @param accept_form
+     * @throws JsonMappingException
+     * @throws IOException
+     */
     public OfficeController(JTextField name, JTextField phone_number,
             JTextField days, JTextField hourStart, JTextField hourEnd,
             JComboBox officeBox, JButton accept_form) throws JsonMappingException, IOException {
@@ -75,8 +87,6 @@ public class OfficeController implements ActionListener {
         String hourEndTyped = hourEnd.getText().toString();
         String officesBoxTyped = officeBox.getSelectedItem().toString();
 
-        Object[][] newData = new Object[offices.length][];
-        int idx = 0;
         for (Object[] obj : offices) {
             Office fullText = new Office(obj[0].toString(), obj[1].toString(), obj[2].toString(), obj[3].toString(), obj[4].toString());
             officesList.add(fullText);

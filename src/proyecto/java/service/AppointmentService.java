@@ -13,17 +13,17 @@ import java.io.IOException;
 import proyecto.java.Constants;
 import proyecto.java.model.Appointment;
 
-
 /**
  *
  * @author Yeni
  */
 public class AppointmentService {
 
-    
+    /**
+     *
+     */
     public AppointmentService() {
     }
-    
 
     /**
      * Wrapper to return the list of appointments from the File
@@ -63,9 +63,8 @@ public class AppointmentService {
 
         return appointment;
     }
-    
-    
-     private String checkIfNull(Object obj) {
+
+    private String checkIfNull(Object obj) {
         String text;
         if (obj == null) {
             text = "";

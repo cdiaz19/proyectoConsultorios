@@ -6,12 +6,10 @@
 
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.io.IOException;
-import javax.swing.JFrame;
 import org.assertj.swing.edt.GuiActionRunner;
 import org.assertj.swing.fixture.FrameFixture;
 import org.assertj.swing.fixture.JPanelFixture;
 import org.junit.After;
-import static org.junit.Assert.assertArrayEquals;
 import org.junit.Before;
 import org.junit.Test;
 import proyecto.java.view.AddAppointmentView;
@@ -26,22 +24,33 @@ public class AddAppointmentJUnitTest {
     private FrameFixture window;
     private JPanelFixture panel;
 
+    /**
+     *
+     */
     public AddAppointmentJUnitTest() {
     }
 
+    /**
+     *
+     * @throws IOException
+     */
     @Before
     public void setUp() throws IOException {
         PrincipalPanelView frame = GuiActionRunner.execute(() -> new PrincipalPanelView());
         window = new FrameFixture(frame);
-        frame.setVisible(true); 
+        frame.setVisible(true);
         window.show();
         frame.setExtendedState(MAXIMIZED_BOTH);
         AddAppointmentView ventanaInterna = new AddAppointmentView();
         window.menuItem("agregarCita").click();
-        
+
         ventanaInterna.setVisible(true);
     }
-            
+
+    /**
+     *
+     * @throws IOException
+     */
     @Test
     public void testVisibleComponents() throws IOException {
         window.label("lblName").requireVisible();
@@ -50,6 +59,10 @@ public class AddAppointmentJUnitTest {
         window.label("lblHour").requireVisible();
     }
 
+    /**
+     *
+     * @throws IOException
+     */
     @Test
     public void isCorrectInformation() throws IOException {
         window.textBox("name").enterText("Maria");
@@ -58,6 +71,9 @@ public class AddAppointmentJUnitTest {
         window.button("ok").click();
     }
 
+    /**
+     *
+     */
     @After
     public void tearDown() {
         window.cleanUp();

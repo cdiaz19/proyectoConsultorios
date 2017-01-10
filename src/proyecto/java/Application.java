@@ -41,6 +41,7 @@ public class Application {
             }
         });
     }
+
     private static void setLookAndFeel() {
         try {
             UIManager.setLookAndFeel(
@@ -50,6 +51,7 @@ public class Application {
             // ignore error
         }
     }
+
     /**
      * Create the GUI
      *

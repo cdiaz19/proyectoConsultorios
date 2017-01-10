@@ -5,7 +5,6 @@
  */
 package proyecto.java.view;
 
-import com.toedter.calendar.JDateChooser;
 import com.toedter.calendar.JSpinnerDateEditor;
 import java.awt.FlowLayout;
 import java.io.IOException;
@@ -34,6 +33,10 @@ public class AddAppointmentView extends JInternalFrame {
     JButton accept_button = new JButton("Aceptar");
     JButton clean_button = new JButton("Limpiar");
 
+    /**
+     *
+     * @throws IOException
+     */
     public AddAppointmentView() throws IOException {
         super("Formulario de Cita Nueva", false, true, false, true);
         setSize(200, 250);
@@ -103,8 +106,13 @@ public class AddAppointmentView extends JInternalFrame {
         }
     }
 
+    /**
+     *
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
         AddAppointmentView.setLookAndFeel();
-        AddAppointmentView ad = new AddAppointmentView();
+        AddAppointmentView addAppointmentView = new AddAppointmentView();
     }
 }

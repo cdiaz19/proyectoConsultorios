@@ -21,24 +21,27 @@ import proyecto.java.controller.InformationPatientController;
  *
  * @author Kimberly
  */
-public class InformationPatientView extends JInternalFrame{
+public class InformationPatientView extends JInternalFrame {
 
     JTable table = new JTable();
     DefaultTableModel tableModel;
 
+    /**
+     *
+     * @throws IOException
+     */
     public InformationPatientView() throws IOException {
-         super("Informacion Personal", true, true, true, true);
+        super("Informacion Personal", true, true, true, true);
         tableModel = new DefaultTableModel();
         // Create table model
         table.setName("mainTable");
         table.setModel(tableModel);
-        
-        
+
         InformationPatientController controller = new InformationPatientController(tableModel);
-        
+
         JPanel ctrlPane = new JPanel();
         ctrlPane.setName("ctrlPanel");
-        
+
         JScrollPane tableScrollPane = new JScrollPane(table);
         tableScrollPane.setName("scrollTablePaneInformation");
         tableScrollPane.setPreferredSize(new Dimension(700, 182));
@@ -54,10 +57,7 @@ public class InformationPatientView extends JInternalFrame{
         add(splitPane);
         pack();
         setVisible(true);
-  
-    
+
     }
-    
-    
 
 }

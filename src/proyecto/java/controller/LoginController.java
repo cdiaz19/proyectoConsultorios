@@ -5,10 +5,8 @@
  */
 package proyecto.java.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -17,7 +15,6 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import proyecto.java.Constants;
 import static proyecto.java.Constants.ACTUAL;
 import proyecto.java.model.Patient;
 import proyecto.java.service.LoginPatientService;
@@ -38,7 +35,6 @@ public class LoginController implements ActionListener {
     private LoginPatientService loginPatientService;
     private Object[][] patients;
     private ArrayList<Patient> loginList;
-    private Patient actual;
 
     /**
      *
@@ -55,7 +51,6 @@ public class LoginController implements ActionListener {
         this.btnLogin = btnLogin;
         this.btnSalir = btnSalir;
         loginList = new ArrayList<>();
-        actual = new Patient();
         loginPatientService = new LoginPatientService();
         patients = loginPatientService.loadOfficesObjWrapper();
 
@@ -64,13 +59,13 @@ public class LoginController implements ActionListener {
             fullText = new Patient(obj[0].toString(), obj[1].toString());
             loginList.add(fullText);
         }
-        
-       System.out.println("i"+1);
+
     }
-    
+
+    /**
+     *
+     */
     public LoginController() {
-        System.out.println("i"+2);
-//        actual = new Patient();
     }
 
     @Override
@@ -91,6 +86,12 @@ public class LoginController implements ActionListener {
         }
     }
 
+    /**
+     *
+     * @param username
+     * @param password
+     * @throws IOException
+     */
     public void validateUserandPassword(String username, String password) throws IOException {
         if (username.equals("") || password.equals("")) {
             JOptionPane.showMessageDialog(null,
@@ -110,7 +111,6 @@ public class LoginController implements ActionListener {
      * @param password
      * @throws IOException
      */
-
     public void compareUserAndPassword(String username, String password) throws IOException {
         if (username.equals("Admin")) {
             if (password.equals("1234")) {
@@ -132,6 +132,12 @@ public class LoginController implements ActionListener {
 
     }
 
+    /**
+     *
+     * @param username
+     * @param password
+     * @throws IOException
+     */
     public void comparePatientInRegister(String username, String password) throws IOException {
         boolean isUser = false;
         for (int i = 0; i < loginList.size(); i++) {

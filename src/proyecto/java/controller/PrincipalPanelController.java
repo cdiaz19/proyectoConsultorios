@@ -36,6 +36,17 @@ public class PrincipalPanelController implements ActionListener {
     private JMenuItem allAppointment;
     private JMenuItem addAppointment;
 
+    /**
+     *
+     * @param exit
+     * @param addOffice
+     * @param allOffice
+     * @param escritorio
+     * @param allPatient
+     * @param addPatient
+     * @param allAppointment
+     * @param addAppointment
+     */
     public PrincipalPanelController(JMenuItem exit, JMenuItem addOffice, JMenuItem allOffice,
             JDesktopPane escritorio, JMenuItem allPatient, JMenuItem addPatient,
             JMenuItem allAppointment, JMenuItem addAppointment) {

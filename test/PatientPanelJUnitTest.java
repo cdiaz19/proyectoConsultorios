@@ -20,19 +20,28 @@ public class PatientPanelJUnitTest {
 
     private FrameFixture window;
 
+    /**
+     *
+     */
     public PatientPanelJUnitTest() {
-       
+
     }
 
+    /**
+     *
+     */
     @Before
-    public void setUp(){
+    public void setUp() {
         PatientPanelView frame = GuiActionRunner.execute(() -> new PatientPanelView());
         window = new FrameFixture(frame);
         window.show();
         frame.setExtendedState(MAXIMIZED_BOTH);
-        
+
     }
-    
+
+    /**
+     *
+     */
     @Test
     public void testVisibleComponents() {
         window.menuItem("citasPaciente").requireVisible();
@@ -40,16 +49,25 @@ public class PatientPanelJUnitTest {
         window.menuItem("salir").requireVisible();
     }
 
+    /**
+     *
+     */
     @Test
     public void testOnClickPersonalInformation() {
         window.menuItem("informacionPersonal").click();
     }
 
+    /**
+     *
+     */
     @Test
     public void testOnClickAppointmentPatient() {
         window.menuItem("citasPaciente").click();
     }
 
+    /**
+     *
+     */
     @After
     public void tearDown() {
         window.cleanUp();

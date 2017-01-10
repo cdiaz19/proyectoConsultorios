@@ -25,18 +25,27 @@ public class PrincipalPanelJUnitTest {
 
     private FrameFixture window;
 
+    /**
+     *
+     */
     public PrincipalPanelJUnitTest() {
-        
+
     }
-    
-     @Before
-    public void setUp(){
+
+    /**
+     *
+     */
+    @Before
+    public void setUp() {
         PrincipalPanelView frame = GuiActionRunner.execute(() -> new PrincipalPanelView());
         window = new FrameFixture(frame);
         window.show();
         frame.setExtendedState(MAXIMIZED_BOTH);
     }
 
+    /**
+     *
+     */
     @Test
     public void testVisibleComponents() {
         window.menuItem("agregarConsultorio").requireVisible();
@@ -44,7 +53,11 @@ public class PrincipalPanelJUnitTest {
         window.menuItem("todosPacientes").requireVisible();
         window.menuItem("salir").requireVisible();
     }
-    
+
+    /**
+     *
+     * @throws IOException
+     */
     @Test
     public void testOnClickAddOffice() throws IOException {
         AddOfficeView ventanaInterna = new AddOfficeView();
@@ -52,13 +65,23 @@ public class PrincipalPanelJUnitTest {
         ventanaInterna.setVisible(true);
     }
 
+    /**
+     *
+     * @throws JsonMappingException
+     * @throws IOException
+     */
     @Test
     public void testOnClickAllOffices() throws JsonMappingException, IOException {
         OfficesListView ventanaInterna = new OfficesListView();
         window.menuItem("todosConsultorios").click();
         ventanaInterna.setVisible(true);
     }
-    
+
+    /**
+     *
+     * @throws JsonMappingException
+     * @throws IOException
+     */
     @Test
     public void testOnClickAllPatients() throws JsonMappingException, IOException {
         PatientListView ventanaInterna = new PatientListView();
@@ -66,6 +89,9 @@ public class PrincipalPanelJUnitTest {
         ventanaInterna.setVisible(true);
     }
 
+    /**
+     *
+     */
     @After
     public void tearDown() {
         window.cleanUp();

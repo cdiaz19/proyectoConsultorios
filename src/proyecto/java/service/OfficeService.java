@@ -18,13 +18,12 @@ import proyecto.java.model.Office;
  * @author cristian
  */
 public class OfficeService {
-    
+
     /**
      * Empty Constructor
      */
     public OfficeService() {
     }
-
 
     /**
      * Wrapper to return the list of offices from the File
