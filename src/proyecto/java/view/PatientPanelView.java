@@ -89,6 +89,6 @@ public class PatientPanelView extends JFrame {
 
     public static void main(String[] arguments) {
         setLookAndFeel();
-        PrincipalPanelView pp = new PrincipalPanelView();
+        PatientPanelView pp = new PatientPanelView();
     }
 }

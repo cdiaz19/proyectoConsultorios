@@ -59,7 +59,7 @@ public class PatientController implements ActionListener {
         this.accept_form = accept_form;
 
         patientService = new PatientService();
-        patients = patientService.loadOfficesObjWrapper();
+        patients = patientService.loadPatientObjWrapper();
     }
 
     @Override

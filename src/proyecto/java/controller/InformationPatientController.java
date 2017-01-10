@@ -39,7 +39,7 @@ public class InformationPatientController {
 
     public void showInformation() throws IOException {
         patientService = new PatientService();
-        information = patientService.loadOfficesObjWrapper();
+        information = patientService.loadPatientObjWrapper();
 
         String user = ACTUAL;
 

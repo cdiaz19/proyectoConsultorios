@@ -42,7 +42,7 @@ public class PatientListController implements ActionListener {
             JsonMappingException, IOException {
         super();
         patientService = new PatientService();
-        patients = patientService.loadOfficesObjWrapper();
+        patients = patientService.loadPatientObjWrapper();
 
         this.searchOfficeTextField = searchTermTextField;
         this.tableModel = tableModel;
