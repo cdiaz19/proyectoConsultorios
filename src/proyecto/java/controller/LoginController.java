@@ -62,7 +62,11 @@ public class LoginController implements ActionListener {
             fullText = new Login(obj[0].toString(), obj[1].toString());
             loginList.add(fullText);
         }
-
+        
+        
+    }
+    
+    public LoginController() {
     }
 
     @Override
@@ -147,4 +151,8 @@ public class LoginController implements ActionListener {
         }
     }
 
+    public String returnName(){
+        String name= txtUsername.getText();
+        return name;
+    }
 }

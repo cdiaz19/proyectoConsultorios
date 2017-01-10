@@ -5,13 +5,12 @@
  */
 package proyecto.java.controller;
 
-import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import proyecto.java.Constants;
 import proyecto.java.service.AppointmentService;
@@ -20,38 +19,37 @@ import proyecto.java.service.AppointmentService;
  *
  * @author Yeni
  */
-public class AppointmentListController implements ActionListener{
-    
-    private JTextField searchAppointmentTextField = new JTextField(26);
+public class AppointmentPatientController implements ActionListener {
+
+    private JButton verify;
     private DefaultTableModel tableModel;
     private AppointmentService appointmentService;
     private Object[][] appointment;
-    
-       public AppointmentListController(JTextField searchTermTextField,
-            DefaultTableModel tableModel) throws JsonGenerationException,
-            JsonMappingException, IOException {
 
+    public AppointmentPatientController(JButton verify, DefaultTableModel tableModel) 
+            throws JsonMappingException, IOException {
         super();
+        this.verify = verify;
+        this.tableModel = tableModel;
+ 
         appointmentService = new AppointmentService();
         appointment = appointmentService.loadAppointmentsObjWrapper();
-
-        this.searchAppointmentTextField = searchTermTextField;
         this.tableModel = tableModel;
 
         // Load the table with the list of appointment
         tableModel.setDataVector(appointment, Constants.TABLE_HEADER_APPOINTMENT);
-    }
 
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
-        String searchTerm = searchAppointmentTextField.getText();
-
-        //Method to search items
-        updateTableSearchTerms(searchTerm);
+        verifyDate();
     }
 
-    private void updateTableSearchTerms(String searchTerm) {
-        if (searchTerm != null && !"".equals(searchTerm)
+       public void verifyDate(){
+        LoginController log = new LoginController();
+        String user = log.returnName();
+        if (user != null && !"".equals(user)
                 && appointment != null && appointment.length > 1) {
             Object[][] newData = new Object[appointment.length][];
             int idx = 0;
@@ -59,17 +57,16 @@ public class AppointmentListController implements ActionListener{
                 String fullText = obj[0].toString() + obj[1].toString()
                         + obj[2].toString() + obj[3].toString();
 
-                if (fullText.contains(searchTerm.trim())) {
+                if (fullText.contains(user.trim())) {
                     newData[idx++] = obj;
                 }
             }
             tableModel.setDataVector(newData, Constants.TABLE_HEADER_APPOINTMENT);
         } else {
             JOptionPane.showMessageDialog(null,
-                    "La busqueda esta vacia", "Error",
+                    "NO tiene citas pendientes", "Error",
                     JOptionPane.ERROR_MESSAGE);
             tableModel.setDataVector(appointment, Constants.TABLE_HEADER_APPOINTMENT);
         }
     }
-    
 }
