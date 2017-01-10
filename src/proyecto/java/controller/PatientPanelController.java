@@ -5,10 +5,15 @@
  */
 package proyecto.java.controller;
 
+import com.fasterxml.jackson.databind.JsonMappingException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JDesktopPane;
 import javax.swing.JMenuItem;
+import proyecto.java.view.AppointmentPatientView;
 
 /**
  *
@@ -38,8 +43,17 @@ public class PatientPanelController implements ActionListener {
         } else if (source == information) {
             System.out.println("Informacion personal");
         } else if (source == appointment) {
-            System.out.println("Citas Registradas");
+            try {
+                loadAppointment();
+            } catch (IOException ex) {
+                Logger.getLogger(PatientPanelController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else {
         }
+    }
+    
+    private void loadAppointment() throws JsonMappingException, IOException{
+        AppointmentPatientView ventana = new AppointmentPatientView();
+        escritorio.add(ventana);
     }
 }
