@@ -33,7 +33,7 @@ public class PatientService {
      * @throws com.fasterxml.jackson.databind.JsonMappingException
      * @throws java.io.IOException
      */
-    public Object[][] loadOfficesObjWrapper() throws JsonGenerationException,
+    public Object[][] loadPatientObjWrapper() throws JsonGenerationException,
             JsonMappingException, IOException {
         Patient[] patients = loadOfficesFromFile();
         Object[][] data = null;

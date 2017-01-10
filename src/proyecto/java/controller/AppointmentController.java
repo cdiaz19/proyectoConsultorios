@@ -8,6 +8,7 @@ package proyecto.java.controller;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.toedter.calendar.JDateChooser;
+import com.toedter.calendar.JSpinnerDateEditor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -32,7 +33,7 @@ public class AppointmentController implements ActionListener {
 
     private JTextField namePatient;
     private JComboBox name;
-    private JDateChooser fecha;
+    private JSpinnerDateEditor fecha;
     private JComboBox hora;
     private JButton accept_button;
     private JButton clean_button;
@@ -42,7 +43,7 @@ public class AppointmentController implements ActionListener {
     private AppointmentService appointmentService;
     private Object[][] appointments;
 
-    public AppointmentController(JTextField namePatient, JComboBox name, JDateChooser fecha,
+    public AppointmentController(JTextField namePatient, JComboBox name, JSpinnerDateEditor fecha,
             JComboBox hora, JButton accept_button,JButton clean_button)
             throws JsonMappingException, IOException {
         super();
@@ -97,7 +98,7 @@ public class AppointmentController implements ActionListener {
     private void cleanAll() throws IOException{
         namePatient.setText(" ");
         name.setSelectedItem(" ");
-        fecha.setCalendar(null);
+        fecha.setDateFormatString("");
         hora.setSelectedItem(" ");   
     }
  
