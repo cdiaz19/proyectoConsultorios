@@ -83,7 +83,7 @@ public class LoginView extends JFrame {
         add(panel);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //pack();
+        pack();
         setLocationRelativeTo(null);
         setVisible(true);
 

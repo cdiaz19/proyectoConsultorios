@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 import javax.swing.JDesktopPane;
 import javax.swing.JMenuItem;
 import proyecto.java.view.AppointmentPatientView;
+import proyecto.java.view.InformationPatientView;
 
 /**
  *
@@ -41,7 +42,11 @@ public class PatientPanelController implements ActionListener {
         if (source == exit) {
             System.exit(0);
         } else if (source == information) {
-            System.out.println("Informacion personal");
+           try {
+                loadInformation();
+            } catch (IOException ex) {
+                Logger.getLogger(PatientPanelController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else if (source == appointment) {
             try {
                 loadAppointment();
@@ -54,6 +59,11 @@ public class PatientPanelController implements ActionListener {
     
     private void loadAppointment() throws JsonMappingException, IOException{
         AppointmentPatientView ventana = new AppointmentPatientView();
+        escritorio.add(ventana);
+    }
+    
+    private void loadInformation() throws JsonMappingException, IOException{
+        InformationPatientView ventana = new InformationPatientView();
         escritorio.add(ventana);
     }
 }

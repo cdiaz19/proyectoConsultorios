@@ -70,7 +70,7 @@ public class LoginJUnitTest {
         window.textBox("username").enterText("Carlos");
         window.textBox("password").enterText("45678");
         window.button("Login").click();
-        assertNotEquals(window.textBox("username").text(), "Juan");
+        assertNotEquals(window.textBox("username").text(), "Santiago");
         assertNotEquals(window.textBox("password").text(), "1234");
     }
     
