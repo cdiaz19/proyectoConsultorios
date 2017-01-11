@@ -74,7 +74,7 @@ public class AddPatientJUnitTest {
         window.textBox("name").enterText("Santiago Gonzalez");
         window.textBox("phone").enterText("22795352");
         window.textBox("address").enterText("Alajuela");
-        // window.textBox("birthday").enterText("23-12-1985");
+        window.panel("birthday").textBox().enterText("23-12-1985");
         window.textBox("associatedDiseases").enterText("Neumonia");
         window.textBox("observations").enterText("Fuerte dolor en el pecho, " + "cuesta respirar");
         window.button("ok").click();

@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
@@ -84,16 +85,22 @@ public class PatientController implements ActionListener {
     }
 
     private void updatePatientsList() throws IOException {
+        
+        String dia = Integer.toString(birthday.getCalendar().get(Calendar.DAY_OF_MONTH));
+        String mes = Integer.toString(birthday.getCalendar().get(Calendar.MONTH) + 1);
+        String year = Integer.toString(birthday.getCalendar().get(Calendar.YEAR));
+        String fecha = (dia + "-" + mes + "-" + year);
+        
         String passwordLogin = new String(password.getPassword());
         ArrayList<Patient> patientsList = new ArrayList<>();
-        String userTyped = user.getText().toString();
-        String passwordTyped = passwordLogin.toString();
-        String nameTyped = name.getText().toString();
-        String phoneTyped = phone_number.getText().toString();
-        String addressTyped = address.getText().toString();
-        String birthdayTyped = birthday.getDateFormatString();
-        String associatedDiseasesTyped = associatedDiseases.getText().toString();
-        String observationsTyped = observations.getText().toString();
+        String userTyped = user.getText();
+        String passwordTyped = passwordLogin;
+        String nameTyped = name.getText();
+        String phoneTyped = phone_number.getText();
+        String addressTyped = address.getText();
+        String birthdayTyped = fecha;
+        String associatedDiseasesTyped = associatedDiseases.getText();
+        String observationsTyped = observations.getText();
 
         for (Object[] obj : patients) {
             Patient fullText = new Patient(obj[0].toString(), obj[1].toString(),

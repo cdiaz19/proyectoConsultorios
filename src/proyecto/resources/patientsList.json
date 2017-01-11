@@ -16,4 +16,13 @@
         "birthday": "23-12-1985",
         "associatedDiseases": "Neumonia",
         "observation": "Fuerte dolor en el pecho, cuesta respirar"
+    }, {
+        "user": "Juan",
+        "password": "1234",
+        "namePatient": "Juan",
+        "phone": "987654",
+        "address": "Heredia",
+        "birthday": "22-1-1998",
+        "associatedDiseases": "",
+        "observation": ""
     }]

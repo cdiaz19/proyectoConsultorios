@@ -7,6 +7,7 @@ package proyecto.java.controller;
 
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.toedter.calendar.JDateChooser;
 import com.toedter.calendar.JSpinnerDateEditor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,6 +15,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
@@ -32,7 +34,7 @@ public class AppointmentController implements ActionListener {
 
     private JTextField namePatient;
     private JComboBox name;
-    private JSpinnerDateEditor fecha;
+    private JDateChooser fecha;
     private JComboBox hora;
     private JButton accept_button;
     private JButton clean_button;
@@ -53,7 +55,7 @@ public class AppointmentController implements ActionListener {
      * @throws JsonMappingException
      * @throws IOException
      */
-    public AppointmentController(JTextField namePatient, JComboBox name, JSpinnerDateEditor fecha,
+    public AppointmentController(JTextField namePatient, JComboBox name, JDateChooser fecha,
             JComboBox hora, JButton accept_button, JButton clean_button)
             throws JsonMappingException, IOException {
         super();
@@ -86,10 +88,15 @@ public class AppointmentController implements ActionListener {
     }
 
     private void updateAppointmentList() throws IOException {
+        String dia = Integer.toString(fecha.getCalendar().get(Calendar.DAY_OF_MONTH));
+        String mes = Integer.toString(fecha.getCalendar().get(Calendar.MONTH) + 1);
+        String year = Integer.toString(fecha.getCalendar().get(Calendar.YEAR));
+        String fecha = (dia + "-" + mes + "-" + year);
+        
         ArrayList<Appointment> appointmentsList = new ArrayList<>();
         String namePatientTyped = namePatient.getText();
         String nameTyped = (String) name.getSelectedItem();
-        String fechaTyped = fecha.getDateFormatString();
+        String fechaTyped = fecha;
         String horaTyped = hora.getSelectedItem().toString();
 
         for (Object[] obj : appointments) {

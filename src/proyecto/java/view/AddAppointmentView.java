@@ -5,7 +5,7 @@
  */
 package proyecto.java.view;
 
-import com.toedter.calendar.JSpinnerDateEditor;
+import com.toedter.calendar.JDateChooser;
 import java.awt.FlowLayout;
 import java.io.IOException;
 import javax.swing.JButton;
@@ -28,7 +28,7 @@ public class AddAppointmentView extends JInternalFrame {
 
     JTextField namePatient = new JTextField(15);
     JComboBox name = new JComboBox(offices);
-    JSpinnerDateEditor fecha = new JSpinnerDateEditor();
+    JDateChooser fecha = new JDateChooser();
     JComboBox hora = new JComboBox();
     JButton accept_button = new JButton("Aceptar");
     JButton clean_button = new JButton("Limpiar");

@@ -6,6 +6,7 @@
 
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.io.IOException;
+import java.text.ParseException;
 import org.assertj.swing.edt.GuiActionRunner;
 import org.assertj.swing.fixture.FrameFixture;
 import org.assertj.swing.fixture.JPanelFixture;
@@ -61,12 +62,13 @@ public class AddAppointmentJUnitTest {
 
     /**
      *
-     * @throws IOException
+     * 
      */
     @Test
-    public void isCorrectInformation() throws IOException {
+    public void isCorrectInformation() {
         window.textBox("name").enterText("Maria");
         window.comboBox("office").selectItem("Hospital CIMA");
+        window.panel("date").textBox().enterText("12-01-2017");
         window.comboBox("hour").selectItem("10:00am");
         window.button("ok").click();
     }
