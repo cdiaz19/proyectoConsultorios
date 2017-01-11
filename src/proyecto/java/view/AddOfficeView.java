@@ -40,7 +40,7 @@ public class AddOfficeView extends JInternalFrame {
      */
     public AddOfficeView() throws IOException {
         super("Formulario Nuevo Consultorio", false, true, false, true);
-        setSize(260, 350);
+        setSize(260, 330);
 
         ImageIcon addOffice = new ImageIcon("accept.png");
         ImageIcon limpiar = new ImageIcon("clear.png");
@@ -82,6 +82,7 @@ public class AddOfficeView extends JInternalFrame {
         hourStart.setName("hourStart");
         hourEnd.setName("hourEnd");
         accept_form.setName("ok");
+        clean_button.setName("clean");
 
         //Las agrega al Panel
         panel.setName("Form");
@@ -98,6 +99,7 @@ public class AddOfficeView extends JInternalFrame {
         panel.add(officeLabel);
         panel.add(officesBox);
         panel.add(accept_form);
+        panel.add(clean_button);
 
         add(panel);
         setVisible(true);

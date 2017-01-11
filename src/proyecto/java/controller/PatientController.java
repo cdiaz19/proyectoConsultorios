@@ -40,6 +40,7 @@ public class PatientController implements ActionListener {
     private JTextField associatedDiseases;
     private JTextArea observations;
     private JButton accept_form;
+    private JButton clean_button;
 
     private PatientService patientService;
     private Object[][] patients;
@@ -60,7 +61,7 @@ public class PatientController implements ActionListener {
      */
     public PatientController(JTextField user, JPasswordField password, JTextField name, JTextField phone_number,
             JTextField address, JDateChooser birthday, JTextField associatedDiseases,
-            JTextArea observations, JButton accept_form) throws JsonMappingException, IOException {
+            JTextArea observations, JButton accept_form, JButton clean_button) throws JsonMappingException, IOException {
         this.user = user;
         this.password = password;
         this.name = name;
@@ -70,6 +71,7 @@ public class PatientController implements ActionListener {
         this.associatedDiseases = associatedDiseases;
         this.observations = observations;
         this.accept_form = accept_form;
+        this.clean_button = clean_button;
 
         patientService = new PatientService();
         patients = patientService.loadPatientObjWrapper();
@@ -77,12 +79,21 @@ public class PatientController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == accept_form) {
         try {
             updatePatientsList();
         } catch (IOException ex) {
             Logger.getLogger(OfficeController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }else if (e.getSource() == clean_button) {
+            try {
+                cleanAll();
+            } catch (IOException ex) {
+                Logger.getLogger(AppointmentController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
+        
 
     private void updatePatientsList() throws IOException {
         
@@ -116,5 +127,15 @@ public class PatientController implements ActionListener {
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(new File(Constants.FILENAME_PATIENT), patientsList);
+    }
+      private void cleanAll() throws IOException {
+        user.setText(" ");
+        password.setText(" ");
+        name.setText(" ");
+        phone_number.setText(" ");
+        address.setText(" ");
+        birthday.setDateFormatString("");
+        associatedDiseases.setText(" ");
+        observations.setText(" ");
     }
 }

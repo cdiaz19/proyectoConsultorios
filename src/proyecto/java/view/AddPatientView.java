@@ -34,6 +34,7 @@ public class AddPatientView extends JInternalFrame {
     JTextField associatedDiseases = new JTextField(15);
     JTextArea observations = new JTextArea(4, 15);
     JButton accept_form = new JButton();
+    JButton clean_button = new JButton();
 
     /**
      *
@@ -44,14 +45,18 @@ public class AddPatientView extends JInternalFrame {
         setSize(220, 560);
         
         ImageIcon aceptar = new ImageIcon("accept.png");
+        ImageIcon limpiar = new ImageIcon("clear.png");
+        
         accept_form = new JButton("Aceptar",aceptar);
+        clean_button = new JButton("Limpiar",limpiar);
         
         // Create controller
         PatientController controller
                 = new PatientController(user, password, name, phone_number, address, birthday,
-                        associatedDiseases, observations, accept_form);
+                        associatedDiseases, observations, accept_form,clean_button);
 
         accept_form.addActionListener(controller);
+        clean_button.addActionListener(controller);
 
         //Inicializa variables
         JPanel panel = new JPanel();
@@ -88,6 +93,7 @@ public class AddPatientView extends JInternalFrame {
         associatedDiseases.setName("associatedDiseases");
         observations.setName("observations");
         accept_form.setName("ok");
+        clean_button.setName("clean");
 
         //Las agrega al Panel
         panel.setName("Form");
@@ -108,6 +114,7 @@ public class AddPatientView extends JInternalFrame {
         panel.add(observationLabel);
         panel.add(observations);
         panel.add(accept_form);
+        panel.add(clean_button);
 
         add(panel);
         setVisible(true);

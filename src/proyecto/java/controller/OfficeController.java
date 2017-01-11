@@ -116,5 +116,13 @@ public class OfficeController implements ActionListener {
         mapper.writeValue(new File(Constants.FILENAME), officesList);
     }
     
-    
+    private void cleanAll() throws IOException {
+        name.setText(" ");
+        phone_number.setText(" ");
+        days.setText(" ");
+        hourStart.setText(" ");
+        hourEnd.setText(" ");
+        officeBox.setSelectedItem("Hospital");
+        
+    }
 }
