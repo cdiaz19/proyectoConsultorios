@@ -66,7 +66,7 @@ public class AddAppointmentJUnitTest {
      */
     @Test
     public void isCorrectInformation() {
-        window.textBox("name").enterText("Maria");
+        window.textBox("name").enterText("Valeria");
         window.comboBox("office").selectItem("Hospital CIMA");
         window.panel("date").textBox().enterText("12-01-2017");
         window.comboBox("hour").selectItem("10:00am");

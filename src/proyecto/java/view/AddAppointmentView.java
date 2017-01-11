@@ -8,6 +8,7 @@ package proyecto.java.view;
 import com.toedter.calendar.JDateChooser;
 import java.awt.FlowLayout;
 import java.io.IOException;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
@@ -30,8 +31,8 @@ public class AddAppointmentView extends JInternalFrame {
     JComboBox name = new JComboBox(offices);
     JDateChooser fecha = new JDateChooser();
     JComboBox hora = new JComboBox();
-    JButton accept_button = new JButton("Aceptar");
-    JButton clean_button = new JButton("Limpiar");
+    JButton accept_button = new JButton();
+    JButton clean_button = new JButton();
 
     /**
      *
@@ -39,8 +40,14 @@ public class AddAppointmentView extends JInternalFrame {
      */
     public AddAppointmentView() throws IOException {
         super("Formulario de Cita Nueva", false, true, false, true);
-        setSize(200, 250);
+        setSize(200, 300);
+        
+        ImageIcon aceptar = new ImageIcon("accept.png");
+        ImageIcon limpiar = new ImageIcon("clear.png");
 
+        accept_button = new JButton("Aceptar",aceptar);
+        clean_button = new JButton("Limpiar",limpiar);
+        
         // Create controller
         AppointmentController controller = new AppointmentController(namePatient, name, fecha, hora, accept_button, clean_button);
 

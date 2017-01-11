@@ -7,6 +7,7 @@ package proyecto.java.view;
 
 import java.awt.FlowLayout;
 import java.io.IOException;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
@@ -30,7 +31,8 @@ public class AddOfficeView extends JInternalFrame {
     JTextField hourStart = new JTextField(15);
     JTextField hourEnd = new JTextField(15);
     JComboBox officesBox = new JComboBox(offices);
-    JButton accept_form = new JButton("Aceptar");
+    JButton accept_form = new JButton();
+    JButton clean_button = new JButton();
 
     /**
      *
@@ -38,25 +40,32 @@ public class AddOfficeView extends JInternalFrame {
      */
     public AddOfficeView() throws IOException {
         super("Formulario Nuevo Consultorio", false, true, false, true);
-        setSize(260, 310);
+        setSize(260, 350);
+
+        ImageIcon addOffice = new ImageIcon("accept.png");
+        ImageIcon limpiar = new ImageIcon("clear.png");
+        
+        accept_form = new JButton("Aceptar", addOffice);
+        clean_button = new JButton("Limpiar",limpiar);
 
         // Create controller
         OfficeController controller
                 = new OfficeController(name, phone_number, days, hourStart,
-                        hourEnd, officesBox, accept_form);
+                        hourEnd, officesBox, accept_form,clean_button);
 
         accept_form.addActionListener(controller);
+        clean_button.addActionListener(controller);
 
         //Inicializa variables
         JPanel panel = new JPanel();
         FlowLayout lm = new FlowLayout(FlowLayout.CENTER);
         panel.setLayout(lm);
-        JLabel nameLabel = new JLabel("Nombre: ");
-        JLabel phonenumberLabel = new JLabel("Telefono: ");
-        JLabel daysLabel = new JLabel("Días: ");
-        JLabel hourStartLabel = new JLabel("Hora Apertura: ");
-        JLabel hourEndLabel = new JLabel("Hora Cierre: ");
-        JLabel officeLabel = new JLabel("Tipo de Consultorio: ");
+        JLabel nameLabel = new JLabel("Nombre:");
+        JLabel phonenumberLabel = new JLabel("Telefono:");
+        JLabel daysLabel = new JLabel("Días:");
+        JLabel hourStartLabel = new JLabel("Hora Apertura:");
+        JLabel hourEndLabel = new JLabel("Hora Cierre:");
+        JLabel officeLabel = new JLabel("Tipo de Consultorio:");
 
         //setea nombres (ids)
         nameLabel.setName("lblName");

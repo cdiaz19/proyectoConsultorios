@@ -8,6 +8,7 @@ package proyecto.java.view;
 import com.toedter.calendar.JDateChooser;
 import java.awt.FlowLayout;
 import java.io.IOException;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
@@ -32,7 +33,7 @@ public class AddPatientView extends JInternalFrame {
     JDateChooser birthday = new JDateChooser();
     JTextField associatedDiseases = new JTextField(15);
     JTextArea observations = new JTextArea(4, 15);
-    JButton accept_form = new JButton("Aceptar");
+    JButton accept_form = new JButton();
 
     /**
      *
@@ -41,7 +42,10 @@ public class AddPatientView extends JInternalFrame {
     public AddPatientView() throws IOException {
         super("Formulario Nuevo Paciente", false, true, false, true);
         setSize(220, 560);
-
+        
+        ImageIcon aceptar = new ImageIcon("accept.png");
+        accept_form = new JButton("Aceptar",aceptar);
+        
         // Create controller
         PatientController controller
                 = new PatientController(user, password, name, phone_number, address, birthday,

@@ -36,6 +36,7 @@ public class OfficeController implements ActionListener {
     private JTextField hourEnd;
     private JComboBox officeBox;
     private JButton accept_form;
+    private JButton clean_button;
 
     private OfficeService officeService;
     private Object[][] offices;
@@ -54,7 +55,7 @@ public class OfficeController implements ActionListener {
      */
     public OfficeController(JTextField name, JTextField phone_number,
             JTextField days, JTextField hourStart, JTextField hourEnd,
-            JComboBox officeBox, JButton accept_form) throws JsonMappingException, IOException {
+            JComboBox officeBox, JButton accept_form,JButton clean_button) throws JsonMappingException, IOException {
         super();
         this.name = name;
         this.phone_number = phone_number;
@@ -63,6 +64,7 @@ public class OfficeController implements ActionListener {
         this.hourEnd = hourEnd;
         this.officeBox = officeBox;
         this.accept_form = accept_form;
+        this.clean_button = clean_button;
 
         officeService = new OfficeService();
         offices = officeService.loadOfficesObjWrapper();
@@ -70,10 +72,18 @@ public class OfficeController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == accept_form) {
         try {
             updateOfficesList();
         } catch (IOException ex) {
             Logger.getLogger(OfficeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }else if (e.getSource() == clean_button) {
+            try {
+                cleanAll();
+            } catch (IOException ex) {
+                Logger.getLogger(AppointmentController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
     }
@@ -104,5 +114,7 @@ public class OfficeController implements ActionListener {
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(new File(Constants.FILENAME), officesList);
-    }  
+    }
+    
+    
 }
