@@ -54,7 +54,8 @@ public class Office implements Serializable {
      * @param hourStart
      * @param hourEnd
      */
-    public Office(int idOffice, String name, String phone, String days, String hourStart, String hourEnd) {
+    public Office(int idOffice, String name, String phone, String days, String hourStart, 
+            String hourEnd) {
         this.idOffice = idOffice;
         this.name = name;
         this.phone = phone;

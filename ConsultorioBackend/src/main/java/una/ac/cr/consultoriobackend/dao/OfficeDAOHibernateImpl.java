@@ -13,7 +13,7 @@ import una.ac.cr.consultoriobackend.model.Office;
  * @author cristian
  */
 public class OfficeDAOHibernateImpl implements OfficeDAO {
-    
+
     private final Session session = HibernateUtil.getSessionFactory().openSession();
 
     @Override
@@ -24,5 +24,5 @@ public class OfficeDAOHibernateImpl implements OfficeDAO {
 
         return office;
     }
-    
+
 }
