@@ -5,9 +5,13 @@
  */
 package funcional.test.una.ac.cr.consultoriobackend;
 
+import static org.hamcrest.CoreMatchers.is;
 import org.junit.After;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
 import org.junit.Test;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 import una.ac.cr.consultoriobackend.dao.OfficeDAO;
 import una.ac.cr.consultoriobackend.dao.OfficeDAOHibernateImpl;
 import una.ac.cr.consultoriobackend.model.Office;
@@ -27,7 +31,7 @@ public class OfficeHibernateServiceTest {
     public OfficeHibernateServiceTest() {
     }
 
-    @Test
+    /*@Test
     public void testHibernateSaveOffice() {
 
         officeDAO = new OfficeDAOHibernateImpl();
@@ -42,7 +46,25 @@ public class OfficeHibernateServiceTest {
 
         office = officeService.saveOffice(office);
         assertNotNull(office.getIdOffice());
-    }
+    }*/
+    
+    /*@Test
+    public void testFindByIdOffice() {
+        officeDAO = mock(OfficeDAOHibernateImpl.class);
+        officeService = new OfficeServiceImpl(officeDAO);
+
+        Office office = new Office();
+
+        office.setName("Hospital CIMA");
+        office.setPhone("22795122");
+        office.setDays("Lunes y Martes");
+        office.setHourStart("8:00");
+        office.setHourEnd("5:00");
+
+        when(officeService.findByIdOffice(1)).thenReturn(office);
+
+        assertThat(office.getName(), is("Hospital CIMA"));
+    }*/
 
     @After
     public void deleteAll() {

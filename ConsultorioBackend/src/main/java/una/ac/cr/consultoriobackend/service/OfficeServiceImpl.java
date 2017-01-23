@@ -13,7 +13,7 @@ import una.ac.cr.consultoriobackend.model.Office;
  * @author cristian
  */
 public class OfficeServiceImpl implements OfficeService {
-    
+
     private OfficeDAO officeDAO;
 
     public OfficeServiceImpl() {
@@ -27,5 +27,20 @@ public class OfficeServiceImpl implements OfficeService {
     public Office saveOffice(Office office) {
         return officeDAO.saveOffice(office);
     }
-    
+
+    @Override
+    public Office findByIdOffice(int id) {
+        return officeDAO.findByIdOffice(id);
+    }
+
+    @Override
+    public void updateOffice(Office office) {
+        officeDAO.updateOffice(office);
+    }
+
+    @Override
+    public void deleteOffice(Office office) {
+        officeDAO.deleteOffice(office);
+    }
+
 }

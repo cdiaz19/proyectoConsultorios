@@ -14,4 +14,10 @@ import una.ac.cr.consultoriobackend.model.Office;
 public interface OfficeDAO {
     
     public Office saveOffice(Office office);
+    
+    public Office findByIdOffice (int id);
+    
+    public void updateOffice(Office office);
+    
+    public void deleteOffice(Office office);
 }

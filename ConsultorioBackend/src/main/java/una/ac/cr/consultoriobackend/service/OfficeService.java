@@ -15,4 +15,10 @@ public interface OfficeService {
     
     public Office saveOffice(Office office);
     
+    public Office findByIdOffice (int id);
+    
+    public void updateOffice(Office office);
+    
+    public void deleteOffice(Office office);
+    
 }

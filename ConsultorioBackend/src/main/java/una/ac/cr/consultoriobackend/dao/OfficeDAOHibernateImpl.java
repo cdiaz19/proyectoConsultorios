@@ -5,6 +5,7 @@
  */
 package una.ac.cr.consultoriobackend.dao;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import una.ac.cr.consultoriobackend.model.Office;
 
@@ -23,6 +24,33 @@ public class OfficeDAOHibernateImpl implements OfficeDAO {
         session.getTransaction().commit();
 
         return office;
+    }
+
+    @Override
+    public Office findByIdOffice(int id) {
+        Office office = null;
+        Query query = session.createQuery("from office where id = :id ");
+        query.setParameter("id", id);
+
+        if (query.list().size() > 0) {
+            office = (Office) query.list().get(0);
+        }
+
+        return office;
+    }
+
+    @Override
+    public void updateOffice(Office office) {
+        session.beginTransaction();
+        session.update(office);
+        session.getTransaction().commit();
+    }
+
+    @Override
+    public void deleteOffice(Office office) {
+        session.beginTransaction();
+        session.delete(office);
+        session.getTransaction().commit();
     }
 
 }
