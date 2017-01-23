@@ -47,7 +47,7 @@ public class Office implements Serializable {
 
     /**
      *
-     * @param idUniversidad
+     * @param idOffice
      * @param name
      * @param phone
      * @param days
