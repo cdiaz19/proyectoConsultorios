@@ -31,9 +31,8 @@ public class OfficeHibernateServiceTest {
     public OfficeHibernateServiceTest() {
     }
 
-    /*@Test
+    @Test
     public void testHibernateSaveOffice() {
-
         officeDAO = new OfficeDAOHibernateImpl();
         officeService = new OfficeServiceImpl(officeDAO);
 
@@ -46,10 +45,10 @@ public class OfficeHibernateServiceTest {
 
         office = officeService.saveOffice(office);
         assertNotNull(office.getIdOffice());
-    }*/
-    
-    /*@Test
-    public void testFindByIdOffice() {
+    }
+
+    @Test
+    public void testHibernateFindByIdOffice() {
         officeDAO = mock(OfficeDAOHibernateImpl.class);
         officeService = new OfficeServiceImpl(officeDAO);
 
@@ -64,7 +63,65 @@ public class OfficeHibernateServiceTest {
         when(officeService.findByIdOffice(1)).thenReturn(office);
 
         assertThat(office.getName(), is("Hospital CIMA"));
-    }*/
+    }
+
+    @Test
+    public void testHibernateUpdateOffice() {
+        officeDAO = new OfficeDAOHibernateImpl();
+        officeService = new OfficeServiceImpl(officeDAO);
+
+        office = new Office();
+
+        office.setName("Clinica Tres Rios");
+        office.setPhone("22795122");
+        office.setDays("Miercoles");
+        office.setHourStart("8:00");
+        office.setHourEnd("5:00");
+
+        office = officeService.saveOffice(office);
+        assertNotNull(office.getIdOffice());
+
+        office.setName("Nueva Clinica Tres Rios");
+        officeService.updateOffice(office);
+        assertThat(office.getName(), is("Nueva Clinica Tres Rios"));
+    }
+
+    @Test
+    public void testHibernateDeleteOffice() {
+        officeDAO = new OfficeDAOHibernateImpl();
+        officeService = new OfficeServiceImpl(officeDAO);
+
+        office = new Office();
+
+        office.setName("Clinica Tres Rios");
+        office.setPhone("22795122");
+        office.setDays("Miercoles");
+        office.setHourStart("8:00");
+        office.setHourEnd("5:00");
+        office = officeService.saveOffice(office);
+        assertNotNull(office.getIdOffice());
+
+        officeService.deleteOffice(office);
+        assertThat(office.getIdOffice(), is(office.getIdOffice()));
+    }
+
+    @Test
+    public void testHibernateFindByNameffice() {
+        officeDAO = mock(OfficeDAOHibernateImpl.class);
+        officeService = new OfficeServiceImpl(officeDAO);
+
+        Office office = new Office();
+
+        office.setName("Hospital CIMA");
+        office.setPhone("22795122");
+        office.setDays("Lunes y Martes");
+        office.setHourStart("8:00");
+        office.setHourEnd("5:00");
+
+        when(officeService.findByNameOffice("Hospital CIMA")).thenReturn(office);
+
+        assertThat(office.getName(), is("Hospital CIMA"));
+    }
 
     @After
     public void deleteAll() {

@@ -5,6 +5,7 @@
  */
 package una.ac.cr.consultoriobackend.service;
 
+import java.util.List;
 import una.ac.cr.consultoriobackend.dao.OfficeDAO;
 import una.ac.cr.consultoriobackend.model.Office;
 
@@ -43,4 +44,13 @@ public class OfficeServiceImpl implements OfficeService {
         officeDAO.deleteOffice(office);
     }
 
+    @Override
+    public Office findByNameOffice(String name) {
+        return officeDAO.findByNameOffice(name);
+    }
+
+    @Override
+    public List<Office> findAllOffice() {
+        return officeDAO.findAllOffice();
+    }
 }
