@@ -30,8 +30,8 @@ public class OfficeDAOHibernateImpl implements OfficeDAO {
     @Override
     public Office findByIdOffice(int id) {
         Office office = null;
-        Query query = session.createQuery("from office where id = :id ");
-        query.setParameter("id", id);
+        Query query = session.createQuery("from office where id_office = :id ");
+        query.setParameter("id_office", id);
 
         if (query.list().size() > 0) {
             office = (Office) query.list().get(0);
