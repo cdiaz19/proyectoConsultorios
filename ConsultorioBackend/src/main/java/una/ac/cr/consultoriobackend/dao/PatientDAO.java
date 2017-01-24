@@ -13,9 +13,9 @@ import una.ac.cr.consultoriobackend.model.Patient;
  * @author cristian
  */
 public interface PatientDAO {
-    
+
     public Patient savePatient(Patient patient);
-    
+
     public Patient findByIdPatient(int id);
 
     public Patient findByNamePatient(String name);
@@ -25,5 +25,5 @@ public interface PatientDAO {
     public void deletePatient(Patient patient);
 
     public List<Patient> findAllPatient();
-    
+
 }
