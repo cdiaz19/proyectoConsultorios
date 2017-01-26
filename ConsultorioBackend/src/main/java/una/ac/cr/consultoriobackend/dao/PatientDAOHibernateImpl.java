@@ -87,4 +87,42 @@ public class PatientDAOHibernateImpl implements PatientDAO {
 
         return patientAppointment;
     }
+
+    @Override
+    public PatientAppointment findByIdPatientAppointment(int id) {
+        PatientAppointment patientAppointment = null;
+        Query query = session.createQuery("from appointment where id_appointment = :id ");
+        query.setParameter("id_appointment", id);
+
+        if (query.list().size() > 0) {
+            patientAppointment = (PatientAppointment) query.list().get(0);
+        }
+
+        return patientAppointment;
+    }
+
+    @Override
+    public void updatePatientAppointment(PatientAppointment patientAppointment) {
+        session.beginTransaction();
+        session.update(patientAppointment);
+        session.getTransaction().commit();
+    }
+
+    @Override
+    public void deletePatientAppointment(PatientAppointment patientAppointment) {
+        session.beginTransaction();
+        session.delete(patientAppointment);
+        session.getTransaction().commit();
+    }
+
+    @Override
+    public List<PatientAppointment> findAllPatientAppointment() {
+        List<PatientAppointment> patientAppointment = null;
+        Query query = session.createQuery("from appointment");
+
+        if (query.list().size() > 0) {
+            patientAppointment = (List<PatientAppointment>) query.list();
+        }
+        return patientAppointment;
+    }
 }

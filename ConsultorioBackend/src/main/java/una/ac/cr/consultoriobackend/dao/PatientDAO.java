@@ -20,13 +20,21 @@ public interface PatientDAO {
     public PatientAppointment savePatientAppointment(PatientAppointment patientAppointment);
 
     public Patient findByIdPatient(int id);
+    
+    public PatientAppointment findByIdPatientAppointment(int id);
 
     public Patient findByNamePatient(String name);
-
+    
     public void updatePatient(Patient patient);
+    
+    public void updatePatientAppointment(PatientAppointment patientAppointment);
 
     public void deletePatient(Patient patient);
+    
+    public void deletePatientAppointment(PatientAppointment patientAppointment);
 
     public List<Patient> findAllPatient();
+    
+    public List<PatientAppointment> findAllPatientAppointment();
     
 }

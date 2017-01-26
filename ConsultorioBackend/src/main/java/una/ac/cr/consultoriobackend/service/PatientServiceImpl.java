@@ -59,4 +59,24 @@ public class PatientServiceImpl implements PatientService {
     public PatientAppointment savePatientAppointment(PatientAppointment patientAppointment) {
         return patientDAO.savePatientAppointment(patientAppointment);
     }
+
+    @Override
+    public PatientAppointment findByIdPatientAppointment(int id) {
+        return patientDAO.findByIdPatientAppointment(id);
+    }
+
+    @Override
+    public void updatePatientAppointment(PatientAppointment patientAppointment) {
+        patientDAO.updatePatientAppointment(patientAppointment);
+    }
+
+    @Override
+    public void deletePatientAppointment(PatientAppointment patientAppointment) {
+        patientDAO.deletePatientAppointment(patientAppointment);
+    }
+
+    @Override
+    public List<PatientAppointment> findAllPatientAppointment() {
+        return patientDAO.findAllPatientAppointment();
+    }
 }
