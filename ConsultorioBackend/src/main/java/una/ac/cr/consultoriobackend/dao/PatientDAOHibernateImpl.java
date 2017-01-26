@@ -9,6 +9,7 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import una.ac.cr.consultoriobackend.model.Patient;
+import una.ac.cr.consultoriobackend.model.PatientAppointment;
 
 /**
  *
@@ -76,5 +77,14 @@ public class PatientDAOHibernateImpl implements PatientDAO {
             patient = (List<Patient>) query.list();
         }
         return patient;
+    }
+
+    @Override
+    public PatientAppointment savePatientAppointment(PatientAppointment patientAppointment) {
+        session.beginTransaction();
+        session.save(patientAppointment);
+        session.getTransaction().commit();
+
+        return patientAppointment;
     }
 }

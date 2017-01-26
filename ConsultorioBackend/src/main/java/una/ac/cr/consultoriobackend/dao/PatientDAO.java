@@ -7,6 +7,7 @@ package una.ac.cr.consultoriobackend.dao;
 
 import java.util.List;
 import una.ac.cr.consultoriobackend.model.Patient;
+import una.ac.cr.consultoriobackend.model.PatientAppointment;
 
 /**
  *
@@ -15,6 +16,8 @@ import una.ac.cr.consultoriobackend.model.Patient;
 public interface PatientDAO {
 
     public Patient savePatient(Patient patient);
+    
+    public PatientAppointment savePatientAppointment(PatientAppointment patientAppointment);
 
     public Patient findByIdPatient(int id);
 
@@ -25,5 +28,5 @@ public interface PatientDAO {
     public void deletePatient(Patient patient);
 
     public List<Patient> findAllPatient();
-
+    
 }
