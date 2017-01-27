@@ -17,6 +17,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import ac.cr.una.proyecto.java.controller.AppointmentController;
+import java.awt.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import static java.util.Arrays.asList;
+
 
 /**
  *
@@ -25,7 +30,7 @@ import ac.cr.una.proyecto.java.controller.AppointmentController;
 public class AddAppointmentView extends JInternalFrame {
     //create UI components 
 
-    String[] offices = {" ", "Hospital CIMA", "Centro Médico del Este"};
+    String[] offices = {" ", "Hospital CIMA", "Centro Medico del Este"};
 
     JTextField namePatient = new JTextField(15);
     JComboBox name = new JComboBox(offices);
@@ -53,17 +58,16 @@ public class AddAppointmentView extends JInternalFrame {
 
         accept_button.addActionListener(controller);
         clean_button.addActionListener(controller);
-        hora.addItem(" ");
-        hora.addItem("8:00am");
-        hora.addItem("9:00am");
-        hora.addItem("10:00am");
-        hora.addItem("11:00am");
-        hora.addItem("12:00pm");
-        hora.addItem("1:00pm");
-        hora.addItem("2:00pm");
-        hora.addItem("3:00pm");
-        hora.addItem("4:00pm");
-        hora.addItem("5:00pm");
+        
+       
+        
+         String horas[] = {" ", "8:00am", "9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", 
+             "2:00pm", "3:00pm", "4:00pm", "5:00pm"};
+         
+         for (int i=0;i<11;i++)
+       {
+           hora.addItem(horas[i]);
+       }
 
         //Inicializa variables
         JPanel panel = new JPanel();
