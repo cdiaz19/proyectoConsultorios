@@ -52,8 +52,7 @@ public class OfficeHibernateServiceTest {
         officeDAO = mock(OfficeDAOHibernateImpl.class);
         officeService = new OfficeServiceImpl(officeDAO);
 
-        Office office = new Office();
-
+        office = new Office();
         office.setName("Hospital CIMA");
         office.setPhone("22795122");
         office.setDays("Lunes y Martes");
@@ -91,7 +90,6 @@ public class OfficeHibernateServiceTest {
         officeDAO = new OfficeDAOHibernateImpl();
         officeService = new OfficeServiceImpl(officeDAO);
 
-        office.setIdOffice(1);
         office.setName("Clinica Tres Rios");
         office.setPhone("22795122");
         office.setDays("Miercoles");
@@ -109,7 +107,7 @@ public class OfficeHibernateServiceTest {
         officeDAO = mock(OfficeDAOHibernateImpl.class);
         officeService = new OfficeServiceImpl(officeDAO);
 
-        Office office = new Office();
+        office = new Office();
 
         office.setName("Hospital CIMA");
         office.setPhone("22795122");

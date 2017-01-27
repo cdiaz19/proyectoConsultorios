@@ -29,6 +29,9 @@ public class PatientAppointmentHibernateServiceTest {
     private PatientService patientService;
     private Patient patient = null;
 
+    /**
+     *
+     */
     @Test
     public void testHibernateSavePatient() {
         patientDAO = new PatientDAOHibernateImpl();
@@ -62,6 +65,9 @@ public class PatientAppointmentHibernateServiceTest {
         assertNotNull(patientAppointment.getIdAppointment());
     }
     
+    /**
+     *
+     */
     @Test
     public void testHibernateFindByIdPatientAppointment() {
         patientDAO = mock(PatientDAOHibernateImpl.class);
@@ -92,10 +98,12 @@ public class PatientAppointmentHibernateServiceTest {
         patientAppointment.setHour("4:30 pm");
 
         when(patientService.findByIdPatientAppointment(1)).thenReturn(patientAppointment);
-
         assertThat(patientAppointment.getPatient().getName(), is("Santiago Gonzalez"));
     }
     
+    /**
+     *
+     */
     @Test
     public void testHibernateUpdatePatientAppointment() {
         patientDAO = new PatientDAOHibernateImpl();
@@ -133,6 +141,9 @@ public class PatientAppointmentHibernateServiceTest {
         assertThat(patientAppointment.getDate(), is("01-02-2017"));
     }
     
+    /**
+     *
+     */
     @Test
     public void testHibernateDeletePatientAppointment() {
         patientDAO = new PatientDAOHibernateImpl();

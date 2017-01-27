@@ -19,6 +19,11 @@ public class PatientDAOHibernateImpl implements PatientDAO {
 
     private final Session session = HibernateUtil.getSessionFactory().openSession();
 
+    /**
+     *
+     * @param patient
+     * @return
+     */
     @Override
     public Patient savePatient(Patient patient) {
         session.beginTransaction();
@@ -28,6 +33,11 @@ public class PatientDAOHibernateImpl implements PatientDAO {
         return patient;
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
     public Patient findByIdPatient(int id) {
         Patient patient = null;
@@ -41,6 +51,11 @@ public class PatientDAOHibernateImpl implements PatientDAO {
         return patient;
     }
 
+    /**
+     *
+     * @param name
+     * @return
+     */
     @Override
     public Patient findByNamePatient(String name) {
         Patient patient = null;
@@ -54,6 +69,11 @@ public class PatientDAOHibernateImpl implements PatientDAO {
         return patient;
     }
 
+    /**
+     *
+     * @param patient
+     * @return
+     */
     @Override
     public Patient updatePatient(Patient patient) {
         session.beginTransaction();
@@ -63,6 +83,11 @@ public class PatientDAOHibernateImpl implements PatientDAO {
         return patient;
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
     public boolean deletePatient(int id) {
         boolean isDeleted = false;
@@ -77,6 +102,10 @@ public class PatientDAOHibernateImpl implements PatientDAO {
         return isDeleted;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<Patient> findAllPatient() {
         List<Patient> patient = null;
@@ -88,6 +117,11 @@ public class PatientDAOHibernateImpl implements PatientDAO {
         return patient;
     }
 
+    /**
+     *
+     * @param patientAppointment
+     * @return
+     */
     @Override
     public PatientAppointment savePatientAppointment(PatientAppointment patientAppointment) {
         session.beginTransaction();
@@ -97,6 +131,11 @@ public class PatientDAOHibernateImpl implements PatientDAO {
         return patientAppointment;
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
     public PatientAppointment findByIdPatientAppointment(int id) {
         PatientAppointment patientAppointment = null;
@@ -110,6 +149,11 @@ public class PatientDAOHibernateImpl implements PatientDAO {
         return patientAppointment;
     }
 
+    /**
+     *
+     * @param patientAppointment
+     * @return
+     */
     @Override
     public PatientAppointment updatePatientAppointment(PatientAppointment patientAppointment) {
         session.beginTransaction();
@@ -118,6 +162,11 @@ public class PatientDAOHibernateImpl implements PatientDAO {
         return patientAppointment;
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
     public boolean deletePatientAppointment(int id) {
         boolean isDeleted = false;
@@ -132,6 +181,10 @@ public class PatientDAOHibernateImpl implements PatientDAO {
         return isDeleted;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<PatientAppointment> findAllPatientAppointment() {
         List<PatientAppointment> patientAppointment = null;

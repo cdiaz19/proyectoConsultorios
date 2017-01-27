@@ -18,9 +18,16 @@ public class PatientServiceImpl implements PatientService {
 
     private PatientDAO patientDAO;
 
+    /**
+     *
+     */
     public PatientServiceImpl() {
     }
 
+    /**
+     *
+     * @param patientDAO
+     */
     public PatientServiceImpl(PatientDAO patientDAO) {
         this.patientDAO = patientDAO;
     }
@@ -42,7 +49,7 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public Patient updatePatient(Patient patient) {
-       return patientDAO.updatePatient(patient);
+        return patientDAO.updatePatient(patient);
     }
 
     @Override
@@ -67,12 +74,12 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public PatientAppointment updatePatientAppointment(PatientAppointment patientAppointment) {
-       return patientDAO.updatePatientAppointment(patientAppointment);
+        return patientDAO.updatePatientAppointment(patientAppointment);
     }
 
     @Override
     public boolean deletePatientAppointment(int id) {
-       return patientDAO.deletePatientAppointment(id);
+        return patientDAO.deletePatientAppointment(id);
     }
 
     @Override

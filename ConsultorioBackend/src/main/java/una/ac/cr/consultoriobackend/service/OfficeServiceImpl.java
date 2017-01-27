@@ -17,9 +17,16 @@ public class OfficeServiceImpl implements OfficeService {
 
     private OfficeDAO officeDAO;
 
+    /**
+     *
+     */
     public OfficeServiceImpl() {
     }
 
+    /**
+     *
+     * @param officeDAO
+     */
     public OfficeServiceImpl(OfficeDAO officeDAO) {
         this.officeDAO = officeDAO;
     }
@@ -41,7 +48,7 @@ public class OfficeServiceImpl implements OfficeService {
 
     @Override
     public boolean deleteOffice(int id) {
-       return  officeDAO.deleteOffice(id);
+        return officeDAO.deleteOffice(id);
     }
 
     @Override

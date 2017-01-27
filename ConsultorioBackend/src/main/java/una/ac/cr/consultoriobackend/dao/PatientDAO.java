@@ -15,26 +15,79 @@ import una.ac.cr.consultoriobackend.model.PatientAppointment;
  */
 public interface PatientDAO {
 
+    /**
+     *
+     * @param patient
+     * @return
+     */
     public Patient savePatient(Patient patient);
-    
+
+    /**
+     *
+     * @param patientAppointment
+     * @return
+     */
     public PatientAppointment savePatientAppointment(PatientAppointment patientAppointment);
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     public Patient findByIdPatient(int id);
-    
+
+    /**
+     *
+     * @param id
+     * @return
+     */
     public PatientAppointment findByIdPatientAppointment(int id);
 
+    /**
+     *
+     * @param name
+     * @return
+     */
     public Patient findByNamePatient(String name);
-    
+
+    /**
+     *
+     * @param patient
+     * @return
+     */
     public Patient updatePatient(Patient patient);
-    
+
+    /**
+     *
+     * @param patientAppointment
+     * @return
+     */
     public PatientAppointment updatePatientAppointment(PatientAppointment patientAppointment);
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     public boolean deletePatient(int id);
-    
+
+    /**
+     *
+     * @param id
+     * @return
+     */
     public boolean deletePatientAppointment(int id);
 
+    /**
+     *
+     * @return
+     */
     public List<Patient> findAllPatient();
-    
+
+    /**
+     *
+     * @return
+     */
     public List<PatientAppointment> findAllPatientAppointment();
-    
+
 }

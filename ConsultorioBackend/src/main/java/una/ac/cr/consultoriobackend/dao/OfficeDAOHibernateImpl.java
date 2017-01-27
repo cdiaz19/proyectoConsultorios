@@ -18,6 +18,11 @@ public class OfficeDAOHibernateImpl implements OfficeDAO {
 
     private final Session session = HibernateUtil.getSessionFactory().openSession();
 
+    /**
+     *
+     * @param office
+     * @return
+     */
     @Override
     public Office saveOffice(Office office) {
         session.beginTransaction();
@@ -27,6 +32,11 @@ public class OfficeDAOHibernateImpl implements OfficeDAO {
         return office;
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
     public Office findByIdOffice(int id) {
         Office office = null;
@@ -40,6 +50,11 @@ public class OfficeDAOHibernateImpl implements OfficeDAO {
         return office;
     }
 
+    /**
+     *
+     * @param office
+     * @return
+     */
     @Override
     public Office updateOffice(Office office) {
         session.beginTransaction();
@@ -48,6 +63,11 @@ public class OfficeDAOHibernateImpl implements OfficeDAO {
         return office;
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
     public boolean deleteOffice(int id) {
         boolean isDeleted = false;
@@ -62,6 +82,10 @@ public class OfficeDAOHibernateImpl implements OfficeDAO {
         return isDeleted;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<Office> findAllOffice() {
         List<Office> office = null;
@@ -73,6 +97,11 @@ public class OfficeDAOHibernateImpl implements OfficeDAO {
         return office;
     }
 
+    /**
+     *
+     * @param name
+     * @return
+     */
     @Override
     public Office findByNameOffice(String name) {
         Office office = null;

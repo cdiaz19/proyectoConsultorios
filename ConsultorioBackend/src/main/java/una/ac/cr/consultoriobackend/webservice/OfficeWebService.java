@@ -32,6 +32,9 @@ public class OfficeWebService {
     @Context
     private UriInfo context;
 
+    /**
+     *
+     */
     public OfficeWebService() {
     }
 
