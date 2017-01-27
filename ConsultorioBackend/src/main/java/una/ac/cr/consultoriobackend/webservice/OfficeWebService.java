@@ -32,16 +32,12 @@ public class OfficeWebService {
     @Context
     private UriInfo context;
 
-    /**
-     * Creates a new instance of StudentResource
-     */
     public OfficeWebService() {
     }
 
     /**
-     * Retrieves All the Students
      *
-     * @return Student
+     * @return
      */
     @GET
     @Path("/")
@@ -56,10 +52,9 @@ public class OfficeWebService {
     }
 
     /**
-     * Retrieves only one student
      *
      * @param id
-     * @return Student
+     * @return
      */
     @GET
     @Path("/{id}")
@@ -73,6 +68,11 @@ public class OfficeWebService {
         return office;
     }
 
+    /**
+     *
+     * @param name
+     * @return
+     */
     @GET
     @Path("/{name}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -86,10 +86,9 @@ public class OfficeWebService {
     }
 
     /**
-     * Create a new Student
      *
      * @param office
-     * @return student
+     * @return
      */
     @POST
     @Path("/")
@@ -105,10 +104,9 @@ public class OfficeWebService {
     }
 
     /**
-     * Delete a new Student
      *
      * @param id
-     * @return student
+     * @return
      */
     @DELETE
     @Path("/{id}")
@@ -122,10 +120,9 @@ public class OfficeWebService {
     }
 
     /**
-     * Update a Student
      *
      * @param office
-     * @return office
+     * @return
      */
     @PUT
     @Path("/")

@@ -14,17 +14,17 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 import una.ac.cr.consultoriobackend.dao.PatientDAO;
 import una.ac.cr.consultoriobackend.dao.PatientDAOHibernateImpl;
-import una.ac.cr.consultoriobackend.model.Patient;
+import una.ac.cr.consultoriobackend.model.PatientAppointment;
 import una.ac.cr.consultoriobackend.service.PatientService;
 import una.ac.cr.consultoriobackend.service.PatientServiceImpl;
 
 /**
- * REST Web Service
  *
  * @author Yeni
  */
-@Path("patients")
-public class PatientWebService {
+
+@Path("citas")
+public class PatientAppointmentWebService {
 
     private PatientDAO patientDAO;
     private PatientService patientService;
@@ -35,7 +35,7 @@ public class PatientWebService {
     /**
      *
      */
-    public PatientWebService() {
+    public PatientAppointmentWebService() {
     }
 
     /**
@@ -45,12 +45,12 @@ public class PatientWebService {
     @GET
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Patient> getAllPatients() {
-        List<Patient> officeList = null;
+    public List<PatientAppointment> getAllAppointments() {
+        List<PatientAppointment> officeList = null;
         patientDAO = new PatientDAOHibernateImpl();
         patientService = new PatientServiceImpl(patientDAO);
 
-        officeList = patientService.findAllPatient();
+        officeList = patientService.findAllPatientAppointment();
 
         return officeList;
     }
@@ -63,30 +63,12 @@ public class PatientWebService {
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Patient getPatientID(@PathParam("id") int id) {
-        Patient office = null;
+    public PatientAppointment getAppointmentID(@PathParam("id") int id) {
+        PatientAppointment office = null;
         patientDAO = new PatientDAOHibernateImpl();
         patientService = new PatientServiceImpl(patientDAO);
 
-        office = patientService.findByIdPatient(id);
-
-        return office;
-    }
-
-    /**
-     *
-     * @param name
-     * @return
-     */
-    @GET
-    @Path("/{name}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Patient getPatientName(@PathParam("name") String name) {
-        Patient office = null;
-        patientDAO = new PatientDAOHibernateImpl();
-        patientService = new PatientServiceImpl(patientDAO);
-
-        office = patientService.findByNamePatient(name);
+        office = patientService.findByIdPatientAppointment(id);
 
         return office;
     }
@@ -100,12 +82,12 @@ public class PatientWebService {
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Patient createPatient(Patient patient) {
+    public PatientAppointment createAppointment(PatientAppointment patient) {
 
         patientDAO = new PatientDAOHibernateImpl();
         patientService = new PatientServiceImpl(patientDAO);
 
-        patient = patientService.savePatient(patient);
+        patient = patientService.savePatientAppointment(patient);
 
         return patient;
     }
@@ -117,12 +99,12 @@ public class PatientWebService {
      */
     @DELETE
     @Path("/{id}")
-    public boolean deletePatient(@PathParam("id") int id) {
+    public boolean deleteAppointment(@PathParam("id") int id) {
         boolean result;
         patientDAO = new PatientDAOHibernateImpl();
         patientService = new PatientServiceImpl(patientDAO);
 
-        result = patientService.deletePatient(id);
+        result = patientService.deletePatientAppointment(id);
 
         return result;
     }
@@ -136,11 +118,11 @@ public class PatientWebService {
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Patient updatePatient(Patient patient) {
+    public PatientAppointment updateAppointment(PatientAppointment patient) {
 
         patientDAO = new PatientDAOHibernateImpl();
         patientService = new PatientServiceImpl(patientDAO);
-        patient = patientService.updatePatient(patient);
+        patient = patientService.updatePatientAppointment(patient);
 
         return patient;
     }
