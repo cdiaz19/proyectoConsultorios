@@ -41,17 +41,25 @@ public class OfficeDAOHibernateImpl implements OfficeDAO {
     }
 
     @Override
-    public void updateOffice(Office office) {
+    public Office updateOffice(Office office) {
         session.beginTransaction();
         session.update(office);
         session.getTransaction().commit();
+        return office;
     }
 
     @Override
-    public void deleteOffice(Office office) {
+    public boolean deleteOffice(int id) {
+        boolean isDeleted = false;
+        Office student = null;
+
         session.beginTransaction();
-        session.delete(office);
+        student = (Office) session.get(Office.class, id);
+        session.delete(student);
+        isDeleted = true;
         session.getTransaction().commit();
+
+        return isDeleted;
     }
 
     @Override

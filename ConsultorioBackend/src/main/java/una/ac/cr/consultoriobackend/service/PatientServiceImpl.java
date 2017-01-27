@@ -41,13 +41,13 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public void updatePatient(Patient patient) {
-        patientDAO.updatePatient(patient);
+    public Patient updatePatient(Patient patient) {
+       return patientDAO.updatePatient(patient);
     }
 
     @Override
-    public void deletePatient(Patient patient) {
-        patientDAO.deletePatient(patient);
+    public boolean deletePatient(int id) {
+        return patientDAO.deletePatient(id);
     }
 
     @Override
@@ -66,13 +66,13 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public void updatePatientAppointment(PatientAppointment patientAppointment) {
-        patientDAO.updatePatientAppointment(patientAppointment);
+    public PatientAppointment updatePatientAppointment(PatientAppointment patientAppointment) {
+       return patientDAO.updatePatientAppointment(patientAppointment);
     }
 
     @Override
-    public void deletePatientAppointment(PatientAppointment patientAppointment) {
-        patientDAO.deletePatientAppointment(patientAppointment);
+    public boolean deletePatientAppointment(int id) {
+       return patientDAO.deletePatientAppointment(id);
     }
 
     @Override

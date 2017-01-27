@@ -35,13 +35,13 @@ public class OfficeServiceImpl implements OfficeService {
     }
 
     @Override
-    public void updateOffice(Office office) {
-        officeDAO.updateOffice(office);
+    public Office updateOffice(Office office) {
+        return officeDAO.updateOffice(office);
     }
 
     @Override
-    public void deleteOffice(Office office) {
-        officeDAO.deleteOffice(office);
+    public boolean deleteOffice(int id) {
+       return  officeDAO.deleteOffice(id);
     }
 
     @Override

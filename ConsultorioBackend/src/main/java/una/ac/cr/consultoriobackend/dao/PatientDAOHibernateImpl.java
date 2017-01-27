@@ -55,17 +55,26 @@ public class PatientDAOHibernateImpl implements PatientDAO {
     }
 
     @Override
-    public void updatePatient(Patient patient) {
+    public Patient updatePatient(Patient patient) {
         session.beginTransaction();
         session.update(patient);
         session.getTransaction().commit();
+        
+        return patient;
     }
 
     @Override
-    public void deletePatient(Patient patient) {
+    public boolean deletePatient(int id) {
+        boolean isDeleted = false;
+        Patient patient = null;
+
         session.beginTransaction();
+        patient = (Patient) session.get(Patient.class, id);
         session.delete(patient);
+        isDeleted = true;
         session.getTransaction().commit();
+
+        return isDeleted;
     }
 
     @Override
@@ -102,17 +111,25 @@ public class PatientDAOHibernateImpl implements PatientDAO {
     }
 
     @Override
-    public void updatePatientAppointment(PatientAppointment patientAppointment) {
+    public PatientAppointment updatePatientAppointment(PatientAppointment patientAppointment) {
         session.beginTransaction();
         session.update(patientAppointment);
         session.getTransaction().commit();
+        return patientAppointment;
     }
 
     @Override
-    public void deletePatientAppointment(PatientAppointment patientAppointment) {
+    public boolean deletePatientAppointment(int id) {
+        boolean isDeleted = false;
+        PatientAppointment appointment = null;
+
         session.beginTransaction();
-        session.delete(patientAppointment);
+        appointment = (PatientAppointment) session.get(PatientAppointment.class, id);
+        session.delete(appointment);
+        isDeleted = true;
         session.getTransaction().commit();
+
+        return isDeleted;
     }
 
     @Override

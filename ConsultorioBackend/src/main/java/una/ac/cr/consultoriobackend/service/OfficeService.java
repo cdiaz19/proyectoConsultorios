@@ -20,9 +20,9 @@ public interface OfficeService {
 
     public Office findByNameOffice(String name);
 
-    public void updateOffice(Office office);
+    public Office updateOffice(Office office);
 
-    public void deleteOffice(Office office);
+    public boolean deleteOffice(int id);
 
     public List<Office> findAllOffice();
 
