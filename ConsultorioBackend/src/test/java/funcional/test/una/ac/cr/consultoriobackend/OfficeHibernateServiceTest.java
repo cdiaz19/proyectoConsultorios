@@ -91,8 +91,7 @@ public class OfficeHibernateServiceTest {
         officeDAO = new OfficeDAOHibernateImpl();
         officeService = new OfficeServiceImpl(officeDAO);
 
-        office = new Office();
-
+        office.setIdOffice(1);
         office.setName("Clinica Tres Rios");
         office.setPhone("22795122");
         office.setDays("Miercoles");
@@ -101,7 +100,7 @@ public class OfficeHibernateServiceTest {
         office = officeService.saveOffice(office);
         assertNotNull(office.getIdOffice());
 
-        officeService.deleteOffice(office);
+        officeService.deleteOffice(office.getIdOffice());
         assertThat(office.getIdOffice(), is(office.getIdOffice()));
     }
 

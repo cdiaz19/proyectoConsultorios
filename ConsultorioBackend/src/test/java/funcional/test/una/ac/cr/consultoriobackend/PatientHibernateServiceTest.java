@@ -114,7 +114,7 @@ public class PatientHibernateServiceTest {
         patient = patientService.savePatient(patient);
         assertNotNull(patient.getIdPatient());
 
-        patientService.deletePatient(patient);
+        patientService.deletePatient(patient.getIdPatient());
         assertThat(patient.getIdPatient(), is(patient.getIdPatient()));
     }
 

@@ -165,7 +165,7 @@ public class PatientAppointmentHibernateServiceTest {
         patientAppointment = patientService.savePatientAppointment(patientAppointment);
         assertNotNull(patientAppointment.getIdAppointment());
 
-        patientService.deletePatientAppointment(patientAppointment);
+        patientService.deletePatientAppointment(patientAppointment.getIdAppointment());
         assertThat(patientAppointment.getIdAppointment(), is(patientAppointment.getIdAppointment()));
     }
 }
