@@ -13,8 +13,8 @@ import org.junit.After;
 import static org.junit.Assert.assertArrayEquals;
 import org.junit.Before;
 import org.junit.Test;
-import proyecto.java.view.AddOfficeView;
-import proyecto.java.view.PrincipalPanelView;
+import ac.cr.una.proyecto.java.view.AddOfficeView;
+import ac.cr.una.proyecto.java.view.PrincipalPanelView;
 
 /**
  *

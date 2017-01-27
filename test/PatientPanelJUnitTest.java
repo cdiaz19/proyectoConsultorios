@@ -10,7 +10,7 @@ import org.assertj.swing.fixture.FrameFixture;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import proyecto.java.view.PatientPanelView;
+import ac.cr.una.proyecto.java.view.PatientPanelView;
 
 /**
  *

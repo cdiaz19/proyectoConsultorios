@@ -12,9 +12,9 @@ import org.assertj.swing.fixture.JPanelFixture;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import proyecto.java.view.InformationPatientView;
-import proyecto.java.view.PatientPanelView;
-import static proyecto.java.Constants.ACTUAL;
+import ac.cr.una.proyecto.java.view.InformationPatientView;
+import ac.cr.una.proyecto.java.view.PatientPanelView;
+import static ac.cr.una.proyecto.java.Constants.ACTUAL;
 
 /**
  *

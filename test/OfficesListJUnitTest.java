@@ -15,11 +15,9 @@ import org.assertj.swing.fixture.JPanelFixture;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import proyecto.java.model.Clinic;
-import proyecto.java.model.Hospital;
-import proyecto.java.model.Office;
-import proyecto.java.view.OfficesListView;
-import proyecto.java.view.PrincipalPanelView;
+import ac.cr.una.proyecto.java.model.Office;
+import ac.cr.una.proyecto.java.view.OfficesListView;
+import ac.cr.una.proyecto.java.view.PrincipalPanelView;
 
 /**
  *
@@ -60,8 +58,8 @@ public class OfficesListJUnitTest {
     @Before
     public void createArrayOffices() {
         offices = new ArrayList<>();
-        offices.add(new Hospital("Hospital CIMA", "22795122", "Lunes y Martes", "8:00", "5:00"));
-        offices.add(new Clinic("Centro Médico del Este", "22792761", "Jueves y Viernes", "8:00", "5:00"));
+        offices.add(new Office("Hospital CIMA", "22795122", "Lunes y Martes", "8:00", "5:00"));
+        offices.add(new Office("Centro Médico del Este", "22792761", "Jueves y Viernes", "8:00", "5:00"));
     }
 
     /**

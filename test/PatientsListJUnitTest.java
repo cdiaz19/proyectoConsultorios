@@ -15,9 +15,9 @@ import org.assertj.swing.fixture.JPanelFixture;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import proyecto.java.model.Patient;
-import proyecto.java.view.OfficesListView;
-import proyecto.java.view.PrincipalPanelView;
+import ac.cr.una.proyecto.java.model.Patient;
+import ac.cr.una.proyecto.java.view.OfficesListView;
+import ac.cr.una.proyecto.java.view.PrincipalPanelView;
 
 /**
  *

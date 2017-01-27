@@ -13,8 +13,8 @@ import org.assertj.swing.fixture.JPanelFixture;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import proyecto.java.view.AddAppointmentView;
-import proyecto.java.view.PrincipalPanelView;
+import ac.cr.una.proyecto.java.view.AddAppointmentView;
+import ac.cr.una.proyecto.java.view.PrincipalPanelView;
 
 /**
  *
