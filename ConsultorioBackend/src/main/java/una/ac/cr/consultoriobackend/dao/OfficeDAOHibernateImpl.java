@@ -40,7 +40,7 @@ public class OfficeDAOHibernateImpl implements OfficeDAO {
     @Override
     public Office findByIdOffice(int id) {
         Office office = null;
-        Query query = session.createQuery("from office where id_office = :id ");
+        Query query = session.createQuery("from Office where id_office = :id ");
         query.setParameter("id_office", id);
 
         if (query.list().size() > 0) {
@@ -71,11 +71,11 @@ public class OfficeDAOHibernateImpl implements OfficeDAO {
     @Override
     public boolean deleteOffice(int id) {
         boolean isDeleted = false;
-        Office student = null;
+        Office office = null;
 
         session.beginTransaction();
-        student = (Office) session.get(Office.class, id);
-        session.delete(student);
+        office = (Office) session.get(Office.class, id);
+        session.delete(office);
         isDeleted = true;
         session.getTransaction().commit();
 
@@ -89,11 +89,8 @@ public class OfficeDAOHibernateImpl implements OfficeDAO {
     @Override
     public List<Office> findAllOffice() {
         List<Office> office = null;
-        Query query = session.createQuery("from office");
+        office = session.createCriteria(Office.class).list();
 
-        if (query.list().size() > 0) {
-            office = (List<Office>) query.list();
-        }
         return office;
     }
 
@@ -105,7 +102,7 @@ public class OfficeDAOHibernateImpl implements OfficeDAO {
     @Override
     public Office findByNameOffice(String name) {
         Office office = null;
-        Query query = session.createQuery("from office o where o.name like :name ");
+        Query query = session.createQuery("from office where name :name ");
         query.setParameter("name", name);
 
         if (query.list().size() > 0) {

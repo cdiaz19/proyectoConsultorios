@@ -174,7 +174,7 @@
     </dependencies>
     
     <build>
-        <finalName>backendExample</finalName>
+        <finalName>CosultorioBackend</finalName>
         <plugins>
 
             <!-- Set a compiler level -->

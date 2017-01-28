@@ -109,11 +109,8 @@ public class PatientDAOHibernateImpl implements PatientDAO {
     @Override
     public List<Patient> findAllPatient() {
         List<Patient> patient = null;
-        Query query = session.createQuery("from patient");
+        patient = session.createCriteria(Patient.class).list();
 
-        if (query.list().size() > 0) {
-            patient = (List<Patient>) query.list();
-        }
         return patient;
     }
 
@@ -188,11 +185,8 @@ public class PatientDAOHibernateImpl implements PatientDAO {
     @Override
     public List<PatientAppointment> findAllPatientAppointment() {
         List<PatientAppointment> patientAppointment = null;
-        Query query = session.createQuery("from appointment");
+        patientAppointment = session.createCriteria(PatientAppointment.class).list();
 
-        if (query.list().size() > 0) {
-            patientAppointment = (List<PatientAppointment>) query.list();
-        }
         return patientAppointment;
     }
 }
