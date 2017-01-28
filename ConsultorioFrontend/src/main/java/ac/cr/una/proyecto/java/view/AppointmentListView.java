@@ -41,7 +41,7 @@ public class AppointmentListView extends JInternalFrame {
      * @throws java.io.IOException
      */
     public AppointmentListView() throws JsonGenerationException,
-            JsonMappingException, IOException {
+            JsonMappingException, IOException, Exception {
 
         super("Lista de Citas", true, true, true, true);
 

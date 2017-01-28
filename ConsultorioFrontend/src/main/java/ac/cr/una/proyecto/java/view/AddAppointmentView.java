@@ -43,7 +43,7 @@ public class AddAppointmentView extends JInternalFrame {
      *
      * @throws IOException
      */
-    public AddAppointmentView() throws IOException {
+    public AddAppointmentView() throws IOException, Exception {
         super("Formulario de Cita Nueva", false, true, false, true);
         setSize(200, 300);
         
@@ -122,7 +122,7 @@ public class AddAppointmentView extends JInternalFrame {
      * @param args
      * @throws IOException
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, Exception {
         AddAppointmentView.setLookAndFeel();
         AddAppointmentView addAppointmentView = new AddAppointmentView();
     }

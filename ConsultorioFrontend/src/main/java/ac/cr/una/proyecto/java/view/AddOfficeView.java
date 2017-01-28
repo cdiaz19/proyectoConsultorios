@@ -38,7 +38,7 @@ public class AddOfficeView extends JInternalFrame {
      *
      * @throws IOException
      */
-    public AddOfficeView() throws IOException {
+    public AddOfficeView() throws IOException, Exception {
         super("Formulario Nuevo Consultorio", false, true, false, true);
         setSize(260, 330);
 
@@ -120,7 +120,7 @@ public class AddOfficeView extends JInternalFrame {
      * @param args
      * @throws IOException
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, Exception {
         AddOfficeView.setLookAndFeel();
         AddOfficeView officeView = new AddOfficeView();
     }

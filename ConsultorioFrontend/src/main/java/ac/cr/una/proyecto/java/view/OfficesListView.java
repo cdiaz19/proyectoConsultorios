@@ -41,7 +41,7 @@ public class OfficesListView extends JInternalFrame {
      * @throws java.io.IOException
      */
     public OfficesListView() throws JsonGenerationException,
-            JsonMappingException, IOException {
+            JsonMappingException, IOException, Exception {
 
         super("Lista de Consultorios", true, true, true, true);
 
