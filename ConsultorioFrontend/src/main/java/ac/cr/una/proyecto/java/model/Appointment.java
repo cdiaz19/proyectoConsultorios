@@ -12,7 +12,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @author Yeni
  */
 public class Appointment {
-
+    @JsonProperty("id_appointment")
+    private int idAppointment;
     @JsonProperty("namePatient")
     private String namePatient;
     @JsonProperty("name")
@@ -24,12 +25,14 @@ public class Appointment {
 
     /**
      *
+     * @param id_appointment
      * @param namePatient
      * @param name
      * @param fecha
      * @param hora
      */
-    public Appointment(String namePatient, String name, String fecha, String hora) {
+    public Appointment(int id_appointment,String namePatient, String name, String fecha, String hora) {
+        this.idAppointment = idAppointment;
         this.namePatient = namePatient;
         this.name = name;
         this.fecha = fecha;
@@ -42,6 +45,30 @@ public class Appointment {
     public Appointment() {
     }
 
+    public Appointment(String namePatient, String name, String fecha, String hora) {
+        this.namePatient = namePatient;
+        this.name = name;
+        this.fecha = fecha;
+        this.hora = hora;
+    }
+    
+
+    /**
+     *
+     * @return
+     */
+    public int getIdAppointment() {
+        return idAppointment;
+    }
+
+    /**
+     *
+     * @param idAppointment
+     */
+    public void setIdAppointment(int idAppointment) {
+        this.idAppointment = idAppointment;
+    }
+    
     /**
      *
      * @return
@@ -108,10 +135,9 @@ public class Appointment {
 
     @Override
     public String toString() {
-        return "Appointment{" + "namePatient="
-                + namePatient + ", name=" + name
-                + ", fecha=" + fecha
-                + ", hora=" + hora + '}';
+        return "Appointment{" + "idAppointment=" + idAppointment + ", namePatient=" + namePatient + ", name=" + name + ", fecha=" + fecha + ", hora=" + hora + '}';
     }
+
+  
 
 }
