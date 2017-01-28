@@ -47,4 +47,20 @@ public class Constants {
      *
      */
     public static final Object[] TABLE_HEADER_APPOINTMENT = {"Nombre Paciente", "Nombre Consultorio", "Fecha", "Hora"};
+    
+    /**
+     *
+     */
+    public static final String WS_URL_OFFICES = "http://localhost:8080/ConsultorioBackend/rest/offices";
+
+    /**
+     *
+     */
+    public static final String WS_URL_APPOINTMENT = "http://localhost:8080/ConsultorioBackend/rest/citas";
+
+    /**
+     *
+     */
+    public static final String WS_URL_PATIENT = "http://localhost:8080/ConsultorioBackend/rest/patients";
+   
 }

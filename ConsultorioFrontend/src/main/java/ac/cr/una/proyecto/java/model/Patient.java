@@ -12,7 +12,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @author cristian
  */
 public class Patient {
-
+    @JsonProperty("id_patient")
+    private String id_patient;
     @JsonProperty("user")
     private String user;
     @JsonProperty("password")

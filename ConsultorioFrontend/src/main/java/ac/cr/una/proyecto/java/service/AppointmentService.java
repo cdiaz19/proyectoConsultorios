@@ -12,6 +12,10 @@ import java.io.File;
 import java.io.IOException;
 import ac.cr.una.proyecto.java.Constants;
 import ac.cr.una.proyecto.java.model.Appointment;
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.WebResource;
+import javax.ws.rs.core.MediaType;
 
 /**
  *
@@ -35,7 +39,8 @@ public class AppointmentService {
      */
     public Object[][] loadAppointmentsObjWrapper() throws JsonGenerationException,
             JsonMappingException, IOException {
-        Appointment[] appointments = loadAppointmentsFromFile();
+        //Appointment[] appointments = loadAppointmentsFromFile();
+        Appointment[] appointments = loadJsonFromWebService();
         Object[][] data = null;
 
         if (appointments != null && appointments.length > 0) {
@@ -72,5 +77,30 @@ public class AppointmentService {
             text = obj.toString();
         }
         return text;
+    }
+    
+    private Appointment[] loadJsonFromWebService() throws Exception {
+        Appointment[] students;
+        String jSonFile;
+        ObjectMapper mapper = new ObjectMapper();
+
+        Client client = Client.create();
+
+        WebResource webResource = client
+                .resource(Constants.WS_URL);
+
+        ClientResponse response = webResource.accept(MediaType.APPLICATION_JSON_TYPE)
+                .get(ClientResponse.class);
+
+        if (response.getStatus() != 200) {
+            throw new RuntimeException("Failed : HTTP error code : "
+                    + response.getStatus());
+        }
+
+        jSonFile = response.getEntity(String.class);
+
+        students = mapper.readValue(jSonFile, Student[].class);
+
+        return students;
     }
 }
