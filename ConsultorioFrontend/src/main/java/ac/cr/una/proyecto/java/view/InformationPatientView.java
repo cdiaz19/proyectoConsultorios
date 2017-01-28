@@ -30,7 +30,7 @@ public class InformationPatientView extends JInternalFrame {
      *
      * @throws IOException
      */
-    public InformationPatientView() throws IOException {
+    public InformationPatientView() throws IOException, Exception {
         super("Informacion Personal", true, true, true, true);
         tableModel = new DefaultTableModel();
         // Create table model

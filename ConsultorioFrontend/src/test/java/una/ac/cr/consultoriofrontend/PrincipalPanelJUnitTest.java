@@ -85,7 +85,7 @@ public class PrincipalPanelJUnitTest {
      * @throws IOException
      */
     @Test
-    public void testOnClickAllPatients() throws JsonMappingException, IOException {
+    public void testOnClickAllPatients() throws JsonMappingException, IOException, Exception {
         PatientListView ventanaInterna = new PatientListView();
         window.menuItem("todosPacientes").click();
         ventanaInterna.setVisible(true);

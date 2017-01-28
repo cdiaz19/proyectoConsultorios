@@ -41,7 +41,7 @@ public class PatientListView extends JInternalFrame {
      * @throws java.io.IOException
      */
     public PatientListView() throws JsonGenerationException,
-            JsonMappingException, IOException {
+            JsonMappingException, IOException, Exception {
 
         super("Lista de Pacientes", true, true, true, true);
 

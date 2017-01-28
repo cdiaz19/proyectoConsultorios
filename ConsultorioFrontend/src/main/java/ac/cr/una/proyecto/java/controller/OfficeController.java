@@ -55,7 +55,7 @@ public class OfficeController implements ActionListener {
      */
     public OfficeController(JTextField name, JTextField phone_number,
             JTextField days, JTextField hourStart, JTextField hourEnd,
-            JTextField officeBox, JButton accept_form,JButton clean_button) throws JsonMappingException, IOException, Exception {
+            JButton accept_form,JButton clean_button) throws JsonMappingException, IOException, Exception {
         super();
         this.name = name;
         this.phone_number = phone_number;
@@ -96,18 +96,21 @@ public class OfficeController implements ActionListener {
         String daysTyped = days.getText();
         String hourStartTyped = hourStart.getText();
         String hourEndTyped = hourEnd.getText();
-        String officesBoxTyped = officeBox.getText();
-
+//        String officesBoxTyped = officeBox.getText();
+    System.out.println("Guill");
         for (Object[] obj : offices) {
-            Office fullText = new Office(obj[0].toString(), obj[1].toString(), obj[2].toString(), obj[3].toString(), obj[4].toString());
+            Office fullText = new Office(obj[0].toString(), obj[1].toString(), obj[2].toString(), 
+                    obj[3].toString(), obj[4].toString());
+            
             officesList.add(fullText);
+            System.out.println("Guille");
         }
 
-        
+        System.out.println("Guiller");
             officesList.add(new Office(nameTyped, phoneTyped, daysTyped, hourStartTyped, hourEndTyped));
             JOptionPane.showMessageDialog(null,
                     "Se agrego " + nameTyped + " correctamente");
-        
+        System.out.println("Guillermo");
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(new File(Constants.FILENAME), officesList);
     }
@@ -118,7 +121,7 @@ public class OfficeController implements ActionListener {
         days.setText(" ");
         hourStart.setText(" ");
         hourEnd.setText(" ");
-        officeBox.setText(" ");
+//        officeBox.setText(" ");
         
     }
 }

@@ -39,7 +39,7 @@ public class PatientListController implements ActionListener {
      */
     public PatientListController(JTextField searchTermTextField,
             DefaultTableModel tableModel) throws JsonGenerationException,
-            JsonMappingException, IOException {
+            JsonMappingException, IOException, Exception {
         super();
         patientService = new PatientService();
         patients = patientService.loadPatientObjWrapper();

@@ -81,8 +81,6 @@ public class PrincipalPanelController implements ActionListener {
         } else if (source == allOffice) {
             try {
                 loadListOffices(e);
-            } catch (IOException ex) {
-                Logger.getLogger(PrincipalPanelView.class.getName()).log(Level.SEVERE, null, ex);
             } catch (Exception ex) {
                 Logger.getLogger(PrincipalPanelController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -90,6 +88,8 @@ public class PrincipalPanelController implements ActionListener {
             try {
                 loadListPatients(e);
             } catch (IOException ex) {
+                Logger.getLogger(PrincipalPanelController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception ex) {
                 Logger.getLogger(PrincipalPanelController.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else if (source == addAppointment) {
@@ -133,7 +133,7 @@ public class PrincipalPanelController implements ActionListener {
         escritorio.add(ventanaInterna);
     }
 
-    private void loadListPatients(java.awt.event.ActionEvent evt) throws JsonMappingException, IOException {
+    private void loadListPatients(java.awt.event.ActionEvent evt) throws JsonMappingException, IOException, Exception {
         PatientListView ventanaInterna = new PatientListView();
         escritorio.add(ventanaInterna);
     }

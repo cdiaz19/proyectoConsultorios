@@ -38,7 +38,7 @@ public class AppointmentPatientJUnitTest {
      * @throws IOException
      */
     @Before
-    public void setUp() throws IOException {
+    public void setUp() throws IOException, Exception {
         //Valor de prueba para test
         ACTUAL = "Santiago"; //Nombre del paciente
         PatientPanelView frame = GuiActionRunner.execute(() -> new PatientPanelView());

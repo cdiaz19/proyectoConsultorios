@@ -38,8 +38,8 @@ public class PatientService {
      * @throws java.io.IOException
      */
     public Object[][] loadPatientObjWrapper() throws JsonGenerationException,
-            JsonMappingException, IOException {
-        Patient[] patients = loadOfficesFromFile();
+            JsonMappingException, IOException, Exception {
+        Patient[] patients = loadJsonFromWebService();
         Object[][] data = null;
 
         if (patients != null && patients.length > 0) {

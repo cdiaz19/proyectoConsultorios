@@ -9,7 +9,6 @@ import java.awt.FlowLayout;
 import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -30,9 +29,9 @@ public class AddOfficeView extends JInternalFrame {
     JTextField days = new JTextField(15);
     JTextField hourStart = new JTextField(15);
     JTextField hourEnd = new JTextField(15);
-    JTextField officesBox = new JTextField(15);
-    JButton accept_form = new JButton();
-    JButton clean_button = new JButton();
+//    JTextField officesBox = new JTextField(15);
+    JButton accept_form = new JButton("Aceptar");
+    JButton clean_button = new JButton("Limpiar");
 
     /**
      *
@@ -42,16 +41,12 @@ public class AddOfficeView extends JInternalFrame {
         super("Formulario Nuevo Consultorio", false, true, false, true);
         setSize(260, 330);
 
-        ImageIcon addOffice = new ImageIcon("accept.png");
-        ImageIcon limpiar = new ImageIcon("clear.png");
         
-        accept_form = new JButton("Aceptar", addOffice);
-        clean_button = new JButton("Limpiar",limpiar);
 
         // Create controller
         OfficeController controller
                 = new OfficeController(name, phone_number, days, hourStart,
-                        hourEnd, officesBox, accept_form,clean_button);
+                        hourEnd, accept_form,clean_button);
 
         accept_form.addActionListener(controller);
         clean_button.addActionListener(controller);
@@ -62,10 +57,10 @@ public class AddOfficeView extends JInternalFrame {
         panel.setLayout(lm);
         JLabel nameLabel = new JLabel("Nombre:");
         JLabel phonenumberLabel = new JLabel("Telefono:");
-        JLabel daysLabel = new JLabel("Días:");
+        JLabel daysLabel = new JLabel("Dias:");
         JLabel hourStartLabel = new JLabel("Hora Apertura:");
         JLabel hourEndLabel = new JLabel("Hora Cierre:");
-        JLabel officeLabel = new JLabel("Consultorio:");
+//        JLabel officeLabel = new JLabel("Consultorio:");
 
         //setea nombres (ids)
         nameLabel.setName("lblName");
@@ -73,12 +68,12 @@ public class AddOfficeView extends JInternalFrame {
         daysLabel.setName("lblDays");
         hourStartLabel.setName("lblHourStart");
         hourEndLabel.setName("lblHourEnd");
-        officeLabel.setName("lblOffice");
+//        officeLabel.setName("lblOffice");
 
         name.setName("name");
         phone_number.setName("phone");
         days.setName("days");
-        officesBox.setName("offices");
+//        officesBox.setName("offices");
         hourStart.setName("hourStart");
         hourEnd.setName("hourEnd");
         accept_form.setName("ok");
@@ -96,8 +91,8 @@ public class AddOfficeView extends JInternalFrame {
         panel.add(hourStart);
         panel.add(hourEndLabel);
         panel.add(hourEnd);
-        panel.add(officeLabel);
-        panel.add(officesBox);
+//        panel.add(officeLabel);
+//        panel.add(officesBox);
         panel.add(accept_form);
         panel.add(clean_button);
 

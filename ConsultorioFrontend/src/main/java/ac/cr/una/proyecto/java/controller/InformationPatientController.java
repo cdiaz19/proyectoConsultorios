@@ -29,7 +29,7 @@ public class InformationPatientController {
      * @throws IOException
      */
     public InformationPatientController(DefaultTableModel tableModel)
-            throws JsonMappingException, IOException {
+            throws JsonMappingException, IOException, Exception {
 
         this.tableModel = tableModel;
         showInformation();
@@ -39,7 +39,7 @@ public class InformationPatientController {
      *
      * @throws IOException
      */
-    public void showInformation() throws IOException {
+    public void showInformation() throws IOException, JsonMappingException, Exception {
         patientService = new PatientService();
         information = patientService.loadPatientObjWrapper();
 

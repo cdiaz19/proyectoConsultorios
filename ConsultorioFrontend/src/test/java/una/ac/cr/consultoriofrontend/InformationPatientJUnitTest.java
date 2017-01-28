@@ -38,7 +38,7 @@ public class InformationPatientJUnitTest {
      * @throws IOException
      */
     @Before
-    public void setUp() throws IOException {
+    public void setUp() throws IOException, Exception {
         //Valor de prueba para test
         ACTUAL = "Carlos"; //Nombre del paciente
         PatientPanelView frame = GuiActionRunner.execute(() -> new PatientPanelView());

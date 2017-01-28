@@ -1,26 +1,26 @@
 [{
-        "id_office":1,
+        
         "name": "Hospital CIMA",
         "phone": "22795122",
         "days": "Lunes y Martes",
         "hourStart": "8:00",
         "hourEnd": "5:00"
     }, {
-        "id_office":2,
+        
         "name": "Centro Médico del Este",
         "phone": "22792761",
         "days": "Jueves y Viernes",
         "hourStart": "8:00",
         "hourEnd": "5:00"
     }, {
-        "id_office":3,
+        
         "name": "Fischel Tres Rios",
         "phone": "88527411",
         "days": "Miercoles",
         "hourStart": "8:30 AM",
         "hourEnd": "12:30 PM"
     }, {
-        "id_office":4,
+       
         "name": "Clinica Tres Rios",
         "phone": "22796352",
         "days": "Miercoles",
