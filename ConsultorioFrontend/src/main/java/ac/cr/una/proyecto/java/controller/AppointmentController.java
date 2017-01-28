@@ -110,7 +110,7 @@ public class AppointmentController implements ActionListener {
         }
         appointmentsList.add(new Appointment(namePatientTyped, nameTyped, fechaTyped, horaTyped));
 
-        JOptionPane.showMessageDialog(null, "Se agregó " + namePatientTyped + " correctamente");
+        JOptionPane.showMessageDialog(null, "Se agrego " + namePatientTyped + " correctamente");
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(new File(Constants.FILENAME_APPOINTMENT), appointmentsList);

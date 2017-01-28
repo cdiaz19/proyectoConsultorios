@@ -55,6 +55,8 @@ public class Patient {
         this.observation = observation;
     }
     
+    
+    
     public Patient(String user, String password, String name, String phone, 
             String address, String birthday, String associatedDiseases, String observation) {
         this.user = user;

@@ -13,6 +13,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class Office {
 
+    @JsonProperty("id_office")
+    private int idOffice;
     @JsonProperty("name")
     private String name;
     @JsonProperty("phone")
@@ -32,12 +34,22 @@ public class Office {
 
     /**
      *
+     * @param idOffice
      * @param name
      * @param phone
      * @param days
      * @param hourStart
      * @param hourEnd
      */
+    public Office(int idOffice,String name, String phone, String days, String hourStart, String hourEnd) {
+        this.idOffice=idOffice;
+        this.name = name;
+        this.phone = phone;
+        this.days = days;
+        this.hourStart = hourStart;
+        this.hourEnd = hourEnd;
+    }
+
     public Office(String name, String phone, String days, String hourStart, String hourEnd) {
         this.name = name;
         this.phone = phone;
@@ -45,6 +57,26 @@ public class Office {
         this.hourStart = hourStart;
         this.hourEnd = hourEnd;
     }
+    
+    
+
+    /**
+     *
+     * @return
+     */
+    public int getIdOffice() {
+        return idOffice;
+    }
+
+    /**
+     *
+     * @param idOffice
+     */
+    public void setIdOffice(int idOffice) {
+        this.idOffice = idOffice;
+    }
+    
+    
 
     /**
      * @return the name
@@ -118,7 +150,14 @@ public class Office {
 
     @Override
     public String toString() {
-        return "Office{" + "name=" + name + ", phone=" + phone + ", days=" + days + ", hourStart=" + hourStart + ", hourEnd=" + hourEnd + '}';
+        return "Office{" + "idOffice=" + idOffice 
+                + ", name=" + name + 
+                ", phone=" + phone + 
+                ", days=" + days + 
+                ", hourStart=" + hourStart + 
+                ", hourEnd=" + hourEnd + '}';
     }
+
+    
 
 }
