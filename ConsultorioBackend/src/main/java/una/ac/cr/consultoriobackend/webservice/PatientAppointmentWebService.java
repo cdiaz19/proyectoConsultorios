@@ -61,16 +61,16 @@ public class PatientAppointmentWebService {
      * @return
      */
     @GET
-    @Path("/{id}")
+    @Path("/{id_appointment}")
     @Produces(MediaType.APPLICATION_JSON)
-    public PatientAppointment getAppointmentID(@PathParam("id") int id) {
-        PatientAppointment office = null;
+    public PatientAppointment getAppointmentID(@PathParam("id_appointment") int id) {
+        PatientAppointment app = null;
         patientDAO = new PatientDAOHibernateImpl();
         patientService = new PatientServiceImpl(patientDAO);
 
-        office = patientService.findByIdPatientAppointment(id);
+        app = patientService.findByIdPatientAppointment(id);
 
-        return office;
+        return app;
     }
 
     /**
@@ -98,13 +98,13 @@ public class PatientAppointmentWebService {
      * @return
      */
     @DELETE
-    @Path("/{id}")
-    public boolean deleteAppointment(@PathParam("id") int id) {
+    @Path("/{id_appointment}")
+    public boolean deleteAppointment(@PathParam("id_appointment") int id_appointment) {
         boolean result;
         patientDAO = new PatientDAOHibernateImpl();
         patientService = new PatientServiceImpl(patientDAO);
 
-        result = patientService.deletePatientAppointment(id);
+        result = patientService.deletePatientAppointment(id_appointment);
 
         return result;
     }

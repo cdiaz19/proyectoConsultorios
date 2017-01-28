@@ -49,6 +49,7 @@ public class OfficeWebService {
         List<Office> officeList = null;
         officeDAO = new OfficeDAOHibernateImpl();
         officeService = new OfficeServiceImpl(officeDAO);
+        
         officeList = officeService.findAllOffice();
 
         return officeList;
@@ -56,17 +57,17 @@ public class OfficeWebService {
 
     /**
      *
-     * @param id
+     * @param id_office
      * @return
      */
     @GET
-    @Path("/{id}")
+    @Path("/{id_office}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Office getOfficeId(@PathParam("id") int id) {
+    public Office getOfficeId(@PathParam("id_office") int id_office) {
         Office office = null;
         officeDAO = new OfficeDAOHibernateImpl();
         officeService = new OfficeServiceImpl(officeDAO);
-        office = officeService.findByIdOffice(id);
+        office = officeService.findByIdOffice(id_office);
 
         return office;
     }
@@ -112,12 +113,12 @@ public class OfficeWebService {
      * @return
      */
     @DELETE
-    @Path("/{id}")
-    public boolean deleteOffice(@PathParam("id") int id) {
+    @Path("/{id_office}")
+    public boolean deleteOffice(@PathParam("id_office") int id_office) {
         boolean result;
         officeDAO = new OfficeDAOHibernateImpl();
         officeService = new OfficeServiceImpl(officeDAO);
-        result = officeService.deleteOffice(id);
+        result = officeService.deleteOffice(id_office);
 
         return result;
     }

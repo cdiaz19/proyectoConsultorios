@@ -5,6 +5,7 @@
  */
 package una.ac.cr.consultoriobackend.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -34,14 +35,14 @@ public class OfficeDAOHibernateImpl implements OfficeDAO {
 
     /**
      *
-     * @param id
+     * @param id_office
      * @return
      */
     @Override
-    public Office findByIdOffice(int id) {
+    public Office findByIdOffice(int id_office) {
         Office office = null;
-        Query query = session.createQuery("from Office where id_office = :id ");
-        query.setParameter("id_office", id);
+        Query query = session.createQuery("from Office where id_office = :id_office ");
+        query.setParameter("id_office", id_office);
 
         if (query.list().size() > 0) {
             office = (Office) query.list().get(0);
@@ -88,7 +89,7 @@ public class OfficeDAOHibernateImpl implements OfficeDAO {
      */
     @Override
     public List<Office> findAllOffice() {
-        List<Office> office = null;
+        List<Office> office = new ArrayList<>();
         office = session.createCriteria(Office.class).list();
 
         return office;

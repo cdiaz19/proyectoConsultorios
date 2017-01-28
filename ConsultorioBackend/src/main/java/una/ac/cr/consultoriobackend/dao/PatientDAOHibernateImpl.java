@@ -5,6 +5,7 @@
  */
 package una.ac.cr.consultoriobackend.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -35,14 +36,14 @@ public class PatientDAOHibernateImpl implements PatientDAO {
 
     /**
      *
-     * @param id
+     * @param id_patient
      * @return
      */
     @Override
-    public Patient findByIdPatient(int id) {
+    public Patient findByIdPatient(int id_patient) {
         Patient patient = null;
         Query query = session.createQuery("from patient where id_patient = :id ");
-        query.setParameter("id_patient", id);
+        query.setParameter("id_patient", id_patient);
 
         if (query.list().size() > 0) {
             patient = (Patient) query.list().get(0);
@@ -108,7 +109,7 @@ public class PatientDAOHibernateImpl implements PatientDAO {
      */
     @Override
     public List<Patient> findAllPatient() {
-        List<Patient> patient = null;
+        List<Patient> patient = new ArrayList<>();
         patient = session.createCriteria(Patient.class).list();
 
         return patient;
@@ -130,14 +131,14 @@ public class PatientDAOHibernateImpl implements PatientDAO {
 
     /**
      *
-     * @param id
+     * @param id_appointment
      * @return
      */
     @Override
-    public PatientAppointment findByIdPatientAppointment(int id) {
+    public PatientAppointment findByIdPatientAppointment(int id_appointment) {
         PatientAppointment patientAppointment = null;
-        Query query = session.createQuery("from appointment where id_appointment = :id ");
-        query.setParameter("id_appointment", id);
+        Query query = session.createQuery("from appointment where id_appointment = :id_appointment ");
+        query.setParameter("id_appointment", id_appointment);
 
         if (query.list().size() > 0) {
             patientAppointment = (PatientAppointment) query.list().get(0);
@@ -184,7 +185,7 @@ public class PatientDAOHibernateImpl implements PatientDAO {
      */
     @Override
     public List<PatientAppointment> findAllPatientAppointment() {
-        List<PatientAppointment> patientAppointment = null;
+        List<PatientAppointment> patientAppointment = new ArrayList<>();
         patientAppointment = session.createCriteria(PatientAppointment.class).list();
 
         return patientAppointment;

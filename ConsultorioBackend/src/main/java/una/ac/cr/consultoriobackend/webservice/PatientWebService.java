@@ -61,9 +61,9 @@ public class PatientWebService {
      * @return
      */
     @GET
-    @Path("/{id}")
+    @Path("/{id_patient}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Patient getPatientID(@PathParam("id") int id) {
+    public Patient getPatientID(@PathParam("id_patient") int id) {
         Patient office = null;
         patientDAO = new PatientDAOHibernateImpl();
         patientService = new PatientServiceImpl(patientDAO);
@@ -116,8 +116,8 @@ public class PatientWebService {
      * @return
      */
     @DELETE
-    @Path("/{id}")
-    public boolean deletePatient(@PathParam("id") int id) {
+    @Path("/{id_patient}")
+    public boolean deletePatient(@PathParam("id_patient") int id) {
         boolean result;
         patientDAO = new PatientDAOHibernateImpl();
         patientService = new PatientServiceImpl(patientDAO);
