@@ -39,7 +39,7 @@ public class OfficeWebService {
     }
 
     /**
-     *
+     * Retrieves All the Offices
      * @return
      */
     @GET
@@ -56,7 +56,7 @@ public class OfficeWebService {
     }
 
     /**
-     *
+     *  Retrieves only one office
      * @param id_office
      * @return
      */
@@ -72,25 +72,10 @@ public class OfficeWebService {
         return office;
     }
 
-    /**
-     *
-     * @param name
-     * @return
-     */
-    @GET
-    @Path("/{name}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Office getOfficeName(@PathParam("name") String name) {
-        Office office = null;
-        officeDAO = new OfficeDAOHibernateImpl();
-        officeService = new OfficeServiceImpl(officeDAO);
-        office = officeService.findByNameOffice(name);
-
-        return office;
-    }
 
     /**
-     *
+     * 
+     * Create a new Office
      * @param office
      * @return
      */
@@ -108,8 +93,8 @@ public class OfficeWebService {
     }
 
     /**
-     *
-     * @param id
+     * Delete a new Office
+     * @param id_office
      * @return
      */
     @DELETE
@@ -124,7 +109,7 @@ public class OfficeWebService {
     }
 
     /**
-     *
+     * Update a Offie
      * @param office
      * @return
      */
