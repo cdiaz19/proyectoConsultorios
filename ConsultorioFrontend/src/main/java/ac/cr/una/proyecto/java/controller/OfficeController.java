@@ -54,7 +54,7 @@ public class OfficeController implements ActionListener {
      */
     public OfficeController(JTextField name, JTextField phone_number,
             JTextField days, JTextField hourStart, JTextField hourEnd,
-            JTextField officeBox, JButton accept_form,JButton clean_button) throws JsonMappingException, IOException {
+            JTextField officeBox, JButton accept_form,JButton clean_button) throws JsonMappingException, IOException, Exception {
         super();
         this.name = name;
         this.phone_number = phone_number;

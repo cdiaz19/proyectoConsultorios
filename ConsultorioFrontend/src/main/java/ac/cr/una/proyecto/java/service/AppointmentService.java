@@ -38,8 +38,8 @@ public class AppointmentService {
      * @throws java.io.IOException
      */
     public Object[][] loadAppointmentsObjWrapper() throws JsonGenerationException,
-            JsonMappingException, IOException {
-        //Appointment[] appointments = loadAppointmentsFromFile();
+            JsonMappingException, IOException, Exception {
+        
         Appointment[] appointments = loadJsonFromWebService();
         Object[][] data = null;
 
@@ -61,7 +61,8 @@ public class AppointmentService {
             JsonMappingException, IOException {
         // Library Jackson parse JSon
         // http://wiki.fasterxml.com/JacksonHome
-        Appointment[] appointment = null;
+        Appointment[] appointment;
+        
         ObjectMapper mapper = new ObjectMapper();
         // Convert JSON string from file to Object
         appointment = mapper.readValue(new File(Constants.FILENAME_APPOINTMENT), Appointment[].class);
@@ -80,14 +81,14 @@ public class AppointmentService {
     }
     
     private Appointment[] loadJsonFromWebService() throws Exception {
-        Appointment[] students;
+        Appointment[] cita;
         String jSonFile;
         ObjectMapper mapper = new ObjectMapper();
 
         Client client = Client.create();
 
         WebResource webResource = client
-                .resource(Constants.WS_URL);
+                .resource(Constants.WS_URL_APPOINTMENT);
 
         ClientResponse response = webResource.accept(MediaType.APPLICATION_JSON_TYPE)
                 .get(ClientResponse.class);
@@ -99,8 +100,54 @@ public class AppointmentService {
 
         jSonFile = response.getEntity(String.class);
 
-        students = mapper.readValue(jSonFile, Student[].class);
+        cita = mapper.readValue(jSonFile, Appointment[].class);
 
-        return students;
+        return cita;
+    }
+    
+    public boolean createAppointment(Appointment appointment) throws JsonGenerationException,
+            JsonMappingException, IOException {
+
+        boolean isCreated = true;
+        ObjectMapper mapper = new ObjectMapper();
+
+        Client client = Client.create();
+
+        WebResource webResource = client
+                .resource(Constants.WS_URL_APPOINTMENT);
+
+        String jsonInString = mapper.writeValueAsString(appointment);
+
+        //POST del JSON
+        ClientResponse response = webResource.type(MediaType.APPLICATION_JSON_TYPE)
+                .post(ClientResponse.class, jsonInString);
+
+        if (response.getStatus() != 200) {
+            isCreated = false;
+            throw new RuntimeException("Failed : HTTP error code : "
+                    + response.getStatus());
+        }
+
+        return isCreated;
+    }
+    
+    public boolean deleteAppointment(int id) {
+        boolean isDeleted = false;
+
+        Client client = Client.create();
+
+        WebResource webResource = client
+                .resource(Constants.WS_URL_APPOINTMENT.concat("/").concat(String.valueOf(id)));
+
+        //POST del JSON
+        ClientResponse response = webResource.delete(ClientResponse.class);
+
+        if (response.getStatus() != 200) {
+            isDeleted = false;
+            throw new RuntimeException("Failed : HTTP error code : "
+                    + response.getStatus());
+        }
+
+        return isDeleted;
     }
 }

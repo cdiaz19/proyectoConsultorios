@@ -51,7 +51,7 @@ public class Constants {
     /**
      *
      */
-    public static final String WS_URL_OFFICES = "http://localhost:8080/ConsultorioBackend/rest/offices";
+    public static final String WS_URL_OFFICE = "http://localhost:8080/ConsultorioBackend/rest/offices";
 
     /**
      *

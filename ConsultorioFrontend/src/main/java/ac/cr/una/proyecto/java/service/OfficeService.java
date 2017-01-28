@@ -12,6 +12,10 @@ import java.io.File;
 import java.io.IOException;
 import ac.cr.una.proyecto.java.Constants;
 import ac.cr.una.proyecto.java.model.Office;
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.WebResource;
+import javax.ws.rs.core.MediaType;
 
 /**
  *
@@ -34,8 +38,8 @@ public class OfficeService {
      * @throws java.io.IOException
      */
     public Object[][] loadOfficesObjWrapper() throws JsonGenerationException,
-            JsonMappingException, IOException {
-        Office[] offices = loadOfficesFromFile();
+            JsonMappingException, IOException, Exception {
+        Office[] offices = loadJsonFromWebService();
         Object[][] data = null;
 
         if (offices != null && offices.length > 0) {
@@ -75,5 +79,76 @@ public class OfficeService {
             text = obj.toString();
         }
         return text;
+    }
+    
+    private Office[] loadJsonFromWebService() throws Exception {
+        Office[] office;
+        String jSonFile;
+        ObjectMapper mapper = new ObjectMapper();
+
+        Client client = Client.create();
+
+        WebResource webResource = client
+                .resource(Constants.WS_URL_OFFICE);
+
+        ClientResponse response = webResource.accept(MediaType.APPLICATION_JSON_TYPE)
+                .get(ClientResponse.class);
+
+        if (response.getStatus() != 200) {
+            throw new RuntimeException("Failed : HTTP error code : "
+                    + response.getStatus());
+        }
+
+        jSonFile = response.getEntity(String.class);
+
+        office = mapper.readValue(jSonFile, Office[].class);
+
+        return office;
+    }
+    
+    public boolean createOffice(Office office) throws JsonGenerationException,
+            JsonMappingException, IOException {
+
+        boolean isCreated = true;
+        ObjectMapper mapper = new ObjectMapper();
+
+        Client client = Client.create();
+
+        WebResource webResource = client
+                .resource(Constants.WS_URL_OFFICE);
+
+        String jsonInString = mapper.writeValueAsString(office);
+
+        //POST del JSON
+        ClientResponse response = webResource.type(MediaType.APPLICATION_JSON_TYPE)
+                .post(ClientResponse.class, jsonInString);
+
+        if (response.getStatus() != 200) {
+            isCreated = false;
+            throw new RuntimeException("Failed : HTTP error code : "
+                    + response.getStatus());
+        }
+
+        return isCreated;
+    }
+
+    public boolean deleteOffice(int id) {
+        boolean isDeleted = false;
+
+        Client client = Client.create();
+
+        WebResource webResource = client
+                .resource(Constants.WS_URL_OFFICE.concat("/").concat(String.valueOf(id)));
+
+        //POST del JSON
+        ClientResponse response = webResource.delete(ClientResponse.class);
+
+        if (response.getStatus() != 200) {
+            isDeleted = false;
+            throw new RuntimeException("Failed : HTTP error code : "
+                    + response.getStatus());
+        }
+
+        return isDeleted;
     }
 }

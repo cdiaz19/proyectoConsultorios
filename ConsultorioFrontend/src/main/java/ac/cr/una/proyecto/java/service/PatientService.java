@@ -12,6 +12,10 @@ import java.io.File;
 import java.io.IOException;
 import ac.cr.una.proyecto.java.Constants;
 import ac.cr.una.proyecto.java.model.Patient;
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.WebResource;
+import javax.ws.rs.core.MediaType;
 
 /**
  *
@@ -78,5 +82,77 @@ public class PatientService {
             text = obj.toString();
         }
         return text;
+    }
+    
+    private Patient[] loadJsonFromWebService() throws Exception {
+        Patient[] patient;
+        String jSonFile;
+        ObjectMapper mapper = new ObjectMapper();
+
+        Client client = Client.create();
+
+        WebResource webResource = client
+                .resource(Constants.WS_URL_PATIENT);
+
+        ClientResponse response = webResource.accept(MediaType.APPLICATION_JSON_TYPE)
+                .get(ClientResponse.class);
+
+        if (response.getStatus() != 200) {
+            throw new RuntimeException("Failed : HTTP error code : "
+                    + response.getStatus());
+        }
+
+        jSonFile = response.getEntity(String.class);
+
+        patient = mapper.readValue(jSonFile, Patient[].class);
+
+        return patient;
+    }
+
+    
+    public boolean createPatient(Patient patient) throws JsonGenerationException,
+            JsonMappingException, IOException {
+
+        boolean isCreated = true;
+        ObjectMapper mapper = new ObjectMapper();
+
+        Client client = Client.create();
+
+        WebResource webResource = client
+                .resource(Constants.WS_URL_PATIENT);
+
+        String jsonInString = mapper.writeValueAsString(patient);
+
+        //POST del JSON
+        ClientResponse response = webResource.type(MediaType.APPLICATION_JSON_TYPE)
+                .post(ClientResponse.class, jsonInString);
+
+        if (response.getStatus() != 200) {
+            isCreated = false;
+            throw new RuntimeException("Failed : HTTP error code : "
+                    + response.getStatus());
+        }
+
+        return isCreated;
+    }
+
+    public boolean deletePatient(int id) {
+        boolean isDeleted = false;
+
+        Client client = Client.create();
+
+        WebResource webResource = client
+                .resource(Constants.WS_URL_PATIENT.concat("/").concat(String.valueOf(id)));
+
+        //POST del JSON
+        ClientResponse response = webResource.delete(ClientResponse.class);
+
+        if (response.getStatus() != 200) {
+            isDeleted = false;
+            throw new RuntimeException("Failed : HTTP error code : "
+                    + response.getStatus());
+        }
+
+        return isDeleted;
     }
 }

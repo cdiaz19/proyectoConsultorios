@@ -39,7 +39,7 @@ public class OfficeListController implements ActionListener {
      */
     public OfficeListController(JTextField searchTermTextField,
             DefaultTableModel tableModel) throws JsonGenerationException,
-            JsonMappingException, IOException {
+            JsonMappingException, IOException, Exception {
         super();
         officeService = new OfficeService();
         offices = officeService.loadOfficesObjWrapper();

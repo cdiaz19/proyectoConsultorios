@@ -56,8 +56,11 @@ public class AppointmentController implements ActionListener {
      */
     public AppointmentController(JTextField namePatient, JComboBox name, JDateChooser fecha,
             JComboBox hora, JButton accept_button, JButton clean_button)
-            throws JsonMappingException, IOException {
+            throws JsonMappingException, IOException, Exception {
         super();
+        appointmentService = new AppointmentService();
+        appointments = appointmentService.loadAppointmentsObjWrapper();
+        
         this.namePatient = namePatient;
         this.name = name;
         this.fecha = fecha;
@@ -65,8 +68,7 @@ public class AppointmentController implements ActionListener {
         this.accept_button = accept_button;
         this.clean_button = clean_button;
 
-        appointmentService = new AppointmentService();
-        appointments = appointmentService.loadAppointmentsObjWrapper();
+        
     }
 
     @Override
@@ -74,7 +76,10 @@ public class AppointmentController implements ActionListener {
         if (e.getSource() == accept_button) {
             try {
                 updateAppointmentList();
+                appointments = appointmentService.loadAppointmentsObjWrapper();
             } catch (IOException ex) {
+                Logger.getLogger(AppointmentController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception ex) {
                 Logger.getLogger(AppointmentController.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else if (e.getSource() == clean_button) {

@@ -37,7 +37,7 @@ public class AppointmentListController implements ActionListener {
      */
     public AppointmentListController(JTextField searchTermTextField,
             DefaultTableModel tableModel) throws JsonGenerationException,
-            JsonMappingException, IOException {
+            JsonMappingException, IOException, Exception {
 
         super();
         appointmentService = new AppointmentService();

@@ -1,4 +1,5 @@
 [{
+        "id_patient": null,
         "user": "Carlos",
         "password": "1234",
         "namePatient": "Carlos Guzman",
@@ -8,6 +9,7 @@
         "associatedDiseases": "Cabeza, panel",
         "observation": "Adicto muy Adicto"
     }, {
+        "id_patient": null,
         "user": "Santiago",
         "password": "1234",
         "namePatient": "Santiago Gonzalez",
@@ -17,6 +19,7 @@
         "associatedDiseases": "Neumonia",
         "observation": "Fuerte dolor en el pecho, cuesta respirar"
     }, {
+        "id_patient": null,
         "user": "Juan",
         "password": "1234",
         "namePatient": "Juan",
@@ -25,4 +28,14 @@
         "birthday": "22-1-1998",
         "associatedDiseases": "",
         "observation": ""
+    }, {
+        "id_patient": null,
+        "user": "Sergio",
+        "password": "12345",
+        "namePatient": "Sergio Corrales",
+        "phone": "22349876",
+        "address": "Heredia",
+        "birthday": "8-2-2017",
+        "associatedDiseases": "Asma",
+        "observation": "Ahogamiento"
     }]

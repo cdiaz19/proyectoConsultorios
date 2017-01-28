@@ -27,13 +27,13 @@ public class AppointmentPatientController {
     private Object[][] appointment;
 
     public AppointmentPatientController(DefaultTableModel tableModel)
-            throws JsonMappingException, IOException {
+            throws JsonMappingException, IOException, Exception {
         super();
         this.tableModel = tableModel;
         verifyDate();
     }
 
-    public void verifyDate() throws JsonMappingException, IOException {
+    public void verifyDate() throws JsonMappingException, IOException, Exception {
         appointmentService = new AppointmentService();
         appointment = appointmentService.loadAppointmentsObjWrapper();
 
