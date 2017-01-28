@@ -13,8 +13,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class Office {
 
-    @JsonProperty("id_office")
-    private int idOffice;
+//    @JsonProperty("id_office")
+//    private int idOffice;
     @JsonProperty("name")
     private String name;
     @JsonProperty("phone")
@@ -41,14 +41,14 @@ public class Office {
      * @param hourStart
      * @param hourEnd
      */
-    public Office(int idOffice,String name, String phone, String days, String hourStart, String hourEnd) {
-        this.idOffice=idOffice;
-        this.name = name;
-        this.phone = phone;
-        this.days = days;
-        this.hourStart = hourStart;
-        this.hourEnd = hourEnd;
-    }
+//    public Office(int idOffice,String name, String phone, String days, String hourStart, String hourEnd) {
+//        this.idOffice=idOffice;
+//        this.name = name;
+//        this.phone = phone;
+//        this.days = days;
+//        this.hourStart = hourStart;
+//        this.hourEnd = hourEnd;
+//    }
 
     public Office(String name, String phone, String days, String hourStart, String hourEnd) {
         this.name = name;
@@ -64,17 +64,17 @@ public class Office {
      *
      * @return
      */
-    public int getIdOffice() {
-        return idOffice;
-    }
-
-    /**
-     *
-     * @param idOffice
-     */
-    public void setIdOffice(int idOffice) {
-        this.idOffice = idOffice;
-    }
+//    public int getIdOffice() {
+//        return idOffice;
+//    }
+//
+//    /**
+//     *
+//     * @param idOffice
+//     */
+//    public void setIdOffice(int idOffice) {
+//        this.idOffice = idOffice;
+//    }
     
     
 
@@ -148,15 +148,15 @@ public class Office {
         this.hourEnd = hourEnd;
     }
 
-    @Override
-    public String toString() {
-        return "Office{" + "idOffice=" + idOffice 
-                + ", name=" + name + 
-                ", phone=" + phone + 
-                ", days=" + days + 
-                ", hourStart=" + hourStart + 
-                ", hourEnd=" + hourEnd + '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Office{" + "idOffice=" + idOffice 
+//                + ", name=" + name + 
+//                ", phone=" + phone + 
+//                ", days=" + days + 
+//                ", hourStart=" + hourStart + 
+//                ", hourEnd=" + hourEnd + '}';
+//    }
 
     
 

@@ -58,8 +58,7 @@ public class AppointmentController implements ActionListener {
             JComboBox hora, JButton accept_button, JButton clean_button)
             throws JsonMappingException, IOException, Exception {
         super();
-        appointmentService = new AppointmentService();
-        appointments = appointmentService.loadAppointmentsObjWrapper();
+        
         
         this.namePatient = namePatient;
         this.name = name;
@@ -68,7 +67,8 @@ public class AppointmentController implements ActionListener {
         this.accept_button = accept_button;
         this.clean_button = clean_button;
 
-        
+//        appointmentService = new AppointmentService();
+//        appointments = appointmentService.loadAppointmentsObjWrapper();
     }
 
     @Override

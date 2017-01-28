@@ -45,7 +45,7 @@ public class PatientsListJUnitTest {
      * @throws IOException
      */
     @Before
-    public void setUp() throws JsonMappingException, IOException {
+    public void setUp() throws JsonMappingException, IOException, Exception {
         PrincipalPanelView frame = GuiActionRunner.execute(() -> new PrincipalPanelView());
         window = new FrameFixture(frame);
         window.show();

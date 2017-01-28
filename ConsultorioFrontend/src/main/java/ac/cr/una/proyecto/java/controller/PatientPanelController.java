@@ -57,14 +57,14 @@ public class PatientPanelController implements ActionListener {
         } else if (source == appointment) {
             try {
                 loadAppointment();
-            } catch (IOException ex) {
+            } catch (Exception ex) {
                 Logger.getLogger(PatientPanelController.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
         }
     }
 
-    private void loadAppointment() throws JsonMappingException, IOException {
+    private void loadAppointment() throws JsonMappingException, IOException, Exception {
         AppointmentPatientView ventana = new AppointmentPatientView();
         escritorio.add(ventana);
     }

@@ -40,6 +40,29 @@ public class OfficeService {
     public Object[][] loadOfficesObjWrapper() throws JsonGenerationException,
             JsonMappingException, IOException, Exception {
         Office[] offices = loadJsonFromWebService();
+        
+        Object[][] data = null;
+
+        if (offices != null && offices.length > 0) {
+            data = new Object[offices.length][5]; // filas y columnas
+            int i = 0;
+            for (Office office : offices) {
+                data[i][0] = checkIfNull(office.getName());
+                data[i][1] = checkIfNull(office.getPhone());
+                data[i][2] = checkIfNull(office.getDays());
+                data[i][3] = checkIfNull(office.getHourStart());
+                data[i][4] = checkIfNull(office.getHourEnd());
+                i++;
+            }
+        }
+
+        return data;
+    }
+    
+     public Object[][] loadOfficesObjWrapperAdd() throws JsonGenerationException,
+            JsonMappingException, IOException, Exception {
+        Office[] offices = loadOfficesFromFile();
+        
         Object[][] data = null;
 
         if (offices != null && offices.length > 0) {

@@ -61,7 +61,7 @@ public class PrincipalPanelJUnitTest {
      * @throws IOException
      */
     @Test
-    public void testOnClickAddOffice() throws IOException {
+    public void testOnClickAddOffice() throws IOException, Exception {
         AddOfficeView ventanaInterna = new AddOfficeView();
         window.menuItem("agregarConsultorio").click();
         ventanaInterna.setVisible(true);
@@ -73,7 +73,7 @@ public class PrincipalPanelJUnitTest {
      * @throws IOException
      */
     @Test
-    public void testOnClickAllOffices() throws JsonMappingException, IOException {
+    public void testOnClickAllOffices() throws JsonMappingException, IOException, Exception {
         OfficesListView ventanaInterna = new OfficesListView();
         window.menuItem("todosConsultorios").click();
         ventanaInterna.setVisible(true);

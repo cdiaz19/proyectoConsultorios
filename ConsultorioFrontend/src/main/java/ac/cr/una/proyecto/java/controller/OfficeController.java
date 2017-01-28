@@ -49,6 +49,7 @@ public class OfficeController implements ActionListener {
      * @param hourEnd
      * @param officeBox
      * @param accept_form
+     * @param clean_button
      * @throws JsonMappingException
      * @throws IOException
      */
@@ -65,8 +66,9 @@ public class OfficeController implements ActionListener {
         this.accept_form = accept_form;
         this.clean_button = clean_button;
 
-        officeService = new OfficeService();
-        offices = officeService.loadOfficesObjWrapper();
+//        officeService = new OfficeService();
+//        offices = officeService.loadOfficesObjWrapperAdd();
+        
     }
 
     @Override
@@ -104,7 +106,7 @@ public class OfficeController implements ActionListener {
         
             officesList.add(new Office(nameTyped, phoneTyped, daysTyped, hourStartTyped, hourEndTyped));
             JOptionPane.showMessageDialog(null,
-                    "Se agregó " + nameTyped + " correctamente");
+                    "Se agrego " + nameTyped + " correctamente");
         
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(new File(Constants.FILENAME), officesList);

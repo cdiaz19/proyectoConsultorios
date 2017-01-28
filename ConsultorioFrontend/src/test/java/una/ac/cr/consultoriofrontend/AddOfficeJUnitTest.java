@@ -39,7 +39,7 @@ public class AddOfficeJUnitTest {
      * @throws IOException
      */
     @Before
-    public void setUp() throws IOException {
+    public void setUp() throws IOException, Exception {
         PrincipalPanelView frame = GuiActionRunner.execute(() -> new PrincipalPanelView());
         window = new FrameFixture(frame);
         frame.setVisible(true);
