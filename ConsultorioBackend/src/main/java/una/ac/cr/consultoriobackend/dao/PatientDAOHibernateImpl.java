@@ -165,10 +165,8 @@ public class PatientDAOHibernateImpl implements PatientDAO {
      */
     @Override
     public  List<PatientAppointment> findAllPatientAppointment() {
-        PatientAppointment patientAppointment = null;
         List<PatientAppointment> result = (List<PatientAppointment>) session.createQuery("from Appointment").list();
-
-
+        
         return result;
     }
 }
