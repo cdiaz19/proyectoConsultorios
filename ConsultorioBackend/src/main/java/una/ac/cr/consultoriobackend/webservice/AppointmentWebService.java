@@ -68,4 +68,43 @@ public class AppointmentWebService {
 
         return app;
     }
+    
+    @POST
+    @Path("/")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Appointment createAppointment(Appointment appointment) {
+
+        appointmentDAO = new PatientDAOHibernateImpl();
+        service = new PatientServiceImpl(appointmentDAO);
+        appointment = service.savePatientAppointment(appointment);
+
+        return appointment;
+    }
+    
+    @DELETE
+    @Path("/{id_appointment}")
+    public boolean deleteAppointment(@PathParam("id_appointment") int id_office) {
+        boolean result;
+        appointmentDAO = new PatientDAOHibernateImpl();
+        service = new PatientServiceImpl(appointmentDAO);
+        
+        result = service.deletePatientAppointment(id_office);
+
+        return result;
+    }
+    
+    @PUT
+    @Path("/")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Appointment updateOffice( Appointment appointment) {
+
+        appointmentDAO = new PatientDAOHibernateImpl();
+        service = new PatientServiceImpl(appointmentDAO);
+        
+        appointment = service.updatePatientAppointment(appointment);
+
+        return appointment;
+    }
 }
