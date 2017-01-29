@@ -66,8 +66,8 @@ public class OfficeController implements ActionListener {
         this.accept_form = accept_form;
         this.clean_button = clean_button;
 
-//        officeService = new OfficeService();
-//        offices = officeService.loadOfficesObjWrapperAdd();
+       officeService = new OfficeService();
+       offices = officeService.loadOfficesObjWrapperAdd();
         
     }
 
@@ -90,30 +90,25 @@ public class OfficeController implements ActionListener {
     }
 
     private void updateOfficesList() throws IOException {
-        ArrayList<Office> officesList = new ArrayList<>();
         String nameTyped = name.getText();
         String phoneTyped = phone_number.getText();
         String daysTyped = days.getText();
         String hourStartTyped = hourStart.getText();
         String hourEndTyped = hourEnd.getText();
         int i= 0;
-//        String officesBoxTyped = officeBox.getText();
-    System.out.println("Guill"); 
-        for (Object[] obj : offices) {
-            Office fullText = new Office(i+1, obj[0].toString(), obj[1].toString(), obj[2].toString(), 
-                    obj[3].toString(), obj[4].toString());
-            
-            officesList.add(fullText);
-            System.out.println("Guille");
-        }
+        
+        Office office = new Office();
+        office.setName(nameTyped);
+        office.setPhone(phoneTyped);
+        office.setDays(daysTyped);
+        office.setHourStart(hourStartTyped);
+        office.setHourEnd(hourEndTyped);
+        
+        officeService.createOffice(office);
+        
+        JOptionPane.showMessageDialog(null,
+                    "Se agregó " + nameTyped + " correctamente");
 
-        System.out.println("Guiller");
-            officesList.add(new Office(i+1, nameTyped, phoneTyped, daysTyped, hourStartTyped, hourEndTyped));
-            JOptionPane.showMessageDialog(null,
-                    "Se agrego " + nameTyped + " correctamente");
-        System.out.println("Guillermo");
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.writeValue(new File(Constants.FILENAME), officesList);
     }
     
     private void cleanAll() throws IOException {
