@@ -43,12 +43,6 @@ public interface PatientService {
      */
     public PatientAppointment findByIdPatientAppointment(int id);
 
-    /**
-     *
-     * @param name
-     * @return
-     */
-    public Patient findByNamePatient(String name);
 
     /**
      *

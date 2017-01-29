@@ -42,7 +42,7 @@ public class PatientDAOHibernateImpl implements PatientDAO {
     @Override
     public Patient findByIdPatient(int id_patient) {
         Patient patient = null;
-        Query query = session.createQuery("from patient where id_patient = :id ");
+        Query query = session.createQuery("from Patient where id_patient = :id_patient ");
         query.setParameter("id_patient", id_patient);
 
         if (query.list().size() > 0) {
@@ -52,23 +52,6 @@ public class PatientDAOHibernateImpl implements PatientDAO {
         return patient;
     }
 
-    /**
-     *
-     * @param name
-     * @return
-     */
-    @Override
-    public Patient findByNamePatient(String name) {
-        Patient patient = null;
-        Query query = session.createQuery("from patient p where p.name like :name ");
-        query.setParameter("name", name);
-
-        if (query.list().size() > 0) {
-            patient = (Patient) query.list().get(0);
-        }
-
-        return patient;
-    }
 
     /**
      *

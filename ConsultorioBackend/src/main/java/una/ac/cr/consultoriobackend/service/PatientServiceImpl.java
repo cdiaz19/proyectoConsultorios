@@ -42,10 +42,6 @@ public class PatientServiceImpl implements PatientService {
         return patientDAO.findByIdPatient(id);
     }
 
-    @Override
-    public Patient findByNamePatient(String name) {
-        return patientDAO.findByNamePatient(name);
-    }
 
     @Override
     public Patient updatePatient(Patient patient) {
