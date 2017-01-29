@@ -15,7 +15,7 @@ import una.ac.cr.consultoriobackend.dao.PatientDAO;
 import una.ac.cr.consultoriobackend.dao.PatientDAOHibernateImpl;
 import una.ac.cr.consultoriobackend.model.Office;
 import una.ac.cr.consultoriobackend.model.Patient;
-import una.ac.cr.consultoriobackend.model.PatientAppointment;
+import una.ac.cr.consultoriobackend.model.Appointment;
 import una.ac.cr.consultoriobackend.service.PatientService;
 import una.ac.cr.consultoriobackend.service.PatientServiceImpl;
 

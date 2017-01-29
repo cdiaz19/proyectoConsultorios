@@ -10,7 +10,7 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import una.ac.cr.consultoriobackend.model.Patient;
-import una.ac.cr.consultoriobackend.model.PatientAppointment;
+import una.ac.cr.consultoriobackend.model.Appointment;
 
 /**
  *
@@ -40,7 +40,7 @@ public class PatientDAOHibernateImpl implements PatientDAO {
      * @return
      */
     @Override
-    public PatientAppointment savePatientAppointment(PatientAppointment patientAppointment) {
+    public Appointment savePatientAppointment(Appointment patientAppointment) {
         session.beginTransaction();
         session.save(patientAppointment);
         session.getTransaction().commit();
@@ -71,13 +71,13 @@ public class PatientDAOHibernateImpl implements PatientDAO {
      * @return
      */
     @Override
-    public PatientAppointment findByIdPatientAppointment(int id_appointment) {
-        PatientAppointment patientAppointment = null;
-        Query query = session.createQuery("from appointment where id_appointment = :id_appointment ");
+    public Appointment findByIdPatientAppointment(int id_appointment) {
+        Appointment patientAppointment = null;
+        Query query = session.createQuery("FROM Appointment WHERE id_appointment = :id_appointment ");
         query.setParameter("id_appointment", id_appointment);
 
         if (query.list().size() > 0) {
-            patientAppointment = (PatientAppointment) query.list().get(0);
+            patientAppointment = (Appointment) query.list().get(0);
         }
 
         return patientAppointment;
@@ -103,7 +103,7 @@ public class PatientDAOHibernateImpl implements PatientDAO {
      * @return
      */
     @Override
-    public PatientAppointment updatePatientAppointment(PatientAppointment patientAppointment) {
+    public Appointment updatePatientAppointment(Appointment patientAppointment) {
         session.beginTransaction();
         session.update(patientAppointment);
         session.getTransaction().commit();
@@ -137,10 +137,10 @@ public class PatientDAOHibernateImpl implements PatientDAO {
     @Override
     public boolean deletePatientAppointment(int id) {
         boolean isDeleted = false;
-        PatientAppointment appointment = null;
+        Appointment appointment = null;
 
         session.beginTransaction();
-        appointment = (PatientAppointment) session.get(PatientAppointment.class, id);
+        appointment = (Appointment) session.get(Appointment.class, id);
         session.delete(appointment);
         isDeleted = true;
         session.getTransaction().commit();
@@ -164,9 +164,10 @@ public class PatientDAOHibernateImpl implements PatientDAO {
      * @return
      */
     @Override
-    public  List<PatientAppointment> findAllPatientAppointment() {
-        List<PatientAppointment> result = (List<PatientAppointment>) session.createQuery("from Appointment").list();
+    public  List<Appointment> findAllPatientAppointment() {
+        List<Appointment> patient = new ArrayList<>();
+        patient = session.createCriteria(Appointment.class).list();
         
-        return result;
+        return patient;
     }
 }

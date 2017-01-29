@@ -15,7 +15,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 import una.ac.cr.consultoriobackend.dao.PatientDAO;
 import una.ac.cr.consultoriobackend.dao.PatientDAOHibernateImpl;
-import una.ac.cr.consultoriobackend.model.PatientAppointment;
+import una.ac.cr.consultoriobackend.model.Appointment;
 import una.ac.cr.consultoriobackend.service.PatientService;
 import una.ac.cr.consultoriobackend.service.PatientServiceImpl;
 
@@ -42,8 +42,8 @@ public class AppointmentWebService {
     @GET
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
-    public  List<PatientAppointment> getAllPatientsAppointment() {
-         List<PatientAppointment> dateList = null;
+    public  List<Appointment> getAllPatientsAppointment() {
+         List<Appointment> dateList = null;
         appointmentDAO = new PatientDAOHibernateImpl();
         service = new PatientServiceImpl(appointmentDAO);
         
@@ -60,8 +60,8 @@ public class AppointmentWebService {
     @GET
     @Path("/{id_appointment}")
     @Produces(MediaType.APPLICATION_JSON)
-    public PatientAppointment getPatientsAppointmentId(@PathParam("id_appointment") int id_appointment) {
-        PatientAppointment app = null;
+    public Appointment getPatientsAppointmentId(@PathParam("id_appointment") int id_appointment) {
+        Appointment app = null;
         appointmentDAO = new PatientDAOHibernateImpl();
         service = new PatientServiceImpl(appointmentDAO);
         app = service.findByIdPatientAppointment(id_appointment);

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: una.ac.cr.consultoriofrontend.AddPatientJUnitTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.078 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.385 sec

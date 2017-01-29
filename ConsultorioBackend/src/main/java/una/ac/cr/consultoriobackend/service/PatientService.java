@@ -7,7 +7,7 @@ package una.ac.cr.consultoriobackend.service;
 
 import java.util.List;
 import una.ac.cr.consultoriobackend.model.Patient;
-import una.ac.cr.consultoriobackend.model.PatientAppointment;
+import una.ac.cr.consultoriobackend.model.Appointment;
 
 /**
  *
@@ -27,7 +27,7 @@ public interface PatientService {
      * @param patientAppointment
      * @return
      */
-    public PatientAppointment savePatientAppointment(PatientAppointment patientAppointment);
+    public Appointment savePatientAppointment(Appointment patientAppointment);
 
     /**
      *
@@ -41,7 +41,7 @@ public interface PatientService {
      * @param id
      * @return
      */
-    public PatientAppointment findByIdPatientAppointment(int id);
+    public Appointment findByIdPatientAppointment(int id);
 
 
     /**
@@ -56,7 +56,7 @@ public interface PatientService {
      * @param patientAppointment
      * @return
      */
-    public PatientAppointment updatePatientAppointment(PatientAppointment patientAppointment);
+    public Appointment updatePatientAppointment(Appointment patientAppointment);
 
     /**
      *
@@ -82,6 +82,6 @@ public interface PatientService {
      *
      * @return
      */
-    public  List<PatientAppointment> findAllPatientAppointment();
+    public  List<Appointment> findAllPatientAppointment();
 
 }

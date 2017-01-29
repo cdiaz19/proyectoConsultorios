@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="una.ac.cr.consultoriofrontend.PatientsListJUnitTest" time="0.626" errors="2" skipped="0">
+<testsuite tests="2" failures="0" name="una.ac.cr.consultoriofrontend.PatientsListJUnitTest" time="2.209" errors="2" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/local/java/jdk1.8.0_121/jre/lib/amd64"/>
@@ -60,26 +60,65 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="una.ac.cr.consultoriofrontend.PatientsListJUnitTest" name="testVisibleComponents" time="0.282">
-    <error message="Unrecognized field &quot;idOffice&quot; (class ac.cr.una.proyecto.java.model.Office), not marked as ignorable (5 known properties: &quot;name&quot;, &quot;phone&quot;, &quot;days&quot;, &quot;hourStart&quot;, &quot;hourEnd&quot;])
- at [Source: [{&quot;days&quot;:&quot;Lunes y Martes&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:1,&quot;name&quot;:&quot;Hospital CIMA&quot;,&quot;phone&quot;:&quot;22795122&quot;},{&quot;days&quot;:&quot;Jueves y Viernes&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:2,&quot;name&quot;:&quot;Centro Médico del Este&quot;,&quot;phone&quot;:&quot;22792761&quot;},{&quot;days&quot;:&quot;Miercoles&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:3,&quot;name&quot;:&quot;Nueva Clinica Tres Rios&quot;,&quot;phone&quot;:&quot;22795122&quot;},{&quot;days&quot;:&quot;Lunes y Martes&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:5,&quot;name&quot;:&quot;Hospital CIMA&quot;,&quot;phone&quot;:&quot;22795122&quot;},{&quot;days&quot;:&quot;Lunes y Martes&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:6,&quot;name&quot;:&quot;Hospital CIMA&quot;,&quot;phone&quot;:&quot;22795122&quot;},{&quot;days&quot;:&quot;Lunes y Martes&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:8,&quot;name&quot;:&quot;Hospital CIMA&quot;,&quot;phone&quot;:&quot;22795122&quot;}]; line: 1, column: 75] (through reference chain: java.lang.Object[][0]-&gt;ac.cr.una.proyecto.java.model.Office[&quot;idOffice&quot;])" type="com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException">com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field &quot;idOffice&quot; (class ac.cr.una.proyecto.java.model.Office), not marked as ignorable (5 known properties: &quot;name&quot;, &quot;phone&quot;, &quot;days&quot;, &quot;hourStart&quot;, &quot;hourEnd&quot;])
- at [Source: [{&quot;days&quot;:&quot;Lunes y Martes&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:1,&quot;name&quot;:&quot;Hospital CIMA&quot;,&quot;phone&quot;:&quot;22795122&quot;},{&quot;days&quot;:&quot;Jueves y Viernes&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:2,&quot;name&quot;:&quot;Centro Médico del Este&quot;,&quot;phone&quot;:&quot;22792761&quot;},{&quot;days&quot;:&quot;Miercoles&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:3,&quot;name&quot;:&quot;Nueva Clinica Tres Rios&quot;,&quot;phone&quot;:&quot;22795122&quot;},{&quot;days&quot;:&quot;Lunes y Martes&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:5,&quot;name&quot;:&quot;Hospital CIMA&quot;,&quot;phone&quot;:&quot;22795122&quot;},{&quot;days&quot;:&quot;Lunes y Martes&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:6,&quot;name&quot;:&quot;Hospital CIMA&quot;,&quot;phone&quot;:&quot;22795122&quot;},{&quot;days&quot;:&quot;Lunes y Martes&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:8,&quot;name&quot;:&quot;Hospital CIMA&quot;,&quot;phone&quot;:&quot;22795122&quot;}]; line: 1, column: 75] (through reference chain: java.lang.Object[][0]-&gt;ac.cr.una.proyecto.java.model.Office[&quot;idOffice&quot;])
-	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:62)
-	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:834)
-	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:1093)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1477)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1455)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:282)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:140)
-	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.deserialize(ObjectArrayDeserializer.java:196)
-	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.deserialize(ObjectArrayDeserializer.java:20)
-	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:3798)
-	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2842)
-	at ac.cr.una.proyecto.java.service.OfficeService.loadJsonFromWebService(OfficeService.java:127)
-	at ac.cr.una.proyecto.java.service.OfficeService.loadOfficesObjWrapper(OfficeService.java:42)
-	at ac.cr.una.proyecto.java.controller.OfficeListController.&lt;init&gt;(OfficeListController.java:45)
-	at ac.cr.una.proyecto.java.view.OfficesListView.&lt;init&gt;(OfficesListView.java:56)
-	at una.ac.cr.consultoriofrontend.PatientsListJUnitTest.setUp(PatientsListJUnitTest.java:54)
+  <testcase classname="una.ac.cr.consultoriofrontend.PatientsListJUnitTest" name="testVisibleComponents" time="1.1">
+    <error message="Unable to find component using matcher org.assertj.swing.core.NameMatcher[name=&apos;txtSearch&apos;, type=javax.swing.text.JTextComponent, requireShowing=true].
+
+Component hierarchy:
+ac.cr.una.proyecto.java.view.PrincipalPanelView[name=&apos;frame12&apos;, title=&apos;Panel Administrativo&apos;, enabled=true, visible=true, showing=true]
+  javax.swing.JRootPane[]
+    javax.swing.JPanel[name=&apos;null.glassPane&apos;]
+    javax.swing.JLayeredPane[]
+      javax.swing.JPanel[name=&apos;null.contentPane&apos;]
+        javax.swing.JDesktopPane[]
+      javax.swing.JMenuBar[]
+        javax.swing.JMenu[name=null, text=&apos;Archivo&apos;, selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name=&apos;salir&apos;, text=&apos;Salir&apos;, selected=false, enabled=true, visible=true, showing=false]
+        javax.swing.JMenu[name=&apos;adminConsultorio&apos;, text=&apos;Administración Consultorio&apos;, selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name=&apos;agregarConsultorio&apos;, text=&apos;Agregar Consultorio&apos;, selected=false, enabled=true, visible=true, showing=false]
+            javax.swing.JMenuItem[name=&apos;todosConsultorios&apos;, text=&apos;Ver Lista&apos;, selected=false, enabled=true, visible=true, showing=false]
+        javax.swing.JMenu[name=&apos;adminPaciente&apos;, text=&apos;Administración Pacientes&apos;, selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name=&apos;agregarPaciente&apos;, text=&apos;Agregar Paciente&apos;, selected=false, enabled=true, visible=true, showing=false]
+            javax.swing.JMenuItem[name=&apos;todosPacientes&apos;, text=&apos;Ver Lista&apos;, selected=false, enabled=true, visible=true, showing=false]
+        javax.swing.JMenu[name=&apos;adminCitas&apos;, text=&apos;Administracion de Citas&apos;, selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name=&apos;agregarCita&apos;, text=&apos;Agregar Cita&apos;, selected=false, enabled=true, visible=true, showing=false]
+            javax.swing.JMenuItem[name=&apos;todasCitas&apos;, text=&apos;Ver Lista&apos;, selected=false, enabled=true, visible=true, showing=false]
+" type="org.assertj.swing.exception.ComponentLookupException">org.assertj.swing.exception.ComponentLookupException: Unable to find component using matcher org.assertj.swing.core.NameMatcher[name=&apos;txtSearch&apos;, type=javax.swing.text.JTextComponent, requireShowing=true].
+
+Component hierarchy:
+ac.cr.una.proyecto.java.view.PrincipalPanelView[name=&apos;frame12&apos;, title=&apos;Panel Administrativo&apos;, enabled=true, visible=true, showing=true]
+  javax.swing.JRootPane[]
+    javax.swing.JPanel[name=&apos;null.glassPane&apos;]
+    javax.swing.JLayeredPane[]
+      javax.swing.JPanel[name=&apos;null.contentPane&apos;]
+        javax.swing.JDesktopPane[]
+      javax.swing.JMenuBar[]
+        javax.swing.JMenu[name=null, text=&apos;Archivo&apos;, selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name=&apos;salir&apos;, text=&apos;Salir&apos;, selected=false, enabled=true, visible=true, showing=false]
+        javax.swing.JMenu[name=&apos;adminConsultorio&apos;, text=&apos;Administración Consultorio&apos;, selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name=&apos;agregarConsultorio&apos;, text=&apos;Agregar Consultorio&apos;, selected=false, enabled=true, visible=true, showing=false]
+            javax.swing.JMenuItem[name=&apos;todosConsultorios&apos;, text=&apos;Ver Lista&apos;, selected=false, enabled=true, visible=true, showing=false]
+        javax.swing.JMenu[name=&apos;adminPaciente&apos;, text=&apos;Administración Pacientes&apos;, selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name=&apos;agregarPaciente&apos;, text=&apos;Agregar Paciente&apos;, selected=false, enabled=true, visible=true, showing=false]
+            javax.swing.JMenuItem[name=&apos;todosPacientes&apos;, text=&apos;Ver Lista&apos;, selected=false, enabled=true, visible=true, showing=false]
+        javax.swing.JMenu[name=&apos;adminCitas&apos;, text=&apos;Administracion de Citas&apos;, selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name=&apos;agregarCita&apos;, text=&apos;Agregar Cita&apos;, selected=false, enabled=true, visible=true, showing=false]
+            javax.swing.JMenuItem[name=&apos;todasCitas&apos;, text=&apos;Ver Lista&apos;, selected=false, enabled=true, visible=true, showing=false]
+
+	at org.assertj.swing.core.BasicComponentFinder.componentNotFound(BasicComponentFinder.java:287)
+	at org.assertj.swing.core.BasicComponentFinder.find(BasicComponentFinder.java:272)
+	at org.assertj.swing.core.BasicComponentFinder.find(BasicComponentFinder.java:265)
+	at org.assertj.swing.core.BasicComponentFinder.findByName(BasicComponentFinder.java:200)
+	at org.assertj.swing.fixture.AbstractContainerFixture.findByName(AbstractContainerFixture.java:622)
+	at org.assertj.swing.fixture.AbstractContainerFixture.textBox(AbstractContainerFixture.java:541)
+	at una.ac.cr.consultoriofrontend.PatientsListJUnitTest.testVisibleComponents(PatientsListJUnitTest.java:78)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -87,7 +126,8 @@
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
@@ -111,27 +151,127 @@
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
+    <system-err>ene 28, 2017 11:21:55 PM ac.cr.una.proyecto.java.controller.PrincipalPanelController actionPerformed
+GRAVE: null
+com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field &quot;idPatient&quot; (class ac.cr.una.proyecto.java.model.Patient), not marked as ignorable (9 known properties: &quot;id_patient&quot;, &quot;address&quot;, &quot;namePatient&quot;, &quot;user&quot;, &quot;observation&quot;, &quot;birthday&quot;, &quot;phone&quot;, &quot;password&quot;, &quot;associatedDiseases&quot;])
+ at [Source: [{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:1,&quot;name&quot;:&quot;Santiago Gonzalez&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Santiago&quot;},{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:2,&quot;name&quot;:&quot;Santiago Gonzalez Solorzano&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Santiago&quot;},{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:4,&quot;name&quot;:&quot;Santiago Gonzalez&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Santiago&quot;},{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:6,&quot;name&quot;:&quot;Santiago Gonzalez&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Santiago&quot;},{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:7,&quot;name&quot;:&quot;Carlos Gonzalez&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Carlos&quot;},{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:9,&quot;name&quot;:&quot;Santiago Gonzalez&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Santiago&quot;}]; line: 1, column: 93] (through reference chain: java.lang.Object[][0]-&gt;ac.cr.una.proyecto.java.model.Patient[&quot;idPatient&quot;])
+	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:62)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:834)
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:1093)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1477)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1455)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:282)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:140)
+	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.deserialize(ObjectArrayDeserializer.java:196)
+	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.deserialize(ObjectArrayDeserializer.java:20)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:3798)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2842)
+	at ac.cr.una.proyecto.java.service.PatientService.loadJsonFromWebService(PatientService.java:107)
+	at ac.cr.una.proyecto.java.service.PatientService.loadPatientObjWrapper(PatientService.java:42)
+	at ac.cr.una.proyecto.java.controller.PatientListController.&lt;init&gt;(PatientListController.java:45)
+	at ac.cr.una.proyecto.java.view.PatientListView.&lt;init&gt;(PatientListView.java:56)
+	at ac.cr.una.proyecto.java.controller.PrincipalPanelController.loadListPatients(PrincipalPanelController.java:137)
+	at ac.cr.una.proyecto.java.controller.PrincipalPanelController.actionPerformed(PrincipalPanelController.java:89)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.AbstractButton.doClick(AbstractButton.java:376)
+	at javax.swing.plaf.basic.BasicMenuItemUI.doClick(BasicMenuItemUI.java:833)
+	at javax.swing.plaf.basic.BasicMenuItemUI$Handler.mouseReleased(BasicMenuItemUI.java:877)
+	at java.awt.Component.processMouseEvent(Component.java:6533)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6298)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:90)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+</system-err>
   </testcase>
-  <testcase classname="una.ac.cr.consultoriofrontend.PatientsListJUnitTest" name="testSearchFilter" time="0.338">
-    <error message="Unrecognized field &quot;idOffice&quot; (class ac.cr.una.proyecto.java.model.Office), not marked as ignorable (5 known properties: &quot;name&quot;, &quot;phone&quot;, &quot;days&quot;, &quot;hourStart&quot;, &quot;hourEnd&quot;])
- at [Source: [{&quot;days&quot;:&quot;Lunes y Martes&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:1,&quot;name&quot;:&quot;Hospital CIMA&quot;,&quot;phone&quot;:&quot;22795122&quot;},{&quot;days&quot;:&quot;Jueves y Viernes&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:2,&quot;name&quot;:&quot;Centro Médico del Este&quot;,&quot;phone&quot;:&quot;22792761&quot;},{&quot;days&quot;:&quot;Miercoles&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:3,&quot;name&quot;:&quot;Nueva Clinica Tres Rios&quot;,&quot;phone&quot;:&quot;22795122&quot;},{&quot;days&quot;:&quot;Lunes y Martes&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:5,&quot;name&quot;:&quot;Hospital CIMA&quot;,&quot;phone&quot;:&quot;22795122&quot;},{&quot;days&quot;:&quot;Lunes y Martes&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:6,&quot;name&quot;:&quot;Hospital CIMA&quot;,&quot;phone&quot;:&quot;22795122&quot;},{&quot;days&quot;:&quot;Lunes y Martes&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:8,&quot;name&quot;:&quot;Hospital CIMA&quot;,&quot;phone&quot;:&quot;22795122&quot;}]; line: 1, column: 75] (through reference chain: java.lang.Object[][0]-&gt;ac.cr.una.proyecto.java.model.Office[&quot;idOffice&quot;])" type="com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException">com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field &quot;idOffice&quot; (class ac.cr.una.proyecto.java.model.Office), not marked as ignorable (5 known properties: &quot;name&quot;, &quot;phone&quot;, &quot;days&quot;, &quot;hourStart&quot;, &quot;hourEnd&quot;])
- at [Source: [{&quot;days&quot;:&quot;Lunes y Martes&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:1,&quot;name&quot;:&quot;Hospital CIMA&quot;,&quot;phone&quot;:&quot;22795122&quot;},{&quot;days&quot;:&quot;Jueves y Viernes&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:2,&quot;name&quot;:&quot;Centro Médico del Este&quot;,&quot;phone&quot;:&quot;22792761&quot;},{&quot;days&quot;:&quot;Miercoles&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:3,&quot;name&quot;:&quot;Nueva Clinica Tres Rios&quot;,&quot;phone&quot;:&quot;22795122&quot;},{&quot;days&quot;:&quot;Lunes y Martes&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:5,&quot;name&quot;:&quot;Hospital CIMA&quot;,&quot;phone&quot;:&quot;22795122&quot;},{&quot;days&quot;:&quot;Lunes y Martes&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:6,&quot;name&quot;:&quot;Hospital CIMA&quot;,&quot;phone&quot;:&quot;22795122&quot;},{&quot;days&quot;:&quot;Lunes y Martes&quot;,&quot;hourEnd&quot;:&quot;5:00&quot;,&quot;hourStart&quot;:&quot;8:00&quot;,&quot;idOffice&quot;:8,&quot;name&quot;:&quot;Hospital CIMA&quot;,&quot;phone&quot;:&quot;22795122&quot;}]; line: 1, column: 75] (through reference chain: java.lang.Object[][0]-&gt;ac.cr.una.proyecto.java.model.Office[&quot;idOffice&quot;])
-	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:62)
-	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:834)
-	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:1093)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1477)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1455)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:282)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:140)
-	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.deserialize(ObjectArrayDeserializer.java:196)
-	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.deserialize(ObjectArrayDeserializer.java:20)
-	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:3798)
-	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2842)
-	at ac.cr.una.proyecto.java.service.OfficeService.loadJsonFromWebService(OfficeService.java:127)
-	at ac.cr.una.proyecto.java.service.OfficeService.loadOfficesObjWrapper(OfficeService.java:42)
-	at ac.cr.una.proyecto.java.controller.OfficeListController.&lt;init&gt;(OfficeListController.java:45)
-	at ac.cr.una.proyecto.java.view.OfficesListView.&lt;init&gt;(OfficesListView.java:56)
-	at una.ac.cr.consultoriofrontend.PatientsListJUnitTest.setUp(PatientsListJUnitTest.java:54)
+  <testcase classname="una.ac.cr.consultoriofrontend.PatientsListJUnitTest" name="testSearchFilter" time="1.107">
+    <error message="Unable to find component using matcher org.assertj.swing.core.NameMatcher[name=&apos;txtSearch&apos;, type=javax.swing.text.JTextComponent, requireShowing=true].
+
+Component hierarchy:
+ac.cr.una.proyecto.java.view.PrincipalPanelView[name=&apos;frame13&apos;, title=&apos;Panel Administrativo&apos;, enabled=true, visible=true, showing=true]
+  javax.swing.JRootPane[]
+    javax.swing.JPanel[name=&apos;null.glassPane&apos;]
+    javax.swing.JLayeredPane[]
+      javax.swing.JPanel[name=&apos;null.contentPane&apos;]
+        javax.swing.JDesktopPane[]
+      javax.swing.JMenuBar[]
+        javax.swing.JMenu[name=null, text=&apos;Archivo&apos;, selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name=&apos;salir&apos;, text=&apos;Salir&apos;, selected=false, enabled=true, visible=true, showing=false]
+        javax.swing.JMenu[name=&apos;adminConsultorio&apos;, text=&apos;Administración Consultorio&apos;, selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name=&apos;agregarConsultorio&apos;, text=&apos;Agregar Consultorio&apos;, selected=false, enabled=true, visible=true, showing=false]
+            javax.swing.JMenuItem[name=&apos;todosConsultorios&apos;, text=&apos;Ver Lista&apos;, selected=false, enabled=true, visible=true, showing=false]
+        javax.swing.JMenu[name=&apos;adminPaciente&apos;, text=&apos;Administración Pacientes&apos;, selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name=&apos;agregarPaciente&apos;, text=&apos;Agregar Paciente&apos;, selected=false, enabled=true, visible=true, showing=false]
+            javax.swing.JMenuItem[name=&apos;todosPacientes&apos;, text=&apos;Ver Lista&apos;, selected=false, enabled=true, visible=true, showing=false]
+        javax.swing.JMenu[name=&apos;adminCitas&apos;, text=&apos;Administracion de Citas&apos;, selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name=&apos;agregarCita&apos;, text=&apos;Agregar Cita&apos;, selected=false, enabled=true, visible=true, showing=false]
+            javax.swing.JMenuItem[name=&apos;todasCitas&apos;, text=&apos;Ver Lista&apos;, selected=false, enabled=true, visible=true, showing=false]
+" type="org.assertj.swing.exception.ComponentLookupException">org.assertj.swing.exception.ComponentLookupException: Unable to find component using matcher org.assertj.swing.core.NameMatcher[name=&apos;txtSearch&apos;, type=javax.swing.text.JTextComponent, requireShowing=true].
+
+Component hierarchy:
+ac.cr.una.proyecto.java.view.PrincipalPanelView[name=&apos;frame13&apos;, title=&apos;Panel Administrativo&apos;, enabled=true, visible=true, showing=true]
+  javax.swing.JRootPane[]
+    javax.swing.JPanel[name=&apos;null.glassPane&apos;]
+    javax.swing.JLayeredPane[]
+      javax.swing.JPanel[name=&apos;null.contentPane&apos;]
+        javax.swing.JDesktopPane[]
+      javax.swing.JMenuBar[]
+        javax.swing.JMenu[name=null, text=&apos;Archivo&apos;, selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name=&apos;salir&apos;, text=&apos;Salir&apos;, selected=false, enabled=true, visible=true, showing=false]
+        javax.swing.JMenu[name=&apos;adminConsultorio&apos;, text=&apos;Administración Consultorio&apos;, selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name=&apos;agregarConsultorio&apos;, text=&apos;Agregar Consultorio&apos;, selected=false, enabled=true, visible=true, showing=false]
+            javax.swing.JMenuItem[name=&apos;todosConsultorios&apos;, text=&apos;Ver Lista&apos;, selected=false, enabled=true, visible=true, showing=false]
+        javax.swing.JMenu[name=&apos;adminPaciente&apos;, text=&apos;Administración Pacientes&apos;, selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name=&apos;agregarPaciente&apos;, text=&apos;Agregar Paciente&apos;, selected=false, enabled=true, visible=true, showing=false]
+            javax.swing.JMenuItem[name=&apos;todosPacientes&apos;, text=&apos;Ver Lista&apos;, selected=false, enabled=true, visible=true, showing=false]
+        javax.swing.JMenu[name=&apos;adminCitas&apos;, text=&apos;Administracion de Citas&apos;, selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name=&apos;agregarCita&apos;, text=&apos;Agregar Cita&apos;, selected=false, enabled=true, visible=true, showing=false]
+            javax.swing.JMenuItem[name=&apos;todasCitas&apos;, text=&apos;Ver Lista&apos;, selected=false, enabled=true, visible=true, showing=false]
+
+	at org.assertj.swing.core.BasicComponentFinder.componentNotFound(BasicComponentFinder.java:287)
+	at org.assertj.swing.core.BasicComponentFinder.find(BasicComponentFinder.java:272)
+	at org.assertj.swing.core.BasicComponentFinder.find(BasicComponentFinder.java:265)
+	at org.assertj.swing.core.BasicComponentFinder.findByName(BasicComponentFinder.java:200)
+	at org.assertj.swing.fixture.AbstractContainerFixture.findByName(AbstractContainerFixture.java:622)
+	at org.assertj.swing.fixture.AbstractContainerFixture.textBox(AbstractContainerFixture.java:541)
+	at una.ac.cr.consultoriofrontend.PatientsListJUnitTest.testSearchFilter(PatientsListJUnitTest.java:95)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -139,7 +279,8 @@
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
@@ -163,5 +304,66 @@
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
+    <system-err>ene 28, 2017 11:21:56 PM ac.cr.una.proyecto.java.controller.PrincipalPanelController actionPerformed
+GRAVE: null
+com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field &quot;idPatient&quot; (class ac.cr.una.proyecto.java.model.Patient), not marked as ignorable (9 known properties: &quot;id_patient&quot;, &quot;address&quot;, &quot;namePatient&quot;, &quot;user&quot;, &quot;observation&quot;, &quot;birthday&quot;, &quot;phone&quot;, &quot;password&quot;, &quot;associatedDiseases&quot;])
+ at [Source: [{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:1,&quot;name&quot;:&quot;Santiago Gonzalez&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Santiago&quot;},{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:2,&quot;name&quot;:&quot;Santiago Gonzalez Solorzano&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Santiago&quot;},{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:4,&quot;name&quot;:&quot;Santiago Gonzalez&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Santiago&quot;},{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:6,&quot;name&quot;:&quot;Santiago Gonzalez&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Santiago&quot;},{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:7,&quot;name&quot;:&quot;Carlos Gonzalez&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Carlos&quot;},{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:9,&quot;name&quot;:&quot;Santiago Gonzalez&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Santiago&quot;}]; line: 1, column: 93] (through reference chain: java.lang.Object[][0]-&gt;ac.cr.una.proyecto.java.model.Patient[&quot;idPatient&quot;])
+	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:62)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:834)
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:1093)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1477)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1455)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:282)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:140)
+	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.deserialize(ObjectArrayDeserializer.java:196)
+	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.deserialize(ObjectArrayDeserializer.java:20)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:3798)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2842)
+	at ac.cr.una.proyecto.java.service.PatientService.loadJsonFromWebService(PatientService.java:107)
+	at ac.cr.una.proyecto.java.service.PatientService.loadPatientObjWrapper(PatientService.java:42)
+	at ac.cr.una.proyecto.java.controller.PatientListController.&lt;init&gt;(PatientListController.java:45)
+	at ac.cr.una.proyecto.java.view.PatientListView.&lt;init&gt;(PatientListView.java:56)
+	at ac.cr.una.proyecto.java.controller.PrincipalPanelController.loadListPatients(PrincipalPanelController.java:137)
+	at ac.cr.una.proyecto.java.controller.PrincipalPanelController.actionPerformed(PrincipalPanelController.java:89)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.AbstractButton.doClick(AbstractButton.java:376)
+	at javax.swing.plaf.basic.BasicMenuItemUI.doClick(BasicMenuItemUI.java:833)
+	at javax.swing.plaf.basic.BasicMenuItemUI$Handler.mouseReleased(BasicMenuItemUI.java:877)
+	at java.awt.Component.processMouseEvent(Component.java:6533)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6298)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:90)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+</system-err>
   </testcase>
 </testsuite>

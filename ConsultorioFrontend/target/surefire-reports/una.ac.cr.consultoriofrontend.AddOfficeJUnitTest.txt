@@ -1,18 +1,18 @@
 -------------------------------------------------------------------------------
 Test set: una.ac.cr.consultoriofrontend.AddOfficeJUnitTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 11.928 sec <<< FAILURE!
-testVisibleComponents(una.ac.cr.consultoriofrontend.AddOfficeJUnitTest)  Time elapsed: 1.423 sec  <<< ERROR!
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 12.151 sec <<< FAILURE!
+testVisibleComponents(una.ac.cr.consultoriofrontend.AddOfficeJUnitTest)  Time elapsed: 1.522 sec  <<< ERROR!
 org.assertj.swing.exception.ComponentLookupException: Unable to find component using matcher org.assertj.swing.core.NameMatcher[name='lblOffice', type=javax.swing.JLabel, requireShowing=true].
 
 Component hierarchy:
-ac.cr.una.proyecto.java.view.PrincipalPanelView[name='frame2', title='Panel Administrativo', enabled=true, visible=true, showing=true]
+ac.cr.una.proyecto.java.view.PrincipalPanelView[name='frame3', title='Panel Administrativo', enabled=true, visible=true, showing=true]
   javax.swing.JRootPane[]
     javax.swing.JPanel[name='null.glassPane']
     javax.swing.JLayeredPane[]
       javax.swing.JPanel[name='null.contentPane']
         javax.swing.JDesktopPane[]
-          ac.cr.una.proyecto.java.view.AddOfficeView[,0,0,260x330,layout=javax.swing.plaf.basic.BasicInternalFrameUI$Handler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.metal.MetalBorders$InternalFrameBorder@92e37ce,flags=264,maximumSize=,minimumSize=,preferredSize=,closable=true,defaultCloseOperation=DISPOSE_ON_CLOSE,desktopIcon=javax.swing.JInternalFrame$JDesktopIcon[,0,0,160x31,invalid,layout=java.awt.BorderLayout,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@7b54da9c,flags=8,maximumSize=,minimumSize=,preferredSize=],frameIcon=sun.swing.ImageIconUIResource@40e0bc36,iconable=true,isClosed=false,isIcon=false,isMaximum=false,isSelected=false,maximizable=false,opened=true,resizable=false,rootPane=javax.swing.JRootPane[,5,27,250x298,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=449,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true,title=Formulario Nuevo Consultorio]
+          ac.cr.una.proyecto.java.view.AddOfficeView[,0,0,260x330,layout=javax.swing.plaf.basic.BasicInternalFrameUI$Handler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.metal.MetalBorders$InternalFrameBorder@1909687a,flags=264,maximumSize=,minimumSize=,preferredSize=,closable=true,defaultCloseOperation=DISPOSE_ON_CLOSE,desktopIcon=javax.swing.JInternalFrame$JDesktopIcon[,0,0,160x31,invalid,layout=java.awt.BorderLayout,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@177aa2e2,flags=8,maximumSize=,minimumSize=,preferredSize=],frameIcon=sun.swing.ImageIconUIResource@6b565a57,iconable=true,isClosed=false,isIcon=false,isMaximum=false,isSelected=false,maximizable=false,opened=true,resizable=false,rootPane=javax.swing.JRootPane[,5,27,250x298,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=449,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true,title=Formulario Nuevo Consultorio]
             javax.swing.JRootPane[]
               javax.swing.JPanel[name='null.glassPane']
               javax.swing.JLayeredPane[]
@@ -89,17 +89,17 @@ ac.cr.una.proyecto.java.view.PrincipalPanelView[name='frame2', title='Panel Admi
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-isCorrectInformation(una.ac.cr.consultoriofrontend.AddOfficeJUnitTest)  Time elapsed: 9.446 sec  <<< ERROR!
+isCorrectInformation(una.ac.cr.consultoriofrontend.AddOfficeJUnitTest)  Time elapsed: 9.537 sec  <<< ERROR!
 org.assertj.swing.exception.ComponentLookupException: Unable to find component using matcher org.assertj.swing.core.NameMatcher[name='offices', type=javax.swing.JComboBox, requireShowing=true].
 
 Component hierarchy:
-ac.cr.una.proyecto.java.view.PrincipalPanelView[name='frame3', title='Panel Administrativo', enabled=true, visible=true, showing=true]
+ac.cr.una.proyecto.java.view.PrincipalPanelView[name='frame4', title='Panel Administrativo', enabled=true, visible=true, showing=true]
   javax.swing.JRootPane[]
     javax.swing.JPanel[name='null.glassPane']
     javax.swing.JLayeredPane[]
       javax.swing.JPanel[name='null.contentPane']
         javax.swing.JDesktopPane[]
-          ac.cr.una.proyecto.java.view.AddOfficeView[,0,0,260x330,invalid,layout=javax.swing.plaf.basic.BasicInternalFrameUI$Handler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.metal.MetalBorders$InternalFrameBorder@92e37ce,flags=264,maximumSize=,minimumSize=,preferredSize=,closable=true,defaultCloseOperation=DISPOSE_ON_CLOSE,desktopIcon=javax.swing.JInternalFrame$JDesktopIcon[,0,0,160x31,invalid,layout=java.awt.BorderLayout,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@7b54da9c,flags=8,maximumSize=,minimumSize=,preferredSize=],frameIcon=sun.swing.ImageIconUIResource@40e0bc36,iconable=true,isClosed=false,isIcon=false,isMaximum=false,isSelected=false,maximizable=false,opened=true,resizable=false,rootPane=javax.swing.JRootPane[,5,27,250x298,invalid,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=449,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true,title=Formulario Nuevo Consultorio]
+          ac.cr.una.proyecto.java.view.AddOfficeView[,0,0,260x330,invalid,layout=javax.swing.plaf.basic.BasicInternalFrameUI$Handler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.metal.MetalBorders$InternalFrameBorder@1909687a,flags=264,maximumSize=,minimumSize=,preferredSize=,closable=true,defaultCloseOperation=DISPOSE_ON_CLOSE,desktopIcon=javax.swing.JInternalFrame$JDesktopIcon[,0,0,160x31,invalid,layout=java.awt.BorderLayout,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@177aa2e2,flags=8,maximumSize=,minimumSize=,preferredSize=],frameIcon=sun.swing.ImageIconUIResource@6b565a57,iconable=true,isClosed=false,isIcon=false,isMaximum=false,isSelected=false,maximizable=false,opened=true,resizable=false,rootPane=javax.swing.JRootPane[,5,27,250x298,invalid,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=449,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true,title=Formulario Nuevo Consultorio]
             javax.swing.JRootPane[]
               javax.swing.JPanel[name='null.glassPane']
               javax.swing.JLayeredPane[]
@@ -176,17 +176,17 @@ ac.cr.una.proyecto.java.view.PrincipalPanelView[name='frame3', title='Panel Admi
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-contentGendersComboBox(una.ac.cr.consultoriofrontend.AddOfficeJUnitTest)  Time elapsed: 1.053 sec  <<< ERROR!
+contentGendersComboBox(una.ac.cr.consultoriofrontend.AddOfficeJUnitTest)  Time elapsed: 1.087 sec  <<< ERROR!
 org.assertj.swing.exception.ComponentLookupException: Unable to find component using matcher org.assertj.swing.core.NameMatcher[name='offices', type=javax.swing.JComboBox, requireShowing=true].
 
 Component hierarchy:
-ac.cr.una.proyecto.java.view.PrincipalPanelView[name='frame4', title='Panel Administrativo', enabled=true, visible=true, showing=true]
+ac.cr.una.proyecto.java.view.PrincipalPanelView[name='frame5', title='Panel Administrativo', enabled=true, visible=true, showing=true]
   javax.swing.JRootPane[]
     javax.swing.JPanel[name='null.glassPane']
     javax.swing.JLayeredPane[]
       javax.swing.JPanel[name='null.contentPane']
         javax.swing.JDesktopPane[]
-          ac.cr.una.proyecto.java.view.AddOfficeView[,0,0,260x330,layout=javax.swing.plaf.basic.BasicInternalFrameUI$Handler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.metal.MetalBorders$InternalFrameBorder@92e37ce,flags=264,maximumSize=,minimumSize=,preferredSize=,closable=true,defaultCloseOperation=DISPOSE_ON_CLOSE,desktopIcon=javax.swing.JInternalFrame$JDesktopIcon[,0,0,160x31,invalid,layout=java.awt.BorderLayout,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@7b54da9c,flags=8,maximumSize=,minimumSize=,preferredSize=],frameIcon=sun.swing.ImageIconUIResource@40e0bc36,iconable=true,isClosed=false,isIcon=false,isMaximum=false,isSelected=false,maximizable=false,opened=true,resizable=false,rootPane=javax.swing.JRootPane[,5,27,250x298,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=449,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true,title=Formulario Nuevo Consultorio]
+          ac.cr.una.proyecto.java.view.AddOfficeView[,0,0,260x330,layout=javax.swing.plaf.basic.BasicInternalFrameUI$Handler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.metal.MetalBorders$InternalFrameBorder@1909687a,flags=264,maximumSize=,minimumSize=,preferredSize=,closable=true,defaultCloseOperation=DISPOSE_ON_CLOSE,desktopIcon=javax.swing.JInternalFrame$JDesktopIcon[,0,0,160x31,invalid,layout=java.awt.BorderLayout,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@177aa2e2,flags=8,maximumSize=,minimumSize=,preferredSize=],frameIcon=sun.swing.ImageIconUIResource@6b565a57,iconable=true,isClosed=false,isIcon=false,isMaximum=false,isSelected=false,maximizable=false,opened=true,resizable=false,rootPane=javax.swing.JRootPane[,5,27,250x298,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=449,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true,title=Formulario Nuevo Consultorio]
             javax.swing.JRootPane[]
               javax.swing.JPanel[name='null.glassPane']
               javax.swing.JLayeredPane[]
@@ -224,11 +224,6 @@ ac.cr.una.proyecto.java.view.PrincipalPanelView[name='frame4', title='Panel Admi
           javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
             javax.swing.JMenuItem[name='agregarCita', text='Agregar Cita', selected=false, enabled=true, visible=true, showing=false]
             javax.swing.JMenuItem[name='todasCitas', text='Ver Lista', selected=false, enabled=true, visible=true, showing=false]
-  javax.swing.Popup$HeavyWeightWindow[name=win0]
-    javax.swing.JRootPane[]
-      javax.swing.JPanel[name='null.glassPane']
-      javax.swing.JLayeredPane[]
-        javax.swing.JPanel[name='null.contentPane']
 
 	at org.assertj.swing.core.BasicComponentFinder.componentNotFound(BasicComponentFinder.java:287)
 	at org.assertj.swing.core.BasicComponentFinder.find(BasicComponentFinder.java:272)

@@ -13,6 +13,6 @@
         <property name="show_sql">true</property>
         <mapping class="una.ac.cr.consultoriobackend.model.Office"></mapping>
         <mapping class="una.ac.cr.consultoriobackend.model.Patient"></mapping>
-        <mapping class="una.ac.cr.consultoriobackend.model.PatientAppointment"></mapping>
+        <mapping class="una.ac.cr.consultoriobackend.model.Appointment"></mapping>
     </session-factory>
 </hibernate-configuration>

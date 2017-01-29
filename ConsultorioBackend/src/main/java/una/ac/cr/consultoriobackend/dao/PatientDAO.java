@@ -7,7 +7,7 @@ package una.ac.cr.consultoriobackend.dao;
 
 import java.util.List;
 import una.ac.cr.consultoriobackend.model.Patient;
-import una.ac.cr.consultoriobackend.model.PatientAppointment;
+import una.ac.cr.consultoriobackend.model.Appointment;
 
 /**
  *
@@ -27,7 +27,7 @@ public interface PatientDAO {
      * @param patientAppointment
      * @return
      */
-    public PatientAppointment savePatientAppointment(PatientAppointment patientAppointment);
+    public Appointment savePatientAppointment(Appointment patientAppointment);
 
     /**
      *
@@ -41,7 +41,7 @@ public interface PatientDAO {
      * @param id
      * @return
      */
-    public PatientAppointment findByIdPatientAppointment(int id);
+    public Appointment findByIdPatientAppointment(int id);
 
    
 
@@ -57,7 +57,7 @@ public interface PatientDAO {
      * @param patientAppointment
      * @return
      */
-    public PatientAppointment updatePatientAppointment(PatientAppointment patientAppointment);
+    public Appointment updatePatientAppointment(Appointment patientAppointment);
 
     /**
      *
@@ -83,6 +83,6 @@ public interface PatientDAO {
      *
      * @return
      */
-    public  List<PatientAppointment> findAllPatientAppointment();
+    public  List<Appointment> findAllPatientAppointment();
 
 }

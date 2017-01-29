@@ -8,7 +8,7 @@ package una.ac.cr.consultoriobackend.service;
 import java.util.List;
 import una.ac.cr.consultoriobackend.dao.PatientDAO;
 import una.ac.cr.consultoriobackend.model.Patient;
-import una.ac.cr.consultoriobackend.model.PatientAppointment;
+import una.ac.cr.consultoriobackend.model.Appointment;
 
 /**
  *
@@ -59,17 +59,17 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public PatientAppointment savePatientAppointment(PatientAppointment patientAppointment) {
+    public Appointment savePatientAppointment(Appointment patientAppointment) {
         return patientDAO.savePatientAppointment(patientAppointment);
     }
 
     @Override
-    public PatientAppointment findByIdPatientAppointment(int id) {
+    public Appointment findByIdPatientAppointment(int id) {
         return patientDAO.findByIdPatientAppointment(id);
     }
 
     @Override
-    public PatientAppointment updatePatientAppointment(PatientAppointment patientAppointment) {
+    public Appointment updatePatientAppointment(Appointment patientAppointment) {
         return patientDAO.updatePatientAppointment(patientAppointment);
     }
 
@@ -79,7 +79,7 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public  List<PatientAppointment> findAllPatientAppointment() {
+    public  List<Appointment> findAllPatientAppointment() {
         return patientDAO.findAllPatientAppointment();
     }
 }

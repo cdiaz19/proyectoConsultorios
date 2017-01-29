@@ -26,7 +26,7 @@ import javax.persistence.UniqueConstraint;
 @Entity
 @Table(name = "appointment", catalog = "proyectoConsultorio", uniqueConstraints = {
     @UniqueConstraint(columnNames = "id_appointment")})
-public class PatientAppointment implements Serializable {
+public class Appointment implements Serializable {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
@@ -50,7 +50,7 @@ public class PatientAppointment implements Serializable {
     /**
      *
      */
-    public PatientAppointment() {
+    public Appointment() {
     }
 
     /**
@@ -61,7 +61,7 @@ public class PatientAppointment implements Serializable {
      * @param date
      * @param hour
      */
-    public PatientAppointment(int idAppointment, Office office, Patient patient,
+    public Appointment(int idAppointment, Office office, Patient patient,
             String date, String hour) {
         this.idAppointment = idAppointment;
         this.office = office;
@@ -162,7 +162,7 @@ public class PatientAppointment implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final PatientAppointment other = (PatientAppointment) obj;
+        final Appointment other = (Appointment) obj;
         if (this.idAppointment != other.idAppointment) {
             return false;
         }
