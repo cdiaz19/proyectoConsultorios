@@ -82,6 +82,6 @@ public interface PatientService {
      *
      * @return
      */
-    public List<PatientAppointment> findAllPatientAppointment();
+    public  List<PatientAppointment> findAllPatientAppointment();
 
 }

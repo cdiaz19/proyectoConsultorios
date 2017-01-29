@@ -36,6 +36,19 @@ public class PatientDAOHibernateImpl implements PatientDAO {
 
     /**
      *
+     * @param patientAppointment
+     * @return
+     */
+    @Override
+    public PatientAppointment savePatientAppointment(PatientAppointment patientAppointment) {
+        session.beginTransaction();
+        session.save(patientAppointment);
+        session.getTransaction().commit();
+
+        return patientAppointment;
+    }
+    /**
+     *
      * @param id_patient
      * @return
      */
@@ -50,66 +63,6 @@ public class PatientDAOHibernateImpl implements PatientDAO {
         }
 
         return patient;
-    }
-
-
-    /**
-     *
-     * @param patient
-     * @return
-     */
-    @Override
-    public Patient updatePatient(Patient patient) {
-        session.beginTransaction();
-        session.update(patient);
-        session.getTransaction().commit();
-        
-        return patient;
-    }
-
-    /**
-     *
-     * @param id
-     * @return
-     */
-    @Override
-    public boolean deletePatient(int id) {
-        boolean isDeleted = false;
-        Patient patient = null;
-
-        session.beginTransaction();
-        patient = (Patient) session.get(Patient.class, id);
-        session.delete(patient);
-        isDeleted = true;
-        session.getTransaction().commit();
-
-        return isDeleted;
-    }
-
-    /**
-     *
-     * @return
-     */
-    @Override
-    public List<Patient> findAllPatient() {
-        List<Patient> patient = new ArrayList<>();
-        patient = session.createCriteria(Patient.class).list();
-
-        return patient;
-    }
-
-    /**
-     *
-     * @param patientAppointment
-     * @return
-     */
-    @Override
-    public PatientAppointment savePatientAppointment(PatientAppointment patientAppointment) {
-        session.beginTransaction();
-        session.save(patientAppointment);
-        session.getTransaction().commit();
-
-        return patientAppointment;
     }
 
     /**
@@ -132,6 +85,20 @@ public class PatientDAOHibernateImpl implements PatientDAO {
 
     /**
      *
+     * @param patient
+     * @return
+     */
+    @Override
+    public Patient updatePatient(Patient patient) {
+        session.beginTransaction();
+        session.update(patient);
+        session.getTransaction().commit();
+        
+        return patient;
+    }
+    
+    /**
+     *
      * @param patientAppointment
      * @return
      */
@@ -149,6 +116,25 @@ public class PatientDAOHibernateImpl implements PatientDAO {
      * @return
      */
     @Override
+    public boolean deletePatient(int id) {
+        boolean isDeleted = false;
+        Patient patient = null;
+
+        session.beginTransaction();
+        patient = (Patient) session.get(Patient.class, id);
+        session.delete(patient);
+        isDeleted = true;
+        session.getTransaction().commit();
+
+        return isDeleted;
+    }
+
+     /**
+     *
+     * @param id
+     * @return
+     */
+    @Override
     public boolean deletePatientAppointment(int id) {
         boolean isDeleted = false;
         PatientAppointment appointment = null;
@@ -161,16 +147,28 @@ public class PatientDAOHibernateImpl implements PatientDAO {
 
         return isDeleted;
     }
+    /**
+     *
+     * @return
+     */
+    @Override
+    public List<Patient> findAllPatient() {
+        List<Patient> patient = new ArrayList<>();
+        patient = session.createCriteria(Patient.class).list();
+
+        return patient;
+    }
 
     /**
      *
      * @return
      */
     @Override
-    public List<PatientAppointment> findAllPatientAppointment() {
-        List<PatientAppointment> patientAppointment = new ArrayList<>();
-        patientAppointment = session.createCriteria(PatientAppointment.class).list();
+    public  List<PatientAppointment> findAllPatientAppointment() {
+        PatientAppointment patientAppointment = null;
+        List<PatientAppointment> result = (List<PatientAppointment>) session.createQuery("from Appointment").list();
 
-        return patientAppointment;
+
+        return result;
     }
 }

@@ -30,7 +30,7 @@ public class PatientAppointment implements Serializable {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    @Column(name = "id_appointment")
+    @Column(name = "id_appointment", unique = true, nullable = false)
     private int idAppointment;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

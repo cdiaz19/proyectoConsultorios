@@ -83,6 +83,6 @@ public interface PatientDAO {
      *
      * @return
      */
-    public List<PatientAppointment> findAllPatientAppointment();
+    public  List<PatientAppointment> findAllPatientAppointment();
 
 }

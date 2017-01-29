@@ -79,7 +79,7 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public List<PatientAppointment> findAllPatientAppointment() {
+    public  List<PatientAppointment> findAllPatientAppointment() {
         return patientDAO.findAllPatientAppointment();
     }
 }
