@@ -54,11 +54,11 @@ public class LoginController implements ActionListener {
         loginPatientService = new LoginPatientService();
         patients = loginPatientService.loadOfficesObjWrapper();
 
-        for (Object obj[] : patients) {
+        /*for (Object obj[] : patients) {
             Patient fullText;
             fullText = new Patient(obj[0].toString(), obj[1].toString());
             loginList.add(fullText);
-        }
+        }*/
 
     }
 

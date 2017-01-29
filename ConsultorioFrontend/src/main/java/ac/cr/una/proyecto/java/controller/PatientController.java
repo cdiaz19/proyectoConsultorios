@@ -73,19 +73,18 @@ public class PatientController implements ActionListener {
         this.accept_form = accept_form;
         this.clean_button = clean_button;
 
-//        patientService = new PatientService();
-//        patients = patientService.loadPatientObjWrapper();
+        patientService = new PatientService();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == accept_form) {
-        try {
-            updatePatientsList();
-        } catch (IOException ex) {
-            Logger.getLogger(OfficeController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }else if (e.getSource() == clean_button) {
+            try {
+                updatePatientsList();
+            } catch (IOException ex) {
+                Logger.getLogger(OfficeController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else if (e.getSource() == clean_button) {
             try {
                 cleanAll();
             } catch (IOException ex) {
@@ -93,17 +92,15 @@ public class PatientController implements ActionListener {
             }
         }
     }
-        
 
     private void updatePatientsList() throws IOException {
-        
+
         String dia = Integer.toString(birthday.getCalendar().get(Calendar.DAY_OF_MONTH));
         String mes = Integer.toString(birthday.getCalendar().get(Calendar.MONTH) + 1);
         String year = Integer.toString(birthday.getCalendar().get(Calendar.YEAR));
         String fecha = (dia + "-" + mes + "-" + year);
-        
+
         String passwordLogin = new String(password.getPassword());
-        ArrayList<Patient> patientsList = new ArrayList<>();
         String userTyped = user.getText();
         String passwordTyped = passwordLogin;
         String nameTyped = name.getText();
@@ -113,22 +110,23 @@ public class PatientController implements ActionListener {
         String associatedDiseasesTyped = associatedDiseases.getText();
         String observationsTyped = observations.getText();
 
-        for (Object[] obj : patients) {
-            Patient fullText = new Patient(obj[0].toString(), obj[1].toString(),
-                    obj[2].toString(), obj[3].toString(), obj[4].toString(), obj[5].toString(),
-                    obj[6].toString(), obj[7].toString());
-            patientsList.add(fullText);
-        }
+        Patient patient = new Patient();
+        patient.setUser(userTyped);
+        patient.setPassword(passwordTyped);
+        patient.setName(nameTyped);
+        patient.setPhone(phoneTyped);
+        patient.setBirthday(birthdayTyped);
+        patient.setAddress(addressTyped);
+        patient.setAssociatedDiseases(associatedDiseasesTyped);
+        patient.setObservation(observationsTyped);
 
-        patientsList.add(new Patient(userTyped, passwordTyped, nameTyped, phoneTyped, addressTyped, birthdayTyped,
-                associatedDiseasesTyped, observationsTyped));
+        patientService.createPatient(patient);
+
         JOptionPane.showMessageDialog(null,
                 "Se agregó " + nameTyped + " correctamente");
-
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.writeValue(new File(Constants.FILENAME_PATIENT), patientsList);
     }
-      private void cleanAll() throws IOException {
+
+    private void cleanAll() throws IOException {
         user.setText(" ");
         password.setText(" ");
         name.setText(" ");

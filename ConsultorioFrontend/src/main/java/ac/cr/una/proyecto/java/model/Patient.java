@@ -12,13 +12,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @author cristian
  */
 public class Patient {
-    @JsonProperty("id_patient")
-    private String id_patient;
+
+    @JsonProperty("idPatient")
+    private int idPatient;
     @JsonProperty("user")
     private String user;
     @JsonProperty("password")
-    private String password;    
-    @JsonProperty("namePatient")
+    private String password;
+    @JsonProperty("name")
     private String name;
     @JsonProperty("phone")
     private String phone;
@@ -31,34 +32,11 @@ public class Patient {
     @JsonProperty("observation")
     private String observation;
 
-    /**
-     *
-     */
     public Patient() {
     }
 
-    /**
-     * 
-     * @param name
-     * @param phone
-     * @param address
-     * @param birthday
-     * @param associatedDiseases
-     * @param observation 
-     */
-    public Patient(String name, String phone, String address, String birthday, String associatedDiseases, String observation) {
-        this.name = name;
-        this.phone = phone;
-        this.address = address;
-        this.birthday = birthday;
-        this.associatedDiseases = associatedDiseases;
-        this.observation = observation;
-    }
-    
-    
-    
-    public Patient(String user, String password, String name, String phone, 
-            String address, String birthday, String associatedDiseases, String observation) {
+    public Patient(int idPatient, String user, String password, String name, String phone, String address, String birthday, String associatedDiseases, String observation) {
+        this.idPatient = idPatient;
         this.user = user;
         this.password = password;
         this.name = name;
@@ -67,6 +45,20 @@ public class Patient {
         this.birthday = birthday;
         this.associatedDiseases = associatedDiseases;
         this.observation = observation;
+    }
+
+    /**
+     * @return the idPatient
+     */
+    public int getIdPatient() {
+        return idPatient;
+    }
+
+    /**
+     * @param idPatient the idPatient to set
+     */
+    public void setIdPatient(int idPatient) {
+        this.idPatient = idPatient;
     }
 
     /**
@@ -81,11 +73,6 @@ public class Patient {
      */
     public void setUser(String user) {
         this.user = user;
-    }
-
-    public Patient(String user, String password) {
-        this.user = user;
-        this.password = password;
     }
 
     /**
@@ -185,16 +172,4 @@ public class Patient {
     public void setObservation(String observation) {
         this.observation = observation;
     }
-
-    @Override
-    public String toString() {
-        return "Patient{" + "user=" + user + 
-                ", password=" + password + 
-                ", name=" + name + 
-                ", phone=" + phone + 
-                ", address=" + address + 
-                ", birthday=" + birthday + 
-                ", associatedDiseases=" + associatedDiseases + 
-                ", observation=" + observation + '}';
-    } 
 }

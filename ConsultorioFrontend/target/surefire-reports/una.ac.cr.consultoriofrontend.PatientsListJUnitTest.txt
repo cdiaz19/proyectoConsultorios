@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: una.ac.cr.consultoriofrontend.PatientsListJUnitTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 2.156 sec <<< FAILURE!
-testVisibleComponents(una.ac.cr.consultoriofrontend.PatientsListJUnitTest)  Time elapsed: 1.07 sec  <<< ERROR!
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 2.071 sec <<< FAILURE!
+testVisibleComponents(una.ac.cr.consultoriofrontend.PatientsListJUnitTest)  Time elapsed: 1.053 sec  <<< ERROR!
 org.assertj.swing.exception.ComponentLookupException: Unable to find component using matcher org.assertj.swing.core.NameMatcher[name='txtSearch', type=javax.swing.text.JTextComponent, requireShowing=true].
 
 Component hierarchy:
@@ -28,6 +28,11 @@ ac.cr.una.proyecto.java.view.PrincipalPanelView[name='frame12', title='Panel Adm
           javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
             javax.swing.JMenuItem[name='agregarCita', text='Agregar Cita', selected=false, enabled=true, visible=true, showing=false]
             javax.swing.JMenuItem[name='todasCitas', text='Ver Lista', selected=false, enabled=true, visible=true, showing=false]
+  javax.swing.Popup$HeavyWeightWindow[name=win10]
+    javax.swing.JRootPane[]
+      javax.swing.JPanel[name='null.glassPane']
+      javax.swing.JLayeredPane[]
+        javax.swing.JPanel[name='null.contentPane']
 
 	at org.assertj.swing.core.BasicComponentFinder.componentNotFound(BasicComponentFinder.java:287)
 	at org.assertj.swing.core.BasicComponentFinder.find(BasicComponentFinder.java:272)
@@ -67,7 +72,7 @@ ac.cr.una.proyecto.java.view.PrincipalPanelView[name='frame12', title='Panel Adm
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-testSearchFilter(una.ac.cr.consultoriofrontend.PatientsListJUnitTest)  Time elapsed: 1.084 sec  <<< ERROR!
+testSearchFilter(una.ac.cr.consultoriofrontend.PatientsListJUnitTest)  Time elapsed: 1.015 sec  <<< ERROR!
 org.assertj.swing.exception.ComponentLookupException: Unable to find component using matcher org.assertj.swing.core.NameMatcher[name='txtSearch', type=javax.swing.text.JTextComponent, requireShowing=true].
 
 Component hierarchy:

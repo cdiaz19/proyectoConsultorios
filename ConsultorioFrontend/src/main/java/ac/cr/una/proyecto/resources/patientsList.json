@@ -1,38 +1,38 @@
 [{
-        "id_patient": null,
+
         "user": "Carlos",
         "password": "1234",
-        "namePatient": "Carlos Guzman",
+        "name": "Carlos Guzman",
         "phone": "22795122",
         "address": "Cartago",
         "birthday": "19-11-1993",
         "associatedDiseases": "Cabeza, panel",
         "observation": "Adicto muy Adicto"
     }, {
-        "id_patient": null,
+
         "user": "Santiago",
         "password": "1234",
-        "namePatient": "Santiago Gonzalez",
+        "name": "Santiago Gonzalez",
         "phone": "22795352",
         "address": "Alajuela",
         "birthday": "23-12-1985",
         "associatedDiseases": "Neumonia",
         "observation": "Fuerte dolor en el pecho, cuesta respirar"
     }, {
-        "id_patient": null,
+
         "user": "Juan",
         "password": "1234",
-        "namePatient": "Juan",
+        "name": "Juan",
         "phone": "987654",
         "address": "Heredia",
         "birthday": "22-1-1998",
         "associatedDiseases": "",
         "observation": ""
     }, {
-        "id_patient": null,
+
         "user": "Sergio",
         "password": "12345",
-        "namePatient": "Sergio Corrales",
+        "name": "Sergio Corrales",
         "phone": "22349876",
         "address": "Heredia",
         "birthday": "8-2-2017",

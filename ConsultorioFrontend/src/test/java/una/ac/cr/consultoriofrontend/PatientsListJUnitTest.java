@@ -62,9 +62,9 @@ public class PatientsListJUnitTest {
     @Before
     public void createArrayPatients() {
         patients = new ArrayList<>();
-        patients.add(new Patient("Carlos Guzman", "22795122", "Cartago",
+        patients.add(new Patient(1, "Carlos", "1234", "Carlos Guzman", "22795122", "Cartago",
                 "19-11-1993", "Cabeza, panel", "Adicto muy Adicto"));
-        patients.add(new Patient("Mario Guzman", "22795122", "Cartago",
+        patients.add(new Patient(2, "Mario", "1234","Mario Guzman", "22795122", "Cartago",
                 "19-11-1993", "Panel, panel", "Adicto muy Adicto"));
     }
 
