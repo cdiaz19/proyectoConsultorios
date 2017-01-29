@@ -53,6 +53,8 @@ public class PatientPanelController implements ActionListener {
                 loadInformation();
             } catch (IOException ex) {
                 Logger.getLogger(PatientPanelController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception ex) {
+                Logger.getLogger(PatientPanelController.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else if (source == appointment) {
             try {
@@ -69,7 +71,7 @@ public class PatientPanelController implements ActionListener {
         escritorio.add(ventana);
     }
 
-    private void loadInformation() throws JsonMappingException, IOException {
+    private void loadInformation() throws JsonMappingException, IOException, Exception {
         InformationPatientView ventana = new InformationPatientView();
         escritorio.add(ventana);
     }

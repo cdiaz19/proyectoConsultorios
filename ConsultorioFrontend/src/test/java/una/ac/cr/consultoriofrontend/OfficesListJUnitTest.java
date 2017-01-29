@@ -60,8 +60,8 @@ public class OfficesListJUnitTest {
     @Before
     public void createArrayOffices() {
         offices = new ArrayList<>();
-        offices.add(new Office("Hospital CIMA", "22795122", "Lunes y Martes", "8:00", "5:00"));
-        offices.add(new Office("Centro Médico del Este", "22792761", "Jueves y Viernes", "8:00", "5:00"));
+        offices.add(new Office(1, "Hospital CIMA", "22795122", "Lunes y Martes", "8:00", "5:00"));
+        offices.add(new Office(2, "Centro Médico del Este", "22792761", "Jueves y Viernes", "8:00", "5:00"));
     }
 
     /**

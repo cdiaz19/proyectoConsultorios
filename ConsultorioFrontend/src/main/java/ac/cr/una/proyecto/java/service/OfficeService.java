@@ -44,14 +44,15 @@ public class OfficeService {
         Object[][] data = null;
 
         if (offices != null && offices.length > 0) {
-            data = new Object[offices.length][5]; // filas y columnas
+            data = new Object[offices.length][6]; // filas y columnas
             int i = 0;
             for (Office office : offices) {
-                data[i][0] = checkIfNull(office.getName());
-                data[i][1] = checkIfNull(office.getPhone());
-                data[i][2] = checkIfNull(office.getDays());
-                data[i][3] = checkIfNull(office.getHourStart());
-                data[i][4] = checkIfNull(office.getHourEnd());
+                data[i][0] = checkIfNull(office.getIdOffice());
+                data[i][1] = checkIfNull(office.getName());
+                data[i][2] = checkIfNull(office.getPhone());
+                data[i][3] = checkIfNull(office.getDays());
+                data[i][4] = checkIfNull(office.getHourStart());
+                data[i][5] = checkIfNull(office.getHourEnd());
                 i++;
             }
         }
@@ -66,14 +67,15 @@ public class OfficeService {
         Object[][] data = null;
 
         if (offices != null && offices.length > 0) {
-            data = new Object[offices.length][5]; // filas y columnas
+            data = new Object[offices.length][6]; // filas y columnas
             int i = 0;
             for (Office office : offices) {
-                data[i][0] = checkIfNull(office.getName());
-                data[i][1] = checkIfNull(office.getPhone());
-                data[i][2] = checkIfNull(office.getDays());
-                data[i][3] = checkIfNull(office.getHourStart());
-                data[i][4] = checkIfNull(office.getHourEnd());
+                data[i][0] = checkIfNull(office.getIdOffice());
+                data[i][1] = checkIfNull(office.getName());
+                data[i][2] = checkIfNull(office.getPhone());
+                data[i][3] = checkIfNull(office.getDays());
+                data[i][4] = checkIfNull(office.getHourStart());
+                data[i][5] = checkIfNull(office.getHourEnd());
                 i++;
             }
         }

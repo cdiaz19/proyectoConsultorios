@@ -96,10 +96,11 @@ public class OfficeController implements ActionListener {
         String daysTyped = days.getText();
         String hourStartTyped = hourStart.getText();
         String hourEndTyped = hourEnd.getText();
+        int i= 0;
 //        String officesBoxTyped = officeBox.getText();
-    System.out.println("Guill");
+    System.out.println("Guill"); 
         for (Object[] obj : offices) {
-            Office fullText = new Office(obj[0].toString(), obj[1].toString(), obj[2].toString(), 
+            Office fullText = new Office(i+1, obj[0].toString(), obj[1].toString(), obj[2].toString(), 
                     obj[3].toString(), obj[4].toString());
             
             officesList.add(fullText);
@@ -107,7 +108,7 @@ public class OfficeController implements ActionListener {
         }
 
         System.out.println("Guiller");
-            officesList.add(new Office(nameTyped, phoneTyped, daysTyped, hourStartTyped, hourEndTyped));
+            officesList.add(new Office(i+1, nameTyped, phoneTyped, daysTyped, hourStartTyped, hourEndTyped));
             JOptionPane.showMessageDialog(null,
                     "Se agrego " + nameTyped + " correctamente");
         System.out.println("Guillermo");

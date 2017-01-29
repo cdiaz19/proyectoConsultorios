@@ -1,0 +1,270 @@
+-------------------------------------------------------------------------------
+Test set: una.ac.cr.consultoriofrontend.AddOfficeJUnitTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 11.928 sec <<< FAILURE!
+testVisibleComponents(una.ac.cr.consultoriofrontend.AddOfficeJUnitTest)  Time elapsed: 1.423 sec  <<< ERROR!
+org.assertj.swing.exception.ComponentLookupException: Unable to find component using matcher org.assertj.swing.core.NameMatcher[name='lblOffice', type=javax.swing.JLabel, requireShowing=true].
+
+Component hierarchy:
+ac.cr.una.proyecto.java.view.PrincipalPanelView[name='frame2', title='Panel Administrativo', enabled=true, visible=true, showing=true]
+  javax.swing.JRootPane[]
+    javax.swing.JPanel[name='null.glassPane']
+    javax.swing.JLayeredPane[]
+      javax.swing.JPanel[name='null.contentPane']
+        javax.swing.JDesktopPane[]
+          ac.cr.una.proyecto.java.view.AddOfficeView[,0,0,260x330,layout=javax.swing.plaf.basic.BasicInternalFrameUI$Handler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.metal.MetalBorders$InternalFrameBorder@92e37ce,flags=264,maximumSize=,minimumSize=,preferredSize=,closable=true,defaultCloseOperation=DISPOSE_ON_CLOSE,desktopIcon=javax.swing.JInternalFrame$JDesktopIcon[,0,0,160x31,invalid,layout=java.awt.BorderLayout,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@7b54da9c,flags=8,maximumSize=,minimumSize=,preferredSize=],frameIcon=sun.swing.ImageIconUIResource@40e0bc36,iconable=true,isClosed=false,isIcon=false,isMaximum=false,isSelected=false,maximizable=false,opened=true,resizable=false,rootPane=javax.swing.JRootPane[,5,27,250x298,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=449,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true,title=Formulario Nuevo Consultorio]
+            javax.swing.JRootPane[]
+              javax.swing.JPanel[name='null.glassPane']
+              javax.swing.JLayeredPane[]
+                javax.swing.JPanel[name='null.contentPane']
+                  javax.swing.JPanel[name='Form']
+                    javax.swing.JLabel[name='lblName', text='Nombre:', enabled=true, visible=true, showing=true]
+                    javax.swing.JTextField[name='name', text='', enabled=true, visible=true, showing=true]
+                    javax.swing.JLabel[name='lblPhone', text='Telefono:', enabled=true, visible=true, showing=true]
+                    javax.swing.JTextField[name='phone', text='', enabled=true, visible=true, showing=true]
+                    javax.swing.JLabel[name='lblDays', text='Dias:', enabled=true, visible=true, showing=true]
+                    javax.swing.JTextField[name='days', text='', enabled=true, visible=true, showing=true]
+                    javax.swing.JLabel[name='lblHourStart', text='Hora Apertura:', enabled=true, visible=true, showing=true]
+                    javax.swing.JTextField[name='hourStart', text='', enabled=true, visible=true, showing=true]
+                    javax.swing.JLabel[name='lblHourEnd', text='Hora Cierre:', enabled=true, visible=true, showing=true]
+                    javax.swing.JTextField[name='hourEnd', text='', enabled=true, visible=true, showing=true]
+                    javax.swing.JButton[name='ok', text='Aceptar', enabled=true, visible=true, showing=true]
+                    javax.swing.JButton[name='clean', text='Limpiar', enabled=true, visible=true, showing=true]
+            javax.swing.plaf.metal.MetalInternalFrameTitlePane[,5,5,250x22,layout=javax.swing.plaf.metal.MetalInternalFrameTitlePane$MetalTitlePaneLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777224,maximumSize=,minimumSize=,preferredSize=]
+              javax.swing.plaf.basic.BasicInternalFrameTitlePane$NoFocusButton[name=null, text='', enabled=true, visible=true, showing=true]
+              javax.swing.plaf.basic.BasicInternalFrameTitlePane$NoFocusButton[name=null, text='', enabled=true, visible=true, showing=true]
+              javax.swing.plaf.basic.BasicInternalFrameTitlePane$NoFocusButton[name=null, text='', enabled=true, visible=true, showing=true]
+      javax.swing.JMenuBar[]
+        javax.swing.JMenu[name=null, text='Archivo', selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name='salir', text='Salir', selected=false, enabled=true, visible=true, showing=false]
+        javax.swing.JMenu[name='adminConsultorio', text='Administración Consultorio', selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name='agregarConsultorio', text='Agregar Consultorio', selected=false, enabled=true, visible=true, showing=false]
+            javax.swing.JMenuItem[name='todosConsultorios', text='Ver Lista', selected=false, enabled=true, visible=true, showing=false]
+        javax.swing.JMenu[name='adminPaciente', text='Administración Pacientes', selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name='agregarPaciente', text='Agregar Paciente', selected=false, enabled=true, visible=true, showing=false]
+            javax.swing.JMenuItem[name='todosPacientes', text='Ver Lista', selected=false, enabled=true, visible=true, showing=false]
+        javax.swing.JMenu[name='adminCitas', text='Administracion de Citas', selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name='agregarCita', text='Agregar Cita', selected=false, enabled=true, visible=true, showing=false]
+            javax.swing.JMenuItem[name='todasCitas', text='Ver Lista', selected=false, enabled=true, visible=true, showing=false]
+
+	at org.assertj.swing.core.BasicComponentFinder.componentNotFound(BasicComponentFinder.java:287)
+	at org.assertj.swing.core.BasicComponentFinder.find(BasicComponentFinder.java:272)
+	at org.assertj.swing.core.BasicComponentFinder.find(BasicComponentFinder.java:265)
+	at org.assertj.swing.core.BasicComponentFinder.findByName(BasicComponentFinder.java:200)
+	at org.assertj.swing.fixture.AbstractContainerFixture.findByName(AbstractContainerFixture.java:622)
+	at org.assertj.swing.fixture.AbstractContainerFixture.label(AbstractContainerFixture.java:289)
+	at una.ac.cr.consultoriofrontend.AddOfficeJUnitTest.testVisibleComponents(AddOfficeJUnitTest.java:64)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+isCorrectInformation(una.ac.cr.consultoriofrontend.AddOfficeJUnitTest)  Time elapsed: 9.446 sec  <<< ERROR!
+org.assertj.swing.exception.ComponentLookupException: Unable to find component using matcher org.assertj.swing.core.NameMatcher[name='offices', type=javax.swing.JComboBox, requireShowing=true].
+
+Component hierarchy:
+ac.cr.una.proyecto.java.view.PrincipalPanelView[name='frame3', title='Panel Administrativo', enabled=true, visible=true, showing=true]
+  javax.swing.JRootPane[]
+    javax.swing.JPanel[name='null.glassPane']
+    javax.swing.JLayeredPane[]
+      javax.swing.JPanel[name='null.contentPane']
+        javax.swing.JDesktopPane[]
+          ac.cr.una.proyecto.java.view.AddOfficeView[,0,0,260x330,invalid,layout=javax.swing.plaf.basic.BasicInternalFrameUI$Handler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.metal.MetalBorders$InternalFrameBorder@92e37ce,flags=264,maximumSize=,minimumSize=,preferredSize=,closable=true,defaultCloseOperation=DISPOSE_ON_CLOSE,desktopIcon=javax.swing.JInternalFrame$JDesktopIcon[,0,0,160x31,invalid,layout=java.awt.BorderLayout,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@7b54da9c,flags=8,maximumSize=,minimumSize=,preferredSize=],frameIcon=sun.swing.ImageIconUIResource@40e0bc36,iconable=true,isClosed=false,isIcon=false,isMaximum=false,isSelected=false,maximizable=false,opened=true,resizable=false,rootPane=javax.swing.JRootPane[,5,27,250x298,invalid,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=449,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true,title=Formulario Nuevo Consultorio]
+            javax.swing.JRootPane[]
+              javax.swing.JPanel[name='null.glassPane']
+              javax.swing.JLayeredPane[]
+                javax.swing.JPanel[name='null.contentPane']
+                  javax.swing.JPanel[name='Form']
+                    javax.swing.JLabel[name='lblName', text='Nombre:', enabled=true, visible=true, showing=true]
+                    javax.swing.JTextField[name='name', text='Clinica Tres Rios', enabled=true, visible=true, showing=true]
+                    javax.swing.JLabel[name='lblPhone', text='Telefono:', enabled=true, visible=true, showing=true]
+                    javax.swing.JTextField[name='phone', text='22796352', enabled=true, visible=true, showing=true]
+                    javax.swing.JLabel[name='lblDays', text='Dias:', enabled=true, visible=true, showing=true]
+                    javax.swing.JTextField[name='days', text='Miercoles', enabled=true, visible=true, showing=true]
+                    javax.swing.JLabel[name='lblHourStart', text='Hora Apertura:', enabled=true, visible=true, showing=true]
+                    javax.swing.JTextField[name='hourStart', text='800 AM', enabled=true, visible=true, showing=true]
+                    javax.swing.JLabel[name='lblHourEnd', text='Hora Cierre:', enabled=true, visible=true, showing=true]
+                    javax.swing.JTextField[name='hourEnd', text='630 PM', enabled=true, visible=true, showing=true]
+                    javax.swing.JButton[name='ok', text='Aceptar', enabled=true, visible=true, showing=true]
+                    javax.swing.JButton[name='clean', text='Limpiar', enabled=true, visible=true, showing=true]
+            javax.swing.plaf.metal.MetalInternalFrameTitlePane[,5,5,250x22,layout=javax.swing.plaf.metal.MetalInternalFrameTitlePane$MetalTitlePaneLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777224,maximumSize=,minimumSize=,preferredSize=]
+              javax.swing.plaf.basic.BasicInternalFrameTitlePane$NoFocusButton[name=null, text='', enabled=true, visible=true, showing=true]
+              javax.swing.plaf.basic.BasicInternalFrameTitlePane$NoFocusButton[name=null, text='', enabled=true, visible=true, showing=true]
+              javax.swing.plaf.basic.BasicInternalFrameTitlePane$NoFocusButton[name=null, text='', enabled=true, visible=true, showing=true]
+      javax.swing.JMenuBar[]
+        javax.swing.JMenu[name=null, text='Archivo', selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name='salir', text='Salir', selected=false, enabled=true, visible=true, showing=false]
+        javax.swing.JMenu[name='adminConsultorio', text='Administración Consultorio', selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name='agregarConsultorio', text='Agregar Consultorio', selected=false, enabled=true, visible=true, showing=false]
+            javax.swing.JMenuItem[name='todosConsultorios', text='Ver Lista', selected=false, enabled=true, visible=true, showing=false]
+        javax.swing.JMenu[name='adminPaciente', text='Administración Pacientes', selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name='agregarPaciente', text='Agregar Paciente', selected=false, enabled=true, visible=true, showing=false]
+            javax.swing.JMenuItem[name='todosPacientes', text='Ver Lista', selected=false, enabled=true, visible=true, showing=false]
+        javax.swing.JMenu[name='adminCitas', text='Administracion de Citas', selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name='agregarCita', text='Agregar Cita', selected=false, enabled=true, visible=true, showing=false]
+            javax.swing.JMenuItem[name='todasCitas', text='Ver Lista', selected=false, enabled=true, visible=true, showing=false]
+
+	at org.assertj.swing.core.BasicComponentFinder.componentNotFound(BasicComponentFinder.java:287)
+	at org.assertj.swing.core.BasicComponentFinder.find(BasicComponentFinder.java:272)
+	at org.assertj.swing.core.BasicComponentFinder.find(BasicComponentFinder.java:265)
+	at org.assertj.swing.core.BasicComponentFinder.findByName(BasicComponentFinder.java:200)
+	at org.assertj.swing.fixture.AbstractContainerFixture.findByName(AbstractContainerFixture.java:622)
+	at org.assertj.swing.fixture.AbstractContainerFixture.comboBox(AbstractContainerFixture.java:178)
+	at una.ac.cr.consultoriofrontend.AddOfficeJUnitTest.isCorrectInformation(AddOfficeJUnitTest.java:88)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+contentGendersComboBox(una.ac.cr.consultoriofrontend.AddOfficeJUnitTest)  Time elapsed: 1.053 sec  <<< ERROR!
+org.assertj.swing.exception.ComponentLookupException: Unable to find component using matcher org.assertj.swing.core.NameMatcher[name='offices', type=javax.swing.JComboBox, requireShowing=true].
+
+Component hierarchy:
+ac.cr.una.proyecto.java.view.PrincipalPanelView[name='frame4', title='Panel Administrativo', enabled=true, visible=true, showing=true]
+  javax.swing.JRootPane[]
+    javax.swing.JPanel[name='null.glassPane']
+    javax.swing.JLayeredPane[]
+      javax.swing.JPanel[name='null.contentPane']
+        javax.swing.JDesktopPane[]
+          ac.cr.una.proyecto.java.view.AddOfficeView[,0,0,260x330,layout=javax.swing.plaf.basic.BasicInternalFrameUI$Handler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.metal.MetalBorders$InternalFrameBorder@92e37ce,flags=264,maximumSize=,minimumSize=,preferredSize=,closable=true,defaultCloseOperation=DISPOSE_ON_CLOSE,desktopIcon=javax.swing.JInternalFrame$JDesktopIcon[,0,0,160x31,invalid,layout=java.awt.BorderLayout,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@7b54da9c,flags=8,maximumSize=,minimumSize=,preferredSize=],frameIcon=sun.swing.ImageIconUIResource@40e0bc36,iconable=true,isClosed=false,isIcon=false,isMaximum=false,isSelected=false,maximizable=false,opened=true,resizable=false,rootPane=javax.swing.JRootPane[,5,27,250x298,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=449,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true,title=Formulario Nuevo Consultorio]
+            javax.swing.JRootPane[]
+              javax.swing.JPanel[name='null.glassPane']
+              javax.swing.JLayeredPane[]
+                javax.swing.JPanel[name='null.contentPane']
+                  javax.swing.JPanel[name='Form']
+                    javax.swing.JLabel[name='lblName', text='Nombre:', enabled=true, visible=true, showing=true]
+                    javax.swing.JTextField[name='name', text='', enabled=true, visible=true, showing=true]
+                    javax.swing.JLabel[name='lblPhone', text='Telefono:', enabled=true, visible=true, showing=true]
+                    javax.swing.JTextField[name='phone', text='', enabled=true, visible=true, showing=true]
+                    javax.swing.JLabel[name='lblDays', text='Dias:', enabled=true, visible=true, showing=true]
+                    javax.swing.JTextField[name='days', text='', enabled=true, visible=true, showing=true]
+                    javax.swing.JLabel[name='lblHourStart', text='Hora Apertura:', enabled=true, visible=true, showing=true]
+                    javax.swing.JTextField[name='hourStart', text='', enabled=true, visible=true, showing=true]
+                    javax.swing.JLabel[name='lblHourEnd', text='Hora Cierre:', enabled=true, visible=true, showing=true]
+                    javax.swing.JTextField[name='hourEnd', text='', enabled=true, visible=true, showing=true]
+                    javax.swing.JButton[name='ok', text='Aceptar', enabled=true, visible=true, showing=true]
+                    javax.swing.JButton[name='clean', text='Limpiar', enabled=true, visible=true, showing=true]
+            javax.swing.plaf.metal.MetalInternalFrameTitlePane[,5,5,250x22,layout=javax.swing.plaf.metal.MetalInternalFrameTitlePane$MetalTitlePaneLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777224,maximumSize=,minimumSize=,preferredSize=]
+              javax.swing.plaf.basic.BasicInternalFrameTitlePane$NoFocusButton[name=null, text='', enabled=true, visible=true, showing=true]
+              javax.swing.plaf.basic.BasicInternalFrameTitlePane$NoFocusButton[name=null, text='', enabled=true, visible=true, showing=true]
+              javax.swing.plaf.basic.BasicInternalFrameTitlePane$NoFocusButton[name=null, text='', enabled=true, visible=true, showing=true]
+      javax.swing.JMenuBar[]
+        javax.swing.JMenu[name=null, text='Archivo', selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name='salir', text='Salir', selected=false, enabled=true, visible=true, showing=false]
+        javax.swing.JMenu[name='adminConsultorio', text='Administración Consultorio', selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name='agregarConsultorio', text='Agregar Consultorio', selected=false, enabled=true, visible=true, showing=false]
+            javax.swing.JMenuItem[name='todosConsultorios', text='Ver Lista', selected=false, enabled=true, visible=true, showing=false]
+        javax.swing.JMenu[name='adminPaciente', text='Administración Pacientes', selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name='agregarPaciente', text='Agregar Paciente', selected=false, enabled=true, visible=true, showing=false]
+            javax.swing.JMenuItem[name='todosPacientes', text='Ver Lista', selected=false, enabled=true, visible=true, showing=false]
+        javax.swing.JMenu[name='adminCitas', text='Administracion de Citas', selected=false, enabled=true, visible=true, showing=true]
+          javax.swing.JPopupMenu[name=null, label=null, enabled=true, visible=false, showing=false]
+            javax.swing.JMenuItem[name='agregarCita', text='Agregar Cita', selected=false, enabled=true, visible=true, showing=false]
+            javax.swing.JMenuItem[name='todasCitas', text='Ver Lista', selected=false, enabled=true, visible=true, showing=false]
+  javax.swing.Popup$HeavyWeightWindow[name=win0]
+    javax.swing.JRootPane[]
+      javax.swing.JPanel[name='null.glassPane']
+      javax.swing.JLayeredPane[]
+        javax.swing.JPanel[name='null.contentPane']
+
+	at org.assertj.swing.core.BasicComponentFinder.componentNotFound(BasicComponentFinder.java:287)
+	at org.assertj.swing.core.BasicComponentFinder.find(BasicComponentFinder.java:272)
+	at org.assertj.swing.core.BasicComponentFinder.find(BasicComponentFinder.java:265)
+	at org.assertj.swing.core.BasicComponentFinder.findByName(BasicComponentFinder.java:200)
+	at org.assertj.swing.fixture.AbstractContainerFixture.findByName(AbstractContainerFixture.java:622)
+	at org.assertj.swing.fixture.AbstractContainerFixture.comboBox(AbstractContainerFixture.java:178)
+	at una.ac.cr.consultoriofrontend.AddOfficeJUnitTest.contentGendersComboBox(AddOfficeJUnitTest.java:74)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)

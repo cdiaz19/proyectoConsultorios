@@ -34,7 +34,7 @@ public class Constants {
     /**
      *
      */
-    public static final Object[] TABLE_HEADER = {"Nombre Consultorio", "Contacto", "Días Consulta",
+    public static final Object[] TABLE_HEADER = {"Cód.", "Nombre Consultorio", "Contacto", "Días Consulta",
         "Horario Apertura", "Horario Cierre"};
 
     /**
