@@ -103,12 +103,6 @@ public class AppointmentController implements ActionListener {
         String fechaTyped = fecha;
         String horaTyped = hora.getSelectedItem().toString();
 
-        for (Object[] obj : appointments) {
-            Appointment fullText
-                    = new Appointment(obj[0].toString(), obj[1].toString(), obj[2].toString(), obj[3].toString());
-            appointmentsList.add(fullText);
-        }
-        appointmentsList.add(new Appointment(namePatientTyped, nameTyped, fechaTyped, horaTyped));
 
         JOptionPane.showMessageDialog(null, "Se agrego " + namePatientTyped + " correctamente");
 
