@@ -12,132 +12,115 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @author Yeni
  */
 public class Appointment {
-    @JsonProperty("id_appointment")
+    @JsonProperty("idAppointment")
     private int idAppointment;
-    @JsonProperty("namePatient")
-    private String namePatient;
-    @JsonProperty("name")
-    private String name;
-    @JsonProperty("fecha")
-    private String fecha;
-    @JsonProperty("hora")
-    private String hora;
+    @JsonProperty("office")
+    private Office office;
+    @JsonProperty("patient")
+    private Patient patient;
+    @JsonProperty("date")
+    private String date;
+    @JsonProperty("hour")
+    private String hour;
 
     /**
-     *
-     * @param id_appointment
-     * @param namePatient
-     * @param name
-     * @param fecha
-     * @param hora
-     */
-    public Appointment(int id_appointment,String namePatient, String name, String fecha, String hora) {
-        this.idAppointment = idAppointment;
-        this.namePatient = namePatient;
-        this.name = name;
-        this.fecha = fecha;
-        this.hora = hora;
-    }
-
-    /**
-     *
+     * 
      */
     public Appointment() {
     }
 
-    public Appointment(String namePatient, String name, String fecha, String hora) {
-        this.namePatient = namePatient;
-        this.name = name;
-        this.fecha = fecha;
-        this.hora = hora;
+    /**
+     * 
+     * @param idAppointment
+     * @param office
+     * @param patient
+     * @param date
+     * @param hour 
+     */
+    public Appointment(int idAppointment, Office office, Patient patient, String date, String hour) {
+        this.idAppointment = idAppointment;
+        this.office = office;
+        this.patient = patient;
+        this.date = date;
+        this.hour = hour;
     }
-    
 
     /**
-     *
-     * @return
+     * @return the idAppointment
      */
     public int getIdAppointment() {
         return idAppointment;
     }
 
     /**
-     *
-     * @param idAppointment
+     * @param idAppointment the idAppointment to set
      */
     public void setIdAppointment(int idAppointment) {
         this.idAppointment = idAppointment;
     }
-    
+
     /**
-     *
-     * @return
+     * @return the office
      */
-    public String getNamePatient() {
-        return namePatient;
+    public Office getOffice() {
+        return office;
     }
 
     /**
-     *
-     * @param namePatient
+     * @param office the office to set
      */
-    public void setNamePatient(String namePatient) {
-        this.namePatient = namePatient;
+    public void setOffice(Office office) {
+        this.office = office;
     }
 
     /**
-     *
-     * @return
+     * @return the patient
      */
-    public String getName() {
-        return name;
+    public Patient getPatient() {
+        return patient;
     }
 
     /**
-     *
-     * @param name
+     * @param patient the patient to set
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 
     /**
-     *
-     * @return
+     * @return the date
      */
-    public String getFecha() {
-        return fecha;
+    public String getDate() {
+        return date;
     }
 
     /**
-     *
-     * @param fecha
+     * @param date the date to set
      */
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     /**
-     *
-     * @return
+     * @return the hour
      */
-    public String getHora() {
-        return hora;
+    public String getHour() {
+        return hour;
     }
 
     /**
-     *
-     * @param hora
+     * @param hour the hour to set
      */
-    public void setHora(String hora) {
-        this.hora = hora;
+    public void setHour(String hour) {
+        this.hour = hour;
     }
 
     @Override
     public String toString() {
-        return "Appointment{" + "idAppointment=" + idAppointment + ", namePatient=" + namePatient + ", name=" + name + ", fecha=" + fecha + ", hora=" + hora + '}';
+        return "Appointment{" + "idAppointment=" + idAppointment + 
+                ", office=" + office + 
+                ", patient=" + patient + 
+                ", date=" + date + 
+                ", hour=" + hour + '}';
     }
-
-  
-
 }

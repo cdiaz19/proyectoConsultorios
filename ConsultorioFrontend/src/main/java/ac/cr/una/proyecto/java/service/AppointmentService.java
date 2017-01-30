@@ -47,10 +47,10 @@ public class AppointmentService {
             data = new Object[appointments.length][4]; // filas y columnas
             int i = 0;
             for (Appointment appointment : appointments) {
-                data[i][0] = checkIfNull(appointment.getNamePatient());
-                data[i][1] = checkIfNull(appointment.getName());
-                data[i][2] = checkIfNull(appointment.getFecha());
-                data[i][3] = checkIfNull(appointment.getHora());
+                data[i][0] = checkIfNull(appointment.getPatient().getName());
+                data[i][1] = checkIfNull(appointment.getOffice().getName());
+                data[i][2] = checkIfNull(appointment.getDate());
+                data[i][3] = checkIfNull(appointment.getHour());
                 i++;
             }
         }
@@ -149,5 +149,31 @@ public class AppointmentService {
         }
 
         return isDeleted;
+    }
+    
+    public boolean updateAppointment(Appointment appointment) throws JsonGenerationException,
+            JsonMappingException, IOException {
+
+        boolean isCreated = true;
+        ObjectMapper mapper = new ObjectMapper();
+
+        Client client = Client.create();
+
+        WebResource webResource = client
+                .resource(Constants.WS_URL_APPOINTMENT);
+
+        String jsonInString = mapper.writeValueAsString(appointment);
+
+        //POST del JSON
+        ClientResponse response = webResource.type(MediaType.APPLICATION_JSON_TYPE)
+                .put(ClientResponse.class, jsonInString);
+
+        if (response.getStatus() != 200) {
+            isCreated = false;
+            throw new RuntimeException("Failed : HTTP error code : "
+                    + response.getStatus());
+        }
+
+        return isCreated;
     }
 }

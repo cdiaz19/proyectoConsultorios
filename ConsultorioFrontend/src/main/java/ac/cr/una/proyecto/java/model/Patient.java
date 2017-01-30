@@ -47,6 +47,10 @@ public class Patient {
         this.observation = observation;
     }
 
+    public Patient(String name) {
+        this.name = name;
+    }
+
     /**
      * @return the idPatient
      */

@@ -6,14 +6,11 @@
 package ac.cr.una.proyecto.java.controller;
 
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.toedter.calendar.JDateChooser;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,8 +18,9 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import ac.cr.una.proyecto.java.Constants;
 import ac.cr.una.proyecto.java.model.Appointment;
+import ac.cr.una.proyecto.java.model.Office;
+import ac.cr.una.proyecto.java.model.Patient;
 import ac.cr.una.proyecto.java.service.AppointmentService;
 
 /**
@@ -67,7 +65,7 @@ public class AppointmentController implements ActionListener {
         this.accept_button = accept_button;
         this.clean_button = clean_button;
 
-//        appointmentService = new AppointmentService();
+        appointmentService = new AppointmentService();
 //        appointments = appointmentService.loadAppointmentsObjWrapper();
     }
 
@@ -76,7 +74,6 @@ public class AppointmentController implements ActionListener {
         if (e.getSource() == accept_button) {
             try {
                 updateAppointmentList();
-                appointments = appointmentService.loadAppointmentsObjWrapper();
             } catch (IOException ex) {
                 Logger.getLogger(AppointmentController.class.getName()).log(Level.SEVERE, null, ex);
             } catch (Exception ex) {
@@ -97,17 +94,24 @@ public class AppointmentController implements ActionListener {
         String year = Integer.toString(fecha.getCalendar().get(Calendar.YEAR));
         String fecha = (dia + "-" + mes + "-" + year);
         
-        ArrayList<Appointment> appointmentsList = new ArrayList<>();
         String namePatientTyped = namePatient.getText();
-        String nameTyped = (String) name.getSelectedItem();
-        String fechaTyped = fecha;
-        String horaTyped = hora.getSelectedItem().toString();
+        String officeTyped = (String) name.getSelectedItem();
+        String dateTyped = fecha;
+        String hourTyped = hora.getSelectedItem().toString();
 
+        Appointment appointment = new Appointment();
+        Patient patient = new Patient(1, "Carlos", "1234", "Carlos Guzman", "22795122", "Cartago",
+                "19-11-1993", "Cabeza, panel", "Adicto muy Adicto");
+        Office office = new Office(1, "Hospital CIMA", "22795122", "Lunes y Martes", "8:00", "5:00");
+        
+        appointment.setPatient(patient);
+        appointment.setOffice(office);
+        appointment.setDate(dateTyped);
+        appointment.setHour(hourTyped);
 
+        appointmentService.createAppointment(appointment);
+        
         JOptionPane.showMessageDialog(null, "Se agrego " + namePatientTyped + " correctamente");
-
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.writeValue(new File(Constants.FILENAME_APPOINTMENT), appointmentsList);
     }
 
     private void cleanAll() throws IOException {

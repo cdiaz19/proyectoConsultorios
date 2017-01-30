@@ -50,13 +50,14 @@ public class Office {
         this.hourEnd = hourEnd;
     }
 
-    /* public Office(String name, String phone, String days, String hourStart, String hourEnd) {
+    /**
+     * 
+     * @param name 
+     */
+    public Office(String name) {
         this.name = name;
-        this.phone = phone;
-        this.days = days;
-        this.hourStart = hourStart;
-        this.hourEnd = hourEnd;
-    }*/
+    }
+
     /**
      *
      * @return
