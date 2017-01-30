@@ -32,9 +32,24 @@ public class Patient {
     @JsonProperty("observation")
     private String observation;
 
+    /**
+     * 
+     */
     public Patient() {
     }
 
+    /**
+     * 
+     * @param idPatient
+     * @param user
+     * @param password
+     * @param name
+     * @param phone
+     * @param address
+     * @param birthday
+     * @param associatedDiseases
+     * @param observation 
+     */
     public Patient(int idPatient, String user, String password, String name, String phone, String address, String birthday, String associatedDiseases, String observation) {
         this.idPatient = idPatient;
         this.user = user;
@@ -45,10 +60,6 @@ public class Patient {
         this.birthday = birthday;
         this.associatedDiseases = associatedDiseases;
         this.observation = observation;
-    }
-
-    public Patient(String name) {
-        this.name = name;
     }
 
     /**

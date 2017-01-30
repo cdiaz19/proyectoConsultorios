@@ -43,7 +43,6 @@ public interface PatientService {
      */
     public Appointment findByIdPatientAppointment(int id);
 
-
     /**
      *
      * @param patient
@@ -82,6 +81,5 @@ public interface PatientService {
      *
      * @return
      */
-    public  List<Appointment> findAllPatientAppointment();
-
+    public List<Appointment> findAllPatientAppointment();
 }

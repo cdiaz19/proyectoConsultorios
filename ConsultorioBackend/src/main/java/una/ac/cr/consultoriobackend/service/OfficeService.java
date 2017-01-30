@@ -54,5 +54,4 @@ public interface OfficeService {
      * @return
      */
     public List<Office> findAllOffice();
-
 }

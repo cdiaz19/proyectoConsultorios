@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="una.ac.cr.consultoriofrontend.AppointmentPatientJUnitTest" time="0.233" errors="1" skipped="0">
+<testsuite tests="1" failures="0" name="una.ac.cr.consultoriofrontend.AppointmentPatientJUnitTest" time="0.232" errors="1" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/local/java/jdk1.8.0_121/jre/lib/amd64"/>
@@ -60,22 +60,14 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="una.ac.cr.consultoriofrontend.AppointmentPatientJUnitTest" name="testVisibleComponents" time="0.231">
-    <error message="Unrecognized field &quot;name&quot; (class ac.cr.una.proyecto.java.model.Patient), not marked as ignorable (9 known properties: &quot;address&quot;, &quot;idPatient&quot;, &quot;user&quot;, &quot;observation&quot;, &quot;birthday&quot;, &quot;phone&quot;, &quot;password&quot;, &quot;associatedDiseases&quot;, &quot;namePatient&quot;])
- at [Source: [{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:1,&quot;name&quot;:&quot;Santiago Gonzalez&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Santiago&quot;},{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:2,&quot;name&quot;:&quot;Santiago Gonzalez Solorzano&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Santiago&quot;},{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:4,&quot;name&quot;:&quot;Santiago Gonzalez&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Santiago&quot;},{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:6,&quot;name&quot;:&quot;Santiago Gonzalez&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Santiago&quot;},{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:7,&quot;name&quot;:&quot;Carlos Gonzalez&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Carlos&quot;},{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:9,&quot;name&quot;:&quot;Santiago Gonzalez&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Santiago&quot;}]; line: 1, column: 102] (through reference chain: java.lang.Object[][0]-&gt;ac.cr.una.proyecto.java.model.Patient[&quot;name&quot;])" type="com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException">com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field &quot;name&quot; (class ac.cr.una.proyecto.java.model.Patient), not marked as ignorable (9 known properties: &quot;address&quot;, &quot;idPatient&quot;, &quot;user&quot;, &quot;observation&quot;, &quot;birthday&quot;, &quot;phone&quot;, &quot;password&quot;, &quot;associatedDiseases&quot;, &quot;namePatient&quot;])
- at [Source: [{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:1,&quot;name&quot;:&quot;Santiago Gonzalez&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Santiago&quot;},{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:2,&quot;name&quot;:&quot;Santiago Gonzalez Solorzano&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Santiago&quot;},{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:4,&quot;name&quot;:&quot;Santiago Gonzalez&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Santiago&quot;},{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:6,&quot;name&quot;:&quot;Santiago Gonzalez&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Santiago&quot;},{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:7,&quot;name&quot;:&quot;Carlos Gonzalez&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Carlos&quot;},{&quot;address&quot;:&quot;Alajuela&quot;,&quot;associatedDiseases&quot;:&quot;Neumonia&quot;,&quot;birthday&quot;:&quot;23-12-1985&quot;,&quot;idPatient&quot;:9,&quot;name&quot;:&quot;Santiago Gonzalez&quot;,&quot;observation&quot;:&quot;Fuerte dolor en el pecho, cuesta respirar&quot;,&quot;password&quot;:&quot;1234&quot;,&quot;phone&quot;:&quot;22795352&quot;,&quot;user&quot;:&quot;Santiago&quot;}]; line: 1, column: 102] (through reference chain: java.lang.Object[][0]-&gt;ac.cr.una.proyecto.java.model.Patient[&quot;name&quot;])
-	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:62)
-	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:834)
-	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:1093)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1477)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1455)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:282)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:140)
-	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.deserialize(ObjectArrayDeserializer.java:196)
-	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.deserialize(ObjectArrayDeserializer.java:20)
-	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:3798)
-	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2842)
-	at ac.cr.una.proyecto.java.service.PatientService.loadJsonFromWebService(PatientService.java:107)
+  <testcase classname="una.ac.cr.consultoriofrontend.AppointmentPatientJUnitTest" name="testVisibleComponents" time="0.225">
+    <error message="java.net.ConnectException: Conexión rehusada (Connection refused)" type="com.sun.jersey.api.client.ClientHandlerException">com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Conexión rehusada (Connection refused)
+	at com.sun.jersey.client.urlconnection.URLConnectionClientHandler.handle(URLConnectionClientHandler.java:149)
+	at com.sun.jersey.api.client.Client.handle(Client.java:648)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:670)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:503)
+	at ac.cr.una.proyecto.java.service.PatientService.loadJsonFromWebService(PatientService.java:98)
 	at ac.cr.una.proyecto.java.service.PatientService.loadPatientObjWrapper(PatientService.java:42)
 	at ac.cr.una.proyecto.java.controller.InformationPatientController.showInformation(InformationPatientController.java:44)
 	at ac.cr.una.proyecto.java.controller.InformationPatientController.&lt;init&gt;(InformationPatientController.java:35)
@@ -111,6 +103,30 @@
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+Caused by: java.net.ConnectException: Conexión rehusada (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.&lt;init&gt;(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1546)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1474)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at com.sun.jersey.client.urlconnection.URLConnectionClientHandler._invoke(URLConnectionClientHandler.java:240)
+	at com.sun.jersey.client.urlconnection.URLConnectionClientHandler.handle(URLConnectionClientHandler.java:147)
+	... 40 more
 </error>
   </testcase>
 </testsuite>

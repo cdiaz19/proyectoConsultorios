@@ -47,6 +47,7 @@ public class PatientDAOHibernateImpl implements PatientDAO {
 
         return patientAppointment;
     }
+
     /**
      *
      * @param id_patient
@@ -93,10 +94,10 @@ public class PatientDAOHibernateImpl implements PatientDAO {
         session.beginTransaction();
         session.update(patient);
         session.getTransaction().commit();
-        
+
         return patient;
     }
-    
+
     /**
      *
      * @param patientAppointment
@@ -129,7 +130,7 @@ public class PatientDAOHibernateImpl implements PatientDAO {
         return isDeleted;
     }
 
-     /**
+    /**
      *
      * @param id
      * @return
@@ -147,6 +148,7 @@ public class PatientDAOHibernateImpl implements PatientDAO {
 
         return isDeleted;
     }
+
     /**
      *
      * @return
@@ -164,10 +166,10 @@ public class PatientDAOHibernateImpl implements PatientDAO {
      * @return
      */
     @Override
-    public  List<Appointment> findAllPatientAppointment() {
+    public List<Appointment> findAllPatientAppointment() {
         List<Appointment> patient = new ArrayList<>();
         patient = session.createCriteria(Appointment.class).list();
-        
+
         return patient;
     }
 }

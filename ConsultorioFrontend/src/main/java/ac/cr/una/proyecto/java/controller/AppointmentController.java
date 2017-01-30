@@ -66,7 +66,6 @@ public class AppointmentController implements ActionListener {
         this.clean_button = clean_button;
 
         appointmentService = new AppointmentService();
-//        appointments = appointmentService.loadAppointmentsObjWrapper();
     }
 
     @Override

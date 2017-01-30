@@ -176,4 +176,30 @@ public class OfficeService {
 
         return isDeleted;
     }
+    
+    public boolean updateOffice(Office office) throws JsonGenerationException,
+            JsonMappingException, IOException {
+
+        boolean isCreated = true;
+        ObjectMapper mapper = new ObjectMapper();
+
+        Client client = Client.create();
+
+        WebResource webResource = client
+                .resource(Constants.WS_URL_OFFICE);
+
+        String jsonInString = mapper.writeValueAsString(office);
+
+        //PUT del JSON
+        ClientResponse response = webResource.type(MediaType.APPLICATION_JSON_TYPE)
+                .put(ClientResponse.class, jsonInString);
+
+        if (response.getStatus() != 200) {
+            isCreated = false;
+            throw new RuntimeException("Failed : HTTP error code : "
+                    + response.getStatus());
+        }
+
+        return isCreated;
+    }
 }

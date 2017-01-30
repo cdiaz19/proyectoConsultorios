@@ -21,6 +21,7 @@ import ac.cr.una.proyecto.java.service.LoginPatientService;
 import ac.cr.una.proyecto.java.view.LoginView;
 import ac.cr.una.proyecto.java.view.PatientPanelView;
 import ac.cr.una.proyecto.java.view.PrincipalPanelView;
+import com.fasterxml.jackson.databind.JsonMappingException;
 
 /**
  *
@@ -42,10 +43,11 @@ public class LoginController implements ActionListener {
      * @param txtPassword
      * @param btnLogin
      * @param btnSalir
+     * @throws com.fasterxml.jackson.databind.JsonMappingException
      * @throws IOException
      */
     public LoginController(JTextField txtUsername, JPasswordField txtPassword, JButton btnLogin,
-            JButton btnSalir) throws IOException {
+            JButton btnSalir) throws JsonMappingException, IOException  {
         this.txtUsername = txtUsername;
         this.txtPassword = txtPassword;
         this.btnLogin = btnLogin;

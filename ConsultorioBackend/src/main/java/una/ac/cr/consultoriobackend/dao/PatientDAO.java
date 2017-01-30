@@ -43,8 +43,6 @@ public interface PatientDAO {
      */
     public Appointment findByIdPatientAppointment(int id);
 
-   
-
     /**
      *
      * @param patient
@@ -84,5 +82,4 @@ public interface PatientDAO {
      * @return
      */
     public  List<Appointment> findAllPatientAppointment();
-
 }

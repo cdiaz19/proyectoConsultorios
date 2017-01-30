@@ -42,7 +42,6 @@ public class PatientServiceImpl implements PatientService {
         return patientDAO.findByIdPatient(id);
     }
 
-
     @Override
     public Patient updatePatient(Patient patient) {
         return patientDAO.updatePatient(patient);
@@ -79,7 +78,7 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public  List<Appointment> findAllPatientAppointment() {
+    public List<Appointment> findAllPatientAppointment() {
         return patientDAO.findAllPatientAppointment();
     }
 }

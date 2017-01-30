@@ -1,4 +1,3 @@
-
 package una.ac.cr.consultoriobackend.webservice;
 
 import java.util.List;
@@ -21,24 +20,29 @@ import una.ac.cr.consultoriobackend.service.OfficeServiceImpl;
 import una.ac.cr.consultoriobackend.service.PatientService;
 import una.ac.cr.consultoriobackend.service.PatientServiceImpl;
 
-
 /**
  *
  * @author Kimberly
  */
-
 @Path("patients")
 public class PatientWebService {
+
     private PatientDAO patientDAO;
     private PatientService patientService;
 
     @Context
     private UriInfo context;
 
+    /**
+     *
+     */
     public PatientWebService() {
     }
 
-    
+    /**
+     *
+     * @return
+     */
     @GET
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
@@ -46,14 +50,15 @@ public class PatientWebService {
         List<Patient> patientList = null;
         patientDAO = new PatientDAOHibernateImpl();
         patientService = new PatientServiceImpl(patientDAO);
-        
+
         patientList = patientService.findAllPatient();
 
         return patientList;
     }
 
     /**
-     *  Retrieves only one office
+     * Retrieves only one patient
+     *
      * @param id_patient
      * @return
      */
@@ -64,14 +69,17 @@ public class PatientWebService {
         Patient patient = null;
         patientDAO = new PatientDAOHibernateImpl();
         patientService = new PatientServiceImpl(patientDAO);
-        
+
         patient = patientService.findByIdPatient(id_patient);
 
         return patient;
     }
 
-
-
+    /**
+     *
+     * @param patient
+     * @return
+     */
     @POST
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -80,25 +88,34 @@ public class PatientWebService {
 
         patientDAO = new PatientDAOHibernateImpl();
         patientService = new PatientServiceImpl(patientDAO);
-        
+
         patient = patientService.savePatient(patient);
 
         return patient;
     }
 
-
+    /**
+     *
+     * @param id_patient
+     * @return
+     */
     @DELETE
     @Path("/{id_patient}")
     public boolean deleteOffice(@PathParam("id_patient") int id_patient) {
         boolean result;
         patientDAO = new PatientDAOHibernateImpl();
         patientService = new PatientServiceImpl(patientDAO);
-        
+
         result = patientService.deletePatient(id_patient);
 
         return result;
     }
 
+    /**
+     *
+     * @param patient
+     * @return
+     */
     @PUT
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -107,7 +124,7 @@ public class PatientWebService {
 
         patientDAO = new PatientDAOHibernateImpl();
         patientService = new PatientServiceImpl(patientDAO);
-        
+
         patient = patientService.updatePatient(patient);
 
         return patient;

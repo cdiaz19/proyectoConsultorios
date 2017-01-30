@@ -40,6 +40,7 @@ public class OfficeWebService {
 
     /**
      * Retrieves All the Offices
+     *
      * @return
      */
     @GET
@@ -49,14 +50,15 @@ public class OfficeWebService {
         List<Office> officeList = null;
         officeDAO = new OfficeDAOHibernateImpl();
         officeService = new OfficeServiceImpl(officeDAO);
-        
+
         officeList = officeService.findAllOffice();
 
         return officeList;
     }
 
     /**
-     *  Retrieves only one office
+     * Retrieves only one office
+     *
      * @param id_office
      * @return
      */
@@ -72,10 +74,10 @@ public class OfficeWebService {
         return office;
     }
 
-
     /**
-     * 
+     *
      * Create a new Office
+     *
      * @param office
      * @return
      */
@@ -94,6 +96,7 @@ public class OfficeWebService {
 
     /**
      * Delete a new Office
+     *
      * @param id_office
      * @return
      */
@@ -109,7 +112,8 @@ public class OfficeWebService {
     }
 
     /**
-     * Update a Offie
+     * Update a Office
+     *
      * @param office
      * @return
      */

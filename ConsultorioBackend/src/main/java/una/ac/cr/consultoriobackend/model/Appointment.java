@@ -183,8 +183,10 @@ public class Appointment implements Serializable {
 
     @Override
     public String toString() {
-        return "PatientAppointment{" + "idAppointment=" + idAppointment + ", office=" + office + ", patient=" + patient + ", date=" + date + ", hour=" + hour + '}';
+        return "PatientAppointment{" + "idAppointment=" + idAppointment + 
+                ", office=" + office + 
+                ", patient=" + patient + 
+                ", date=" + date + 
+                ", hour=" + hour + '}';
     }
-
-    
 }

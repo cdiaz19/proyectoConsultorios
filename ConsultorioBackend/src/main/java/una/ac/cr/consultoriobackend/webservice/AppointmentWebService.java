@@ -1,4 +1,3 @@
-
 package una.ac.cr.consultoriobackend.webservice;
 
 import java.util.List;
@@ -23,37 +22,42 @@ import una.ac.cr.consultoriobackend.service.PatientServiceImpl;
  *
  * @author Yeni
  */
-
 @Path("appointments")
 public class AppointmentWebService {
+
     private PatientDAO appointmentDAO;
     private PatientService service;
 
     @Context
     private UriInfo context;
 
+    /**
+     *
+     */
     public AppointmentWebService() {
     }
-    
+
     /**
      * Retrieves All the Appointments
+     *
      * @return
      */
     @GET
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
-    public  List<Appointment> getAllPatientsAppointment() {
-         List<Appointment> dateList = null;
+    public List<Appointment> getAllPatientsAppointment() {
+        List<Appointment> dateList = null;
         appointmentDAO = new PatientDAOHibernateImpl();
         service = new PatientServiceImpl(appointmentDAO);
-        
+
         dateList = service.findAllPatientAppointment();
 
         return dateList;
     }
-    
-     /**
-     *  Retrieves only one office
+
+    /**
+     * Retrieves only one appointment
+     *
      * @param id_appointment
      * @return
      */
@@ -68,7 +72,12 @@ public class AppointmentWebService {
 
         return app;
     }
-    
+
+    /**
+     *
+     * @param appointment
+     * @return
+     */
     @POST
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -81,28 +90,38 @@ public class AppointmentWebService {
 
         return appointment;
     }
-    
+
+    /**
+     *
+     * @param id_appointment
+     * @return
+     */
     @DELETE
     @Path("/{id_appointment}")
-    public boolean deleteAppointment(@PathParam("id_appointment") int id_office) {
+    public boolean deleteAppointment(@PathParam("id_appointment") int id_appointment) {
         boolean result;
         appointmentDAO = new PatientDAOHibernateImpl();
         service = new PatientServiceImpl(appointmentDAO);
-        
-        result = service.deletePatientAppointment(id_office);
+
+        result = service.deletePatientAppointment(id_appointment);
 
         return result;
     }
-    
+
+    /**
+     *
+     * @param appointment
+     * @return
+     */
     @PUT
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Appointment updateOffice( Appointment appointment) {
+    public Appointment updateOffice(Appointment appointment) {
 
         appointmentDAO = new PatientDAOHibernateImpl();
         service = new PatientServiceImpl(appointmentDAO);
-        
+
         appointment = service.updatePatientAppointment(appointment);
 
         return appointment;
